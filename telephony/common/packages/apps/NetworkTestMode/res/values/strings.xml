@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Network Test Mode</string>
+    <string name="key_pref_screen">key_pref_screen</string>
+    <string name="action_settings">Settings</string>
+    <string name="str_apn">PDN Up/Down</string>
+    <string name="str_dns">DNS Query Block</string>
+
+    <!-- APN Mode -->
+    <string name="str_apn_title">APN Mode Setting</string>
+    <string name="str_select_sim">Select SIM</string>
+    <string name="str_sim1">SIM1</string>
+    <string name="str_sim2">SIM2</string>
+    <string name="key_apn_list">key_apn_list</string>
+    <string name="key_select_sim">key_select_sim</string>
+    <string name="key_sim1">key_sim1</string>
+    <string name="key_sim2">key_sim2</string>
+
+    <!-- DNS Query Block -->
+    <string name="str_dns_block">DNS Query Block</string>
+    <string name="str_dns_title">DNS Query Block Setting</string>
+
+    <!-- VoLTE Setting -->
+    <string name="key_volte_mode">key_volte_mode</string>
+    <string name="str_volte_title">VoLTE mode setting</string>
+    <string name="str_volte_mode">VoLTE mode</string>
+
+    <!-- Dual VoLTE Setting -->
+    <string name="str_dual_volte_title">Dual VoLTE mode setting</string>
+
+    <!-- URSP Setting -->
+    <string name="str_usrp_test_mode">URSP Test Mode</string>
+    <string name="str_ursp_setting">URSP Setting</string>
+    <string name="str_ursp_os_id">URSP OS ID</string>
+    <string name="str_ursp_app_id">URSP APP ID</string>
+    <string name="str_fqdn">FQDN</string>
+    <string name="str_ipv4_addr">IPv4 Address</string>
+    <string name="str_ipv4_mask">IPv4 Mask</string>
+    <string name="str_ipv6_addr">IPv6 Address</string>
+    <string name="str_prefix_len">Prefix Length</string>
+    <string name="str_next_ip_hdr">Next IP Header</string>
+    <string name="str_single_port_range">Single port range</string>
+    <string name="str_port_range_low_limit">Port Range Low Limit</string>
+    <string name="str_port_range_high_limit">Port Range High Limit</string>
+    <string name="key_usrp_test_mode">key_usrp_test_mode</string>
+    <string name="key_ursp_os">key_ursp_os</string>
+    <string name="key_ursp_app">key_ursp_app</string>
+    <string name="key_fqdn">key_fqdn</string>
+    <string name="key_ipv4_addr">key_ipv4_addr</string>
+    <string name="key_ipv4_mask">key_ipv4_mask</string>
+    <string name="key_ipv6_addr">key_ipv6_addr</string>
+    <string name="key_prefix_len">key_prefix_len</string>
+    <string name="key_next_ip_hdr">key_next_ip_hdr</string>
+    <string name="key_single_port_range">key_single_port_range</string>
+    <string name="key_port_range_low_limit">key_port_range_low_limit</string>
+    <string name="key_port_range_high_limit">key_port_range_high_limit</string>
+    <string name="action_save">Save</string>
+
+    <!-- Data Stall Recovery Block -->
+    <string name="str_data_stall_block">Data Stall Recovery Block</string>
+    <string name="str_data_stall_block_title">Data Stall Recovery Block Setting</string>
+
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.epdg.servers">ims-operator:sim</string>
+    <boolean name="vendor.mms_over_wifi_supported" value="false"/>
+</vendor_config>

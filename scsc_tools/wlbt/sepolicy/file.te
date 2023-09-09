@@ -1,0 +1,12 @@
+# For b/up, please append the below code to device/samsung/sepolicy/common/file.te
+
+## wlbt cnntlogger
+# Lable for the logging output dir: /data/vendor/log/wlbt(/.*)?
+type vendor_wlbt_log_file, file_type, data_file_type;
+
+# Lable for /driver/unifi0/build and /driver/mxman_info/mx_release which is accessed by udi_log
+type vendor_wlbt_build, proc_type;
+
+# Lable for /sys/module/scsc_logring/parameters(/.*)? and /sys/module/scsc_bt/parameters(/.*)? to control logging level
+type vendor_wlbt_sysfs_mxlog_filter, fs_type, sysfs_type;
+## wlbt cnntlogger

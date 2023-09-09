@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="30"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="60"/>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes256-sha256-prfsha1-modp1024-modp1536-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes256-sha256!</string>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+    <int name="vendor.epdg.retransmit_tries" value="5"/>
+</vendor_config>

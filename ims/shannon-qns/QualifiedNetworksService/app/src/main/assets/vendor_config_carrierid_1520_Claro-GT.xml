@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.epdg.servers">ims-operator:sim</string>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="180"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="10"/>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <boolean name="vendor.epdg.ike_initiator_id_has_mac_addr" value="true"/>
+</vendor_config>

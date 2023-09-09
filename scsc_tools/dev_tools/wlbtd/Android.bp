@@ -1,0 +1,48 @@
+cc_binary {
+    srcs: ["wlbtd_sable.cpp", "wlbtd.cpp"],
+    name: "wlbtd",
+    include_dirs: ["system/core/include"],
+    shared_libs: [
+        "liblog",
+        "libnl",
+    ],
+
+    proprietary: true,
+    tidy:true, //clang-tidy
+}
+
+cc_prebuilt_binary {
+    srcs: ["mx_log_collection.sh"],
+    name: "mx_log_collection.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["mx_log_collection_x86.sh"],
+    name: "mx_log_collection_x86.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["mx_logger_dump.sh"],
+    name: "mx_logger_dump.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["mx_logger.sh"],
+    name: "mx_logger.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}

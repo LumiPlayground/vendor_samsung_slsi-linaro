@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <int name="vendor.epdg.esp_lifetime" value="43000"/>
+    <int name="vendor.epdg.retransmit_tries" value="10"/>
+</vendor_config>

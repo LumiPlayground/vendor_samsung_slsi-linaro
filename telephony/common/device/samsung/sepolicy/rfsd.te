@@ -1,0 +1,17 @@
+type rfsd, domain;
+type rfsd_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(rfsd);
+
+set_prop(rfsd, vendor_rild_prop);
+set_prop(rfsd, vendor_sys_default_prop);
+set_prop(rfsd, vendor_config_default_prop);
+get_prop(rfsd, vendor_persist_config_default_prop);
+
+allow rfsd block_device:dir search;
+allow rfsd efs_file:dir search;
+allow rfsd efs_file:dir create_dir_perms;
+allow rfsd efs_file:file create_file_perms;
+allow rfsd { modem_block_device efs_block_device }:blk_file r_file_perms;
+allow rfsd radio_device:chr_file rw_file_perms;
+allow rfsd self:capability { chown setuid fowner };
+allow rfsd mnt_vendor_file:dir search;

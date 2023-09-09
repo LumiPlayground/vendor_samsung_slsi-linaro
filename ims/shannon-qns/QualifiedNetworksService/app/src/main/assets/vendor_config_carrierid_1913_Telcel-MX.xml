@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.wifi_access_points_handover_timeout" value="30"/>
+    <string name="vendor.ims_handover_rove_in">utran{rscp=-105,ecno=-9};eutran{rsrp=-120,rsrq=-12};iwlan{rssi=-75}</string>
+    <string name="vendor.ims_handover_rove_out">utran{rscp=-108,ecno=-12};eutran{rsrp=-122,rsrq=-14};iwlan{rssi=-85}</string>
+    <string name="vendor.ims_handover_hand_in">eutran{rsrp=-122,rsrq=-14,rssnr=4};iwlan{rssi=-75}</string>
+    <string name="vendor.ims_handover_hand_out">eutran{rsrp=-126,rsrq=-18,rssnr=1};iwlan{rssi=-85}</string>
+    <int name="vendor.ims_handover_rtp_jitter_max" value="200"/>
+    <int name="vendor.ims_handover_hysteresis_timer_volte" value="0"/>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="0"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <boolean name="vendor.mms_over_wifi_supported" value="false"/>
+    <string name="vendor.epdg.servers">ims-operator:sim</string>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="180"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="10"/>
+    <boolean name="vendor.epdg.ike_initiator_id_has_mac_addr" value="true"/>
+    <string name="vendor.epdg.ike_device_identity">attribute:16385</string>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-sha1-sha256-prfsha1-prfsha256-modp1024!</string>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-sha1-sha256!</string>
+    <boolean name="vendor.epdg.ike_mobike_enabled" value="false"/>
+    <string name="vendor.epdg.xcap_keyid">internet.itelcel.com</string>
+</vendor_config>

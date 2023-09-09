@@ -1,0 +1,27 @@
+type vendor_telephony_silentlogging_app, domain, mlstrustedsubject;;
+app_domain(vendor_telephony_silentlogging_app)
+
+set_prop(vendor_telephony_silentlogging_app, vendor_diag_prop)
+set_prop(vendor_telephony_silentlogging_app, vendor_slog_prop)
+
+allow vendor_telephony_silentlogging_app vendor_slog_file:dir create_dir_perms;
+allow vendor_telephony_silentlogging_app vendor_slog_file:file create_file_perms;
+allow vendor_telephony_silentlogging_app cgroup:file rw_file_perms;
+allow vendor_telephony_silentlogging_app self:udp_socket { create ioctl };
+allowxperm vendor_telephony_silentlogging_app self:udp_socket ioctl SIOCGIFHWADDR;
+
+allow vendor_telephony_silentlogging_app app_api_service:service_manager find;
+allow vendor_telephony_silentlogging_app hal_exynos_rild_hwservice:hwservice_manager find;
+allow vendor_telephony_silentlogging_app hal_vendor_oem_hwservice:hwservice_manager find;
+binder_call(vendor_telephony_silentlogging_app, dmd)
+binder_call(vendor_telephony_silentlogging_app, rild)
+binder_call(vendor_telephony_silentlogging_app, sced)
+allow vendor_telephony_silentlogging_app vendor_rild_file:dir { rw_dir_perms };
+allow vendor_telephony_silentlogging_app vendor_rild_file:file { create_file_perms rw_file_perms };
+userdebug_or_eng(`
+# Silent Logging
+dontaudit vendor_telephony_silentlogging_app system_app_data_file:dir create_dir_perms;
+dontaudit vendor_telephony_silentlogging_app system_app_data_file:file create_file_perms;
+dontaudit vendor_telephony_silentlogging_app default_prop:file { getattr open read map };
+allow vendor_telephony_silentlogging_app selinuxfs:file { read open };
+')

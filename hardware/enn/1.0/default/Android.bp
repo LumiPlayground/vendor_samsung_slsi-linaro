@@ -1,0 +1,32 @@
+
+cc_prebuilt_binary {
+    name: "vendor.samsung_slsi.hardware.enn@1.0-service",
+    srcs: [
+        "vendor.samsung_slsi.hardware.enn@1.0-service"
+    ],
+    check_elf_files: false,
+    shared_libs: [
+        "android.hidl.allocator@1.0",
+        "android.hidl.memory@1.0",
+        "libc++",
+        "libc",
+        "libcutils",
+        "libdl",
+        "libfmq",
+        "libhidlbase",
+        "libhidlmemory",
+        "libdmabufheap",
+        "liblog",
+        "libm",
+        "libutils",
+        "vendor.samsung_slsi.hardware.enn@1.0",
+    ],
+    vendor: true,
+    relative_install_path: "hw",
+    vintf_fragments: [
+        "vendor.samsung_slsi.hardware.enn@1.0-service.xml"
+    ],
+    init_rc: [
+        "vendor.samsung_slsi.hardware.enn@1.0-lazy-service.rc"
+    ],
+}

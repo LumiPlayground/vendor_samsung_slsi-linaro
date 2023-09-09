@@ -1,0 +1,84 @@
+type slogreports_app, domain, mlstrustedsubject;
+app_domain(slogreports_app);
+binder_use(slogreports_app);
+
+allow slogreports_app {
+    activity_task_service
+    activity_service
+    accessibility_service
+    appops_service
+    audio_service
+    audioserver_service
+    autofill_service
+    cameraserver_service
+    connectivity_service
+    content_service
+    display_service
+    mediaextractor_service
+    mediametrics_service
+    mediaserver_service
+    media_session_service
+    mount_service
+    network_management_service
+    notification_service
+    power_service
+    radio_service
+    registry_service
+    wifi_service
+    usb_service
+    user_service
+    surfaceflinger_service
+    input_method_service
+    graphicsstats_service
+    textservices_service
+    input_service
+    device_identifiers_service
+    hint_service
+    media_communication_service
+    game_service
+    netstats_service
+    gpu_service
+    content_capture_service
+}:service_manager find;
+
+allow slogreports_app system_app_data_file:dir create_dir_perms;
+allow slogreports_app system_app_data_file:file create_file_perms;
+allow slogreports_app system_data_file:dir { r_dir_perms };
+allow slogreports_app system_data_file:file { r_file_perms };
+allow slogreports_app vendor_data_file:dir { create_dir_perms };
+allow slogreports_app vendor_data_file:file { create_file_perms };
+allow slogreports_app init:dir { getattr search };
+allow slogreports_app kernel:dir { getattr search read };
+allow slogreports_app proc:file { getattr open read };
+allow slogreports_app proc_stat:file r_file_perms;
+
+allow slogreports_app self:packet_socket { read getopt create setopt map write };
+allow slogreports_app self:udp_socket { create_socket_perms };
+allow slogreports_app node:udp_socket { node_bind };
+allow slogreports_app self:tcp_socket { create_stream_socket_perms };
+allow slogreports_app port:tcp_socket { name_connect };
+allow slogreports_app dnsproxyd_socket:sock_file { write };
+allow slogreports_app fwmarkd_socket:sock_file { write };
+
+get_prop(slogreports_app, vendor_wland_prop);
+get_prop(slogreports_app, vendor_gnss_prop);
+get_prop(slogreports_app, vendor_slog_prop);
+
+allow slogreports_app vendor_wland_prop:file {read open getattr};
+allow slogreports_app vendor_log_file:dir { create_dir_perms };
+allow slogreports_app vendor_log_file:file { create_file_perms };
+allow slogreports_app vendor_gnss_prop:file {read open getattr};
+allow slogreports_app vendor_gps_file:dir { create_dir_perms };
+allow slogreports_app vendor_gps_file:file { create_file_perms };
+allow slogreports_app vendor_file:dir { r_dir_perms };
+allow slogreports_app vendor_file:file { r_file_perms };
+allow slogreports_app vendor_configs_file:dir { r_dir_perms };
+allow slogreports_app vendor_configs_file:file { r_file_perms };
+allow slogreports_app vendor_abox_log_file:dir { create_dir_perms };
+allow slogreports_app vendor_abox_log_file:file { create_file_perms };
+allow slogreports_app cgroup:file { open write };
+
+get_prop(slogreports_app, vendor_persist_sys_default_prop);
+get_prop(slogreports_app, vendor_slog_prop);
+allow slogreports_app vendor_slog_file:dir { create_dir_perms };
+allow slogreports_app vendor_slog_file:file { create_file_perms };

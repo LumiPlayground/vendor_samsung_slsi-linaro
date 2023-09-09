@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/bg_rectangle"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="CP"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:paddingTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SilentLogging"
+                android:textSize="20dp"/>
+
+            <Button
+                android:id="@+id/Button_CP_SilentLogging_Start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_toStartOf="@+id/Button_CP_SilentLogging_Stop"
+                android:text="Start"
+                android:textSize="16dp"/>
+
+            <Button
+                android:id="@+id/Button_CP_SilentLogging_Stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Stop"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:paddingTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="130dp"
+                android:text="DSP"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/Button_DSP_Enable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/Button_DSP_Disable"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Start"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/Button_DSP_Disable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_alignParentRight="true"
+                android:text="Stop"
+                android:textSize="16dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/bg_rectangle"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="@string/gnss_logging"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:paddingTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gnss_log"
+                android:textSize="20dp"/>
+
+            <Button
+                android:id="@+id/Button_GNSS_SilentLogging_Start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_toStartOf="@+id/Button_GNSS_SilentLogging_Stop"
+                android:text="Start"
+                android:textSize="16dp"/>
+
+            <Button
+                android:id="@+id/Button_GNSS_SilentLogging_Stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Stop"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCopy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner_button"
+        android:drawableLeft="@drawable/file_copy"
+        android:drawablePadding="18dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="18dp"
+        android:text="copy logs to storage" />
+
+    <Button
+        android:id="@+id/btnRemove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_button"
+        android:drawableLeft="@drawable/delete"
+        android:drawablePadding="18dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="18dp"
+        android:text="Remove logs in storage" />
+
+    <Button
+        android:id="@+id/btnDump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_corner_button"
+        android:drawableLeft="@drawable/save"
+        android:drawablePadding="18dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="18dp"
+        android:text="Save dumpstate" />
+
+</LinearLayout>

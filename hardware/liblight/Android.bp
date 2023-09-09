@@ -1,0 +1,13 @@
+cc_library_shared {
+    name: "lights.default",
+    vendor: true,
+    relative_install_path: "hw",
+    srcs: [
+        "lights.c",
+    ],
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libhardware",
+    ],
+}

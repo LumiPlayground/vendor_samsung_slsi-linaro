@@ -1,0 +1,9 @@
+# For b/up, please append the below code to device/samsung/sepolicy/common/device.te
+
+## wlbt cnntlogger
+# /dev/(.*)udi(.*)
+type vendor_wlbt_udi_device, dev_type;
+
+# /dev/hip4_0_sam_(.*)
+type vendor_wlbt_hip4_device, dev_type;
+## wlbt cnntlogger

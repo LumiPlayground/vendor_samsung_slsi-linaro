@@ -1,0 +1,42 @@
+type sced, domain;
+type sced_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(sced);
+net_domain(sced);
+
+userdebug_or_eng(`
+
+allow sced self:global_capability_class_set {
+    net_admin
+    net_bind_service
+    net_broadcast
+    net_raw
+};
+allow sced self:capability { kill setuid sys_nice setgid net_raw net_admin };
+allow sced self:packet_socket create_socket_perms;
+allow sced self:netlink_generic_socket create_socket_perms_no_ioctl;
+#allow sced vendor_toolbox_exec:file rx_file_perms;
+allow sced vendor_shell_exec:file rx_file_perms;
+
+allow sced vendor_data_file:dir create_dir_perms;
+allow sced vendor_data_file:file create_file_perms;
+allow sced vendor_slog_file:dir create_dir_perms;
+allow sced vendor_slog_file:file create_file_perms;
+allow sced vendor_shell_exec:file execute_no_trans;
+allow sced tcpdump_vendor_exec:file execute_no_trans;
+
+# for hal service
+hwbinder_use(sced)
+get_prop(sced, hwservicemanager_prop);
+allow sced hal_vendor_oem_hwservice:hwservice_manager { add find };
+allow sced hidl_base_hwservice:hwservice_manager add;
+binder_call(sced, hwservicemanager)
+binder_call(sced, vendor_telephony_app)
+binder_call(sced, vendor_telephony_silentlogging_app)
+
+allowxperm sced self:udp_socket ioctl priv_sock_ioctls;
+allowxperm sced self:udp_socket ioctl unpriv_sock_ioctls;
+allowxperm sced self:netlink_generic_socket ioctl priv_sock_ioctls;
+allowxperm sced self:netlink_generic_socket ioctl unpriv_sock_ioctls;
+allowxperm sced self:packet_socket ioctl { SIOCGIFINDEX };
+
+')

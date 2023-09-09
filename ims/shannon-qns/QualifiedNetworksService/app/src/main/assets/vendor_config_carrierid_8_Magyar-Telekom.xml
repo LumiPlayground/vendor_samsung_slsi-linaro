@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <string name="vendor.ims_handover_rove_in_wifi_preferred">eutran{rsrp=-118}</string>
+    <string name="vendor.ims_handover_hand_in_wifi_preferred">eutran{rsrp=-117};iwlan{rssi=-75}</string>
+    <string name="vendor.ims_handover_hand_out_wifi_preferred">iwlan{rssi=-80}</string>
+    <string name="vendor.ims_handover_rove_in_cell_preferred">geran{rssi=-89};utran{rscp=-99};eutran{rsrp=-117};iwlan{rssi=-80}</string>
+    <string name="vendor.ims_handover_hand_in_cell_preferred">eutran{rsrp=-117};iwlan{rssi=-75}</string>
+    <string name="vendor.ims_handover_rove_out_cell_preferred">geran{rssi=-106};utran{rscp=-113};eutran{rsrp=-118}</string>
+    <string name="vendor.ims_handover_hand_out_cell_preferred">geran{rssi=-102};utran{rscp=-105};eutran{rsrp=-119};iwlan{rssi=-75}</string>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-sha1-sha256-prfsha1-prfsha256-modp1024-modp1536-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-sha1-sha256!</string>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.xcap_use_ims_precondition_for_wifi" value="true"/>
+</vendor_config>

@@ -1,0 +1,203 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+
+soong_config_module_type_import {
+    from: "vendor/samsung_slsi/telephony/exynos-ril/Android.bp",
+    module_types: ["vendor_ril_feature_cc_defaults"],
+}
+
+// libril_tests
+vendor_ril_feature_cc_defaults {
+    name: "libril_tests_cc_defaults",
+    srcs: [
+        "ril_service_test.cpp",
+        "test_radio_response_1_1.cpp",
+        "test_radio_response_1_2.cpp",
+        "test_radio_response_1_4.cpp",
+        "test_radio_response_1_5.cpp",
+        "test_radio_indication_1_1.cpp",
+        "test_radio_indication_1_2.cpp",
+        "test_radio_indication_1_4.cpp",
+        "test_radio_indication_1_5.cpp",
+        "ril_service_legacy_test.cpp",
+        "ril_service_legacy_response_test.cpp",
+        "ril_service_legacy_indication_test.cpp",
+        "radioconfig_service_test.cpp",
+        "ril_oem_service_test.cpp",
+        "ril_external_service_test.cpp",
+        "radio_hidl_utils_1_5_test.cpp",
+        "vendorfunctions_test.cpp",
+    ],
+    shared_libs: [
+        "libril_sitril",
+        "libutils",
+        "libcutils",
+        "liblog",
+        "librilutils",
+        "libhidlbase",
+        "android.hardware.radio@1.0",
+        "android.hardware.radio@1.1",
+        "android.hardware.radio@1.2",
+        "android.hardware.radio@1.3",
+        "android.hardware.radio@1.4",
+        "android.hardware.radio@1.5",
+        "android.hardware.radio.config@1.0",
+        "android.hardware.radio.config@1.1",
+        "android.hardware.radio.config@1.2",
+        "vendor.samsung_slsi.telephony.hardware.radio@1.0",
+        "vendor.samsung_slsi.telephony.hardware.radio@1.1",
+        "vendor.samsung_slsi.telephony.hardware.radio@1.2",
+        "vendor.samsung_slsi.telephony.hardware.radioExternal@1.0",
+        "vendor.samsung_slsi.telephony.hardware.radioExternal@1.1",
+    ],
+    static_libs: [
+        "libvendortestbase",
+        "librilvendorhalutils",
+    ],
+    include_dirs: [
+        "vendor/samsung_slsi/telephony/exynos-ril/libril",
+        "vendor/samsung_slsi/telephony/exynos-ril/libril/radioconfig",
+        "vendor/samsung_slsi/telephony/exynos-ril/libril/slsi",
+        "vendor/samsung_slsi/telephony/exynos-ril/libril/aidl-service",
+        "vendor/samsung_slsi/telephony/exynos-ril/libril/hidl",
+        "vendor/samsung_slsi/telephony/exynos-ril/libril-aidl/include",
+        "vendor/samsung_slsi/telephony/exynos-ril/tests/testlib",
+    ],
+    header_libs: ["vendor_ril_headers"],
+    soong_config_variables: {
+        multisim: {
+            cflags: [
+                "-DANDROID_SIM_COUNT_2",
+                "-DANDROID_MULTI_SIM",
+            ],
+        },
+        use_radio_hal_1_6: {
+            cflags: [
+                "-D__RADIO_HAL_V1_6__",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.6",
+            ],
+            srcs: [
+                "test_radio_indication_1_6.cpp",
+                "test_radio_response_1_6.cpp",
+                "ril_service_1_6_test.cpp",
+                "ril_service_1_6_response_test.cpp",
+                "ril_service_1_6_indication_test.cpp",
+                "radio_hidl_utils_1_6_test.cpp",
+            ],
+        },
+        use_radio_hal_2_0: {
+            cflags: [
+                "-D__RADIO_HAL_AIDL__",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.6",
+                // aidl
+                "libril-aidl",
+                "libbase",
+                "android.hardware.radio.data-V1-ndk",
+                "android.hardware.radio.messaging-V1-ndk",
+                "android.hardware.radio.modem-V1-ndk",
+                "android.hardware.radio.network-V1-ndk",
+                "android.hardware.radio.sim-V1-ndk",
+                "android.hardware.radio.voice-V1-ndk",
+                "libbinder_ndk",
+            ],
+            srcs: [
+                "test_radio_indication_1_6.cpp",
+                "test_radio_response_1_6.cpp",
+                "ril_service_1_6_test.cpp",
+                "ril_service_1_6_response_test.cpp",
+                "ril_service_1_6_indication_test.cpp",
+                "radio_hidl_utils_1_6_test.cpp",
+                // aidl tests
+                "commands_test_base.cpp",
+                "commands_modem_test.cpp",
+                "commands_network_test.cpp",
+                "commands_voice_test.cpp",
+                "commands_sim_test.cpp",
+                "commands_data_test.cpp",
+                "radioconfigproxy_requesthook_test.cpp",
+                "radiomessagingproxy_requesthook_test.cpp",
+                "radiomodemproxy_requesthook_test.cpp",
+                "radionetworkproxy_requesthook_test.cpp",
+                "radiodataproxy_requesthook_test.cpp",
+                "radiosimproxy_requesthook_test.cpp",
+                "radiovoiceproxy_requesthook_test.cpp",
+                "hook_commands_config_resp_test.cpp",
+                "hook_commands_messaging_ind_test.cpp",
+                "hook_commands_messaging_resp_test.cpp",
+                "hook_commands_modem_ind_test.cpp",
+                "hook_commands_modem_resp_test.cpp",
+                "hook_commands_network_ind_test.cpp",
+                "hook_commands_network_resp_test.cpp",
+                "hook_commands_sim_ind_test.cpp",
+                "hook_commands_sim_resp_test.cpp",
+                "hook_commands_data_resp_test.cpp",
+                "hook_commands_data_ind_test.cpp",
+                "hook_commands_voice_ind_test.cpp",
+                "hook_commands_voice_resp_test.cpp",
+                "hook_structs_config_test.cpp",
+                "hook_structs_modem_test.cpp",
+                "hook_structs_network_test.cpp",
+                "hook_structs_sim_test.cpp",
+                "hook_structs_ps_test.cpp",
+                "hook_structs_voice_test.cpp",
+                "hook_structs_messaging_test.cpp",
+                "radiointerface_test.cpp",
+                "radioproxy_test.cpp",
+                "radioresponse_test.cpp",
+            ],
+        },
+    },
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    sanitize: {
+        misc_undefined: ["integer"],
+    },
+    tidy: false,
+    tidy_checks: [
+        "-*",
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+}
+
+cc_test {
+    name: "libril_tests",
+    defaults: [
+        "libril_tests_cc_defaults",
+    ],
+    srcs: [
+        "asan_options.cpp",
+    ],
+    sanitize: {
+        misc_undefined: ["integer"],
+        address : true,
+        diag: {
+            misc_undefined: ["integer"],
+        },
+    },
+    proprietary: true,
+}
+
+cc_test_library {
+    name: "libril_tests_static",
+    vendor: true,
+    defaults: [
+        "libril_tests_cc_defaults",
+    ],
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16384"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16386"/>
+</vendor_config>

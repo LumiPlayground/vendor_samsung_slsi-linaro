@@ -1,0 +1,24 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+
+genrule {
+    name: "version_info_exynos_ril",
+    cmd: "export ANDROID_BUILD_TOP=$$(pwd) && $(location gen_version_info.sh) < $(in) > $(out)",
+    srcs: ["version_info_defs.h.in"],
+    out: ["version_info_exynos_ril.txt"],
+    tool_files: ["gen_version_info.sh"],
+}
+
+prebuilt_etc {
+    name: "version_info_exynos_ril_etc",
+    src: ":version_info_exynos_ril",
+    soc_specific: true,
+    filename: "version_info_exynos_ril.txt",
+}

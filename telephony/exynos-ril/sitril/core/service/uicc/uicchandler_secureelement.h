@@ -1,0 +1,42 @@
+/*
+ * Copyright Samsung Electronics Co., LTD.
+ *
+ * This software is proprietary of Samsung Electronics.
+ * No part of this software, either material or conceptual may be copied or distributed, transmitted,
+ * transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+ * electronic, mechanical, manual or otherwise, or disclosed
+ * to third parties without the express written permission of Samsung Electronics.
+ */
+/*
+ * secure_element.h
+ *
+ *  Created on: 2020. 7. 16.
+ *      Author: sungwoo48.choi
+ */
+
+#ifndef __SECURE_ELEMENT_H__
+#define __SECURE_ELEMENT_H__
+
+#include "servicehandlerbase.h"
+
+/**
+ * SeOpenChannelHandler
+ */
+DECLARE_TINY_SERVICE_HANDLER_CLASS(SeOpenChannelHandler)
+
+/**
+ * SeTransmitApduLogicalHandler
+ */
+DECLARE_TINY_SERVICE_HANDLER_CLASS(SeTransmitApduLogicalHandler)
+
+/**
+ * GetUiccCardPresentHandler
+ */
+DECLARE_TINY_SERVICE_HANDLER_CLASS(GetUiccCardPresentHandler)
+
+/**
+ * SeResetHandler
+ */
+DECLARE_TINY_SERVICE_HANDLER_CLASS(SeResetHandler)
+
+#endif /* __SECURE_ELEMENT_H__ */

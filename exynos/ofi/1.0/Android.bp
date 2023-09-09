@@ -1,0 +1,120 @@
+soong_namespace {}
+
+cc_prebuilt_library_shared {
+  name : "libdal",
+  multilib:{
+    lib32: {
+      srcs: ["lib/libdal.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libdal.so"],
+    },
+  },
+  vendor: true,
+  shared_libs: ["libc++", "libc", "libdl", "libion_exynos", "liblog", "libm"],
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_kernels_cpu",
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_kernels_cpu.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_kernels_cpu.so"],
+    },
+  },
+  vendor: true,
+  shared_libs: ["libc++", "libc", "libcutils", "libdl", "libion_exynos", "liblog", "libm", "libutils"],
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_rt_framework",
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_rt_framework.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_rt_framework.so"],
+    },
+  },
+  vendor: true,
+  shared_libs: ["android.hidl.memory@1.0", "libc++", "libc", "libcutils", "libdal", "libdl", "libhidlbase", "libhidlmemory", "libion_exynos", "liblog", "libm", "libofi_kernels_cpu", "libutils", "vendor.samsung_slsi.hardware.ofi@1.0"],
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_rt_framework_user_vendor",
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_rt_framework_user_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_rt_framework_user_vendor.so"],
+    },
+  },
+  vendor: true,
+  shared_libs: ["android.hidl.memory@1.0", "libc++", "libc", "libcutils", "libdl", "libhidlbase", "libhidlmemory", "libion_exynos", "liblog", "libm", "libofi_service_interface_vendor", "libutils", "vendor.samsung_slsi.hardware.ofi@1.0"],
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_service_interface_vendor",
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_service_interface_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_service_interface_vendor.so"],
+    },
+  },
+  vendor: true,
+  shared_libs: ["android.hidl.memory@1.0", "libc++", "libc", "libcutils", "libdl", "libhidlbase", "libhidlmemory", "libion_exynos", "liblog", "libm", "libutils", "vendor.samsung_slsi.hardware.ofi@1.0"],
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_external_enf",
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_external_enf.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_external_enf.so"],
+    },
+  },
+  vendor: true,
+  shared_libs: ["android.hidl.memory@1.0", "libc++", "libc", "libcutils", "libdl", "libhidlbase", "libhidlmemory", "libion_exynos", "liblog", "libm", "libofi_rt_framework", "libofi_rt_framework_user_vendor", "libutils", "vendor.samsung_slsi.hardware.ofi@1.0"],
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_external_mfb",
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_external_mfb.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_external_mfb.so"],
+    },
+  },
+  vendor: true,
+  shared_libs: ["android.hidl.memory@1.0", "libc++", "libc", "libcutils", "libdl", "libhidlbase", "libhidlmemory", "libion_exynos", "liblog", "libm", "libofi_rt_framework", "libofi_rt_framework_user_vendor", "libutils", "vendor.samsung_slsi.hardware.ofi@1.0"],
+  strip: {
+    none: true,
+  },
+}

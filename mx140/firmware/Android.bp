@@ -1,0 +1,65 @@
+soong_config_module_type
+{
+    name: "wlbt_firmware_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "wlbt",
+    variables: ["type"],
+    properties: ["srcs"],
+}
+
+soong_config_string_variable
+{
+    name: "type",
+    values: ["java_s611", "lassen_s612", "leman_s620", "nacho_s612","neus_s620","orion_s621", "papaya_s620", "morion2_s615", "paean_s630"],
+}
+
+cc_prebuilt_binary {
+    srcs: ["enable_test_mode.sh"],
+    name: "enable_test_mode.sh",
+    proprietary: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["enable_monitor_mode.sh"],
+    name: "enable_monitor_mode.sh",
+    proprietary: true,
+    strip: { none: true},
+}
+
+wlbt_firmware_defaults{
+    name: "wlbt_defaults",
+    cflags: ["-DGENERIC"],
+    soong_config_variables:{
+        type: {
+            java_s611:{
+                srcs: ["java_s611/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            lassen_s612:{
+                srcs: ["lassen_s612/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            leman_s620:{
+                srcs: ["leman_s620/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            nacho_s612:{
+                srcs: ["nacho_s612/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            neus_s620:{
+                srcs: ["neus_s620/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            orion_s621:{
+                srcs: ["orion_s621/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            papaya_s620:{
+                srcs: ["papaya_s620/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            morion2_s615:{
+                srcs: ["papaya_s620/mx140/debug/hardware/moredump/moredump.bin"],
+            },
+            paean_s630:{
+                srcs: ["paean_s630/mx140_evt0.0/debug/hardware/moredump/moredump.bin"],
+            },
+        },
+    },
+}
+

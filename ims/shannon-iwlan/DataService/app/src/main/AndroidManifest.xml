@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.shannon.dataservice"
+    android:sharedUserId="android.uid.phone">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.Manifest.permission.PACKET_KEEPALIVE_OFFLOAD"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.shannon.permission.IWLAN_CONFIGURATION"/>
+
+    <application
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:directBootAware="true"
+        android:persistent="true">
+
+        <receiver
+            android:name=".ConfigurationBroadcastReceiver"
+            android:directBootAware="true"
+            android:permission="com.shannon.permission.IWLAN_CONFIGURATION"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.shannon.ACTION.VCC.vendor_config_changed"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".PcoDataBroadcastReceiver"
+          android:exported="true">
+          <intent-filter>
+            <action android:name="com.android.internal.telephony.CARRIER_SIGNAL_PCO_VALUE"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".ShannonDataService"
+            android:permission="android.permission.BIND_TELEPHONY_DATA_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telephony.data.DataService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

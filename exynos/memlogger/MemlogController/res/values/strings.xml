@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Memlogger Controller</string>
+    <string name="gnss_logging">GNSS</string>
+    <string name="gnss_log">LOG</string>
+    <string name="dialog_sdcard">SD Card</string>
+    <string name="dialog_internal">Internal Storage</string>
+    <string-array name="levels">
+        <item>[0] EMERG</item>
+        <item>[1] ERROR</item>
+        <item>[2] CAUTION</item>
+        <item>[3] NOTICE</item>
+        <item>[4] INFO</item>
+        <item>[5] DEBUG</item>
+    </string-array>
+
+    <string-array name="gnss_levels">
+        <item>[1] ERROR</item>
+        <item>[2] CAUTION</item>
+        <item>[3] NOTICE</item>
+        <item>[4] INFO</item>
+        <item>[5] DEBUG</item>
+    </string-array>
+</resources>

@@ -1,0 +1,562 @@
+soong_namespace {}
+
+cc_prebuilt_library_shared {
+  name : "libenf_gc_vendor",
+  shared_libs: ["libc", "libdl", "liblog", "libm"],
+  multilib:{
+    lib32: {
+      srcs: ["vendor/lib/libenf_gc.so"],
+    },
+    lib64: {
+      srcs: ["vendor/lib64/libenf_gc.so"],
+    },
+  },
+  vendor: true,
+  check_elf_files: false,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libenf_uv_gc_vendor",
+  shared_libs: ["libc", "libdl", "liblog", "libm"],
+  multilib:{
+    lib32: {
+      srcs: ["vendor/lib/libenf_uv_gc.so"],
+    },
+    lib64: {
+      srcs: ["vendor/lib64/libenf_uv_gc.so"],
+    },
+  },
+  vendor: true,
+  check_elf_files: false,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libenf_gc_system",
+  shared_libs: ["libc", "libdl", "liblog", "libm"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libenf_gc.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libenf_gc.so"],
+    },
+  },
+  vendor: false,
+  check_elf_files: false,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libenf_uv_gc_system",
+  shared_libs: ["libc", "libdl", "liblog", "libm"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libenf_uv_gc.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libenf_uv_gc.so"],
+    },
+  },
+  vendor: false,
+  check_elf_files: false,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_kernels_cpu",
+  shared_libs: ["libc++", "libc", "libcutils", "libdl",
+    "libdmabufheap", "liblog", "libm", "libutils"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_kernels_cpu.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_kernels_cpu.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_klm_vendor",
+  shared_libs: [
+    "liblog",
+    "libcutils",
+    "libc++",
+    "libc",
+    "libm",
+    "libdl",
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_klm_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_klm_vendor.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_rt_framework",
+  shared_libs: [
+    "android.hidl.memory@1.0",
+    "libc++",
+    "libc",
+    "libcutils",
+    "libdl",
+    "libhidlbase",
+    "libhidlmemory",
+    "libdmabufheap",
+    "liblog",
+    "libm",
+    "libofi_dal",
+    "libofi_kernels_cpu",
+    "libutils",
+    "vendor.samsung_slsi.hardware.ofi@2.0",
+    "vendor.samsung_slsi.hardware.ofi@2.1"
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_rt_framework.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_rt_framework.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_rt_framework_user_vendor",
+  shared_libs: [
+    "android.hidl.memory@1.0",
+    "libc++",
+    "libc",
+    "libcutils",
+    "libdl",
+    "libhidlbase",
+    "libhidlmemory",
+    "libdmabufheap",
+    "liblog",
+    "libm",
+    "libofi_service_interface_vendor",
+    "libutils",
+    "vendor.samsung_slsi.hardware.ofi@2.0",
+    "vendor.samsung_slsi.hardware.ofi@2.1"
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_rt_framework_user_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_rt_framework_user_vendor.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_service_interface_vendor",
+  shared_libs: [
+    "android.hidl.memory@1.0",
+    "libc++",
+    "libc",
+    "libcutils",
+    "libdl",
+    "libhidlbase",
+    "libhidlmemory",
+    "libdmabufheap",
+    "liblog",
+    "libm",
+    "libutils",
+    "vendor.samsung_slsi.hardware.ofi@2.0",
+    "vendor.samsung_slsi.hardware.ofi@2.1"
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_service_interface_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_service_interface_vendor.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_gc_vendor",
+  shared_libs: ["libc++", "libc", "libcutils", "libdl",
+	"liblog", "libm",
+	"libofi_klm_vendor",
+	"libutils"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_gc_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_gc_vendor.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_seva_vendor",
+  shared_libs: ["libc++", "libc", "libcutils", "libdl",
+	"libofi_gc_vendor", "liblog", "libm",
+	"libofi_klm_vendor", "libofi_rt_framework_user_vendor",
+	"libutils"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_seva_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_seva_vendor.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_dal",
+  shared_libs: [
+    "libc++",
+    "libc",
+    "libcutils",
+    "libdl",
+    "libion_exynos",
+    "liblog",
+    "libm"
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_dal.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_dal.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofib_rt_framework",
+  shared_libs: [
+    "libc++",
+    "libc",
+    "libcutils",
+    "libdl",
+    "libdmabufheap",
+    "liblog",
+    "libm",
+    "libofi_dal",
+    "libofi_kernels_cpu",
+    "libutils"
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofib_rt_framework.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofib_rt_framework.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofib_rt_framework_user",
+  shared_libs: [
+    "libc++",
+    "libc",
+    "libcutils",
+    "libdl",
+    "libdmabufheap",
+    "liblog",
+    "libm",
+    "libofib_rt_framework",
+    "libofib_service_interface",
+    "libutils"
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofib_rt_framework_user.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofib_rt_framework_user.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofib_service_interface",
+  shared_libs: [
+    "libc++",
+    "libc",
+    "libcutils",
+    "libdl",
+    "libdmabufheap",
+    "liblog",
+    "libm",
+    "libofib_rt_framework",
+    "libutils",
+    "vendor.samsung_slsi.hardware.ofi@2.0",
+    "vendor.samsung_slsi.hardware.ofi@2.1",
+  ],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofib_service_interface.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofib_service_interface.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_gc",
+  shared_libs: ["libc++", "libcutils",
+    "libutils", "libofi_klm", "libm",
+    "libdl", "libc", "liblog"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_gc.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_gc.so"],
+    },
+  },
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_klm",
+  shared_libs: ["libc++", "libcutils", "liblog"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_klm.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_klm.so"],
+    },
+  },
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_rt_framework_user",
+  shared_libs: ["android.hidl.memory@1.0", "libc++",
+    "libc", "libcutils", "libdl", "libhidlbase",
+    "libhidlmemory", "libdmabufheap", "liblog", "libm",
+    "libofi_service_interface", "libutils",
+    "vendor.samsung_slsi.hardware.ofi@2.0",
+    "vendor.samsung_slsi.hardware.ofi@2.1"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_rt_framework_user.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_rt_framework_user.so"],
+    },
+  },
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_service_interface",
+  shared_libs: ["android.hidl.memory@1.0", "libc++", "libc",
+    "libcutils", "libdl", "libhidlbase", "libhidlmemory",
+    "libdmabufheap", "liblog", "libm", "libutils",
+    "vendor.samsung_slsi.hardware.ofi@2.0",
+    "vendor.samsung_slsi.hardware.ofi@2.1"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_service_interface.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_service_interface.so"],
+    },
+  },
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_seva",
+  shared_libs: ["libc++", "libc", "libcutils", "libdl",
+    "libofi_gc", "liblog", "libm",
+    "libofi_klm", "libofi_rt_framework_user", "libutils"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_seva.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_seva.so"],
+    },
+  },
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libinference_engine_vendor",
+  shared_libs: ["libc++", "libc", "libcutils", "libdl", "liblog", "libm", "libutils", "libofi_klm_vendor"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libinference_engine_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libinference_engine_vendor.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_plugin_vendor",
+  allow_undefined_symbols: true,
+  shared_libs: ["libc++", "libc", "libcutils", "libdl",
+    "libinference_engine_vendor", "liblog", "libm",
+    "libofi_klm_vendor", "libofi_seva_vendor", "libutils"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_plugin_vendor.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_plugin_vendor.so"],
+    },
+  },
+  vendor: true,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libinference_engine",
+  shared_libs: ["libc++", "libc", "libcutils", "libdl", "liblog", "libm", "libutils", "libofi_klm"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libinference_engine.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libinference_engine.so"],
+    },
+  },
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libofi_plugin",
+  allow_undefined_symbols: true,
+  shared_libs: ["libc++", "libc", "libcutils", "libdl",
+    "libinference_engine", "liblog", "libm",
+    "libofi_klm", "libofi_seva", "libutils"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libofi_plugin.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libofi_plugin.so"],
+    },
+  },
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libann_gc_vendor",
+  shared_libs: ["libc", "libdl", "liblog", "libm"],
+  multilib:{
+    lib32: {
+      srcs: ["vendor/lib/libann_gc.so"],
+    },
+    lib64: {
+      srcs: ["vendor/lib64/libann_gc.so"],
+    },
+  },
+  vendor: true,
+  check_elf_files: false,
+  strip: {
+    none: true,
+  },
+}
+
+cc_prebuilt_library_shared {
+  name : "libann_gc_system",
+  shared_libs: ["libc", "libdl", "liblog", "libm"],
+  multilib:{
+    lib32: {
+      srcs: ["lib/libann_gc.so"],
+    },
+    lib64: {
+      srcs: ["lib64/libann_gc.so"],
+    },
+  },
+  vendor: false,
+  check_elf_files: false,
+  strip: {
+    none: true,
+  },
+}

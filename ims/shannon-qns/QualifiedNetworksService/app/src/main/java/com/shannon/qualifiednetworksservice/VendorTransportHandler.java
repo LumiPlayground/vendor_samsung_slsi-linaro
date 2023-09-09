@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2020 Samsung Electronics Co., Ltd.
+ *
+ * This software is proprietary of Samsung Electronics.
+ * No part of this software, either material or conceptual may be copied or
+ * distributed, transmitted, transcribed, stored in a retrieval system or
+ * translated into any human or computer language in any form by any means,
+ * electronic, mechanical, manual or otherwise, or disclosed to third parties
+ * without the express written permission of Samsung Electronics.
+ */
+package com.shannon.qualifiednetworksservice;
+
+public class VendorTransportHandler implements Transport.IVendorTransportHandler {
+    protected String TAG;
+
+    public void doInitialization(Transport transport) {}
+    public void tryConnecting(Transport transport) {}
+    public void tryHandover(Transport transport) {}
+    public void onConnected(Transport transport) {}
+    public void onHandoverCompleted(Transport transport) {}
+    public void onDisconnected(Transport transport) {}
+
+    public boolean onConnectionFailure(Transport transport, int cause, int timeout) { return false; }
+    public boolean onHandoverFailure(Transport transport, int cause, int timeout) { return false; }
+    public boolean onAirplaneModeChanged(Transport transport) { return false; }
+    public boolean onOperatorChanged(Transport transport) { return false; }
+    public boolean onRatChanged(Transport transport) { return false; }
+    public boolean onWiFiStateChanged(Transport transport) { return false; }
+    public boolean onWiFiAccessPointChanged(Transport transport) { return false; }
+    public boolean onWfcStateChanged(Transport transport) { return false; }
+    public boolean onCarrierConfigChanged(Transport transport) { return false; }
+    public boolean onRegistrationFailed(Transport transport, int statusCode) { return false; }
+    public boolean onRegistrationCompleted(Transport transport) { return false; }
+}

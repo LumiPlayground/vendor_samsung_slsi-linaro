@@ -1,0 +1,14 @@
+# for dmd daemon
+allow hwservicemanager dmd:binder { call transfer };
+allow hwservicemanager dmd:dir search;
+allow hwservicemanager dmd:file { read open };
+allow hwservicemanager dmd:process getattr;
+
+# for sced
+allow hwservicemanager sced:binder { call transfer };
+allow hwservicemanager sced:dir search;
+allow hwservicemanager sced:file { read open };
+allow hwservicemanager sced:process getattr;
+
+# for bipchmgr
+allow hwservicemanager bipchmgr:binder { call transfer };

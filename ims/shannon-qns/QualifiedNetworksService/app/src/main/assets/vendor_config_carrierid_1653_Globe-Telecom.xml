@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <string name="vendor.epdg.servers">weconnect.globe.com.ph</string>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+</vendor_config>

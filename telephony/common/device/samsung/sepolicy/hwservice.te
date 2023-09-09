@@ -1,0 +1,2 @@
+# oem servcie
+type hal_vendor_oem_hwservice, hwservice_manager_type;

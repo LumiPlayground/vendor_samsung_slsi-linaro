@@ -1,0 +1,33 @@
+<resources>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextStyle" parent="@style/AppTheme">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="NormalMessageStyle" parent="@style/AppTheme">
+        <item name="android:textColor">@android:color/holo_green_dark</item>
+    </style>
+
+    <style name="ErrorMessageStyle" parent="@style/AppTheme">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="ButtonStyle" parent="@style/AppTheme">
+        <item name="android:layout_width">220dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">#ffdddddd</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+</resources>

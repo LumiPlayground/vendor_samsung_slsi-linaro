@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_lifetime" value="3600"/>
+    <int name="vendor.epdg.esp_lifetime" value="1800"/>
+    <boolean name="vendor.epdg.ike_original_tsi_for_rekey" value="true"/>
+    <boolean name="vendor.epdg.ike_initiator_id_has_mac_addr" value="true"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-aes128ctr-aes256ctr-sha1-sha256-sha384-sha512-prfsha1-prfsha256-prfsha384-prfsha512-modp2048-modp3072-modp4096-modp6144-modp8192!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-aes128ctr-aes256ctr-md5-sha1-sha256-sha384-sha512-aesxcbc!</string>
+    <int name="vendor.epdg.ike_dpd_interval" value="60"/>
+    <boolean name="vendor.ims_handover_supported_roaming" value="false"/>
+    <boolean name="vendor.ims_handover_supported_in_call_roaming" value="false"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+</vendor_config>

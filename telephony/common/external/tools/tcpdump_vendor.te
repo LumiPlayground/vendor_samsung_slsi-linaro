@@ -1,0 +1,26 @@
+type tcpdump_vendor, domain;
+
+net_domain(tcpdump_vendor);
+
+type tcpdump_vendor_exec, exec_type, vendor_file_type, file_type;
+
+allow init tcpdump_vendor:process transition;
+
+allow tcpdump_vendor self:global_capability_class_set {
+    net_admin
+    net_bind_service
+    net_broadcast
+    net_raw
+};
+allow tcpdump_vendor self:capability { kill setuid sys_nice setgid net_raw net_admin };
+allow tcpdump_vendor self:packet_socket create_socket_perms_no_ioctl;
+allow tcpdump_vendor self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow tcpdump_vendor vendor_data_file:dir { create read open ioctl };
+allow tcpdump_vendor vendor_data_file:file { create read open ioctl };
+allow tcpdump_vendor self:capability net_admin;
+allow tcpdump_vendor vendor_data_file:file create_file_perms;
+allow tcpdump_vendor vendor_slog_file:file create_file_perms;
+allow tcpdump_vendor vendor_shell_exec:file rx_file_perms;
+allowxperm tcpdump_vendor self:netlink_generic_socket ioctl unpriv_sock_ioctls;
+allowxperm tcpdump_vendor self:netlink_generic_socket ioctl priv_sock_ioctls;
+allowxperm tcpdump_vendor self:socket ioctl unpriv_sock_ioctls;

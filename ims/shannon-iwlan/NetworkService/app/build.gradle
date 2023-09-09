@@ -1,0 +1,118 @@
+apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
+
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
+android {
+    compileSdkVersion 32
+    defaultConfig {
+        applicationId "com.shannon.networkservice"
+        minSdkVersion 32
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jcenter.bintray.com" }
+        maven { url 'https://repo1.maven.org/maven2' }
+        maven { url "https://www.jitpack.io" }
+    }
+
+    buildToolsVersion '32.0.0'
+
+    testOptions {
+        unitTests {
+            includeAndroidResources true
+        }
+        unitTests.all {
+            setIgnoreFailures(true)
+            systemProperty 'robolectric.offline', 'true'
+            systemProperty('robolectric.dependency.dir', "${project.projectDir}/robolectric/")
+        }
+    }
+    lintOptions {
+    }
+    productFlavors {
+    }
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+//    implementation 'androidx.appcompat:appcompat:1.4.1'
+//    implementation 'com.google.android.material:material:1.5.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+
+    // tests
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.mockito:mockito-core:3.6.0"
+    testImplementation 'net.sf.kxml:kxml2:2.3.0'
+    testImplementation 'org.mockito:mockito-inline:3.4.0'
+
+    testImplementation 'androidx.test:core:1.3.0'
+    testImplementation 'androidx.test:runner:1.3.0'
+    testImplementation 'androidx.test:rules:1.3.0'
+    testImplementation 'androidx.test.ext:junit:1.1.2'
+    testImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation 'org.robolectric:robolectric:4.8-alpha-1'
+
+    // instrumented tests
+    androidTestImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test:core:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'org.mockito:mockito-core:3.6.0'
+    androidTestImplementation 'org.mockito:mockito-android:3.6.0'
+
+    androidTestImplementation 'com.android.support.test:runner:1.1.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.1.0'
+}
+
+jacoco {
+    toolVersion = '0.8.7'
+    reportsDir = file("${buildDir}/reports")
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+    testLogging {
+        events TestLogEvent.FAILED
+        exceptionFormat TestExceptionFormat.FULL
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        showStandardStreams true
+    }
+}
+
+task coverageReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
+    group = 'unittest'
+    description = "Generate Jacoco coverage Reports"
+    reports {
+        xml.enabled = true
+        csv.enabled = true
+        html.enabled = true
+    }
+
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', 'android/**/*.*']
+    def debugTree = fileTree(dir: "${project.buildDir}/intermediates/javac/debug/classes", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories.from = files([mainSrc])
+    classDirectories.from = files([debugTree])
+    executionData.from = files("${project.buildDir}/jacoco/testDebugUnitTest.exec")
+}

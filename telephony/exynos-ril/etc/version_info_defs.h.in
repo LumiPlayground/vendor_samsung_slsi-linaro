@@ -1,0 +1,2 @@
+@NEW_VERSION_MAJOR@.@NEW_VERSION_MINOR@.@BUILD_DATE@.(commit ID:@GIT_HASH_TOP@)
+exynos_ril[@ID_EXYNOS_RIL@].libsitril[@ID_LIBSITRIL@].libril[@ID_LIBRIL@].librilutils[@ID_LIBRILUTILS@].libril_aidl[@ID_LIBRIL_AIDL@].rild[@ID_RILD@]

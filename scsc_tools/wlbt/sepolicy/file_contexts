@@ -1,0 +1,19 @@
+# For b/up, please append the below code to device/samsung/sepolicy/common/file_contexts
+
+## wlbt cnntlogger
+# Map log output dir
+/data/vendor/log/wlbt(/.*)?   u:object_r:vendor_wlbt_log_file:s0
+
+# Map udi log node
+/dev/(.*)udi(.*)               u:object_r:vendor_wlbt_udi_device:s0
+
+# Map mxlog level node
+/sys/module/scsc_logring/parameters(/.*)                u:object_r:vendor_wlbt_sysfs_mxlog_filter:s0
+/sys/module/scsc_bt/parameters/mxlog_filter             u:object_r:vendor_wlbt_sysfs_mxlog_filter:s0
+
+#Map hip4 sampling node
+/dev/hip4_0_sam_(.*)           u:object_r:vendor_wlbt_hip4_device:s0
+
+# Map wland bin
+/(vendor|system/vendor)/bin/wland              u:object_r:wland_exec:s0
+## wlbt cnntlogger

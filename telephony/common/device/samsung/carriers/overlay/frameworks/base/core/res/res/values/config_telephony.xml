@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2022 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <!-- This file defines Android telephony related resources -->
+    <!-- When a radio power off request is received, we will delay completing the request until
+         either IMS moves to the deregistered state or the timeout defined by this configuration
+         elapses. If 0, this feature is disabled and we do not delay radio power off requests.-->
+    <integer name="config_delay_for_ims_dereg_millis">3000</integer>
+    <java-symbol type="integer" name="config_delay_for_ims_dereg_millis" />
+
+    <!-- Configure tcp buffer sizes per network type in the form:
+         network-type:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
+
+         The network-type must be a valid DataConfigNetworkType value. If no value is found for the
+         network-type in use, config_tcp_buffers will be used instead.
+    -->
+    <!-- 1xRTT, LTE, LTE_CA, NR_* is modified by Samsung SLSI -->
+    <string-array name="config_network_type_tcp_buffers">
+        <!-- default values of carriers comes from CarrierConfig/2014571 -->
+        <!-- <tag value=" " /> is not supported -->
+        <!-- from TMO CarrierConfig -->
+        <item>UMTS:21135,131070,1056768,6144,24576,165312</item>
+        <item>HSPA:18300,131070,1056768,6144,24576,393216</item>
+        <item>HSDPA:18300,131070,1056768,6144,24576,393216</item>
+        <item>HSUPA:6141,131070,1056768,6144,24576,393216</item>
+        <item>HSPA+:31455,131070,1830912,6144,24576,1830912</item>
+        <item>EDGE:8192,26280,704512,4096,16384,110208</item>
+        <item>GPRS:8192,8760,704512,4096,8760,110208</item>
+        <!-- <item value="LTE:2097152,4194304,8388608,32768,131072,1048576"/> -->
+        <!-- <item value="LTE_CA:2097152,4194304,8388608,32768,131072,1048576"/> -->
+        <!-- <item value="NR_NSA:2097152,6291456,16777216,32768,131072,8388608"/> -->
+        <!-- <item value="NR_NSA_MMWAVE:2097152,6291456,16777216,32768,131072,8388608"/> -->
+        <!-- <item value="NR_SA:2097152,6291456,16777216,32768,131072,8388608"/> -->
+        <!-- <item value="NR_SA_MMWAVE:2097152,6291456,16777216,32768,131072,8388608"/> -->
+
+        <!-- from ATT -->
+        <!-- <item value="UMTS:131072,262144,1452032,4096,16384,399360"/> -->
+        <!-- <item value="HSPA:131072,262144,1452032,4096,16384,399360"/> -->
+        <!-- <item value="HSDPA:131072,262144,1452032,4096,16384,399360"/> -->
+        <!-- <item value="HSUPA:131072,262144,1452032,4096,16384,399360"/> -->
+        <!-- <item value="HSPA+:131072,262144,1452032,4096,16384,399360"/> -->
+        <!-- <item value="EDGE:4093,26280,35040,4096,16384,35040"/> -->
+        <!-- <item value="GPRS:4092,8760,11680,4096,8760,11680"/> -->
+        <item>EvDo_0:4094,87380,262144,4096,16384,262144</item>
+        <item>EvDo_A:4094,87380,262144,4096,16384,262144</item>
+        <item>EvDo_B:4094,87380,262144,4096,16384,262144</item>
+        <!-- <item value="LTE:524288,1048576,8388608,262144,524288,4194304"/> -->
+        <!-- Samsung SLSI updated -->
+        <item>1xRTT:16384,32768,32768,4096,8096,65536</item>
+        <item>LTE:2097152,8388608,33554432,524288,1048576,2097152</item>
+        <item>LTE_CA:2097152,8388608,33554432,524288,1048576,2097152</item>
+        <item>NR_NSA:4194304,16777216,33554432,1048576,2097152,8388608</item>
+        <item>NR_NSA_MMWAVE:4194304,16777216,33554432,1048576,2097152,8388608</item>
+        <item>NR_SA:4194304,16777216,33554432,1048576,2097152,8388608</item>
+        <item>NR_SA_MMWAVE:4194304,16777216,33554432,1048576,2097152,8388608</item>
+    </string-array>
+    <java-symbol type="array" name="config_network_type_tcp_buffers" />
+</resources>

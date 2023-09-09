@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CarrierConfigOverride</string>
+    <string name="action_restore">Restore Carrier Config</string>
+</resources>

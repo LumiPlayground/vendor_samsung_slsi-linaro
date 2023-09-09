@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.ims_handover_supported_roaming" value="false"/>
+    <boolean name="vendor.ims_handover_supported_in_call_roaming" value="false"/>
+    <string name="vendor.ims_handover_supported_radio_technology">LTE,LTE_CA,NR</string>
+    <string name="vendor.ims_handover_rove_in">geran{rssi=-95};utran{rscp=-100,ecno=-10};eutran{rsrp=-109};ngran{rsrp=-109};iwlan{rssi=-70}</string>
+    <string name="vendor.ims_handover_rove_out">geran{rssi=-105};utran{rscp=-110,ecno=-15};eutran{rsrp=-114};ngran{rsrp=-114};iwlan{rssi=-80}</string>
+    <int name="vendor.ims_handover_hysteresis_timer_volte" value="10"/>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="10"/>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <string name="vendor.epdg.servers">3gpp-operator:ehplmn, 3gpp-operator:sim</string>
+    <string name="vendor.epdg.servers_roaming">3gpp-operator:oplmnact</string>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16384"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16386"/>
+    <string name="vendor.epdg.connection_retry_parameters">name=TMO, N_fqdn=2, N_fast_try=3, N_max=6, T_fast=0, T_start=300</string>
+</vendor_config>

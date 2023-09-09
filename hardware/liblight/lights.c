@@ -1,0 +1,154 @@
+/*
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+#define LOG_TAG "LightsHAL"
+
+#include <log/log.h>
+
+#include <stdint.h>
+#include <string.h>
+#include <unistd.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <stdlib.h>
+
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include "lights.h"
+
+#define LOGD ALOGD
+#define LOGE ALOGE
+
+/******************************************************************************/
+
+static pthread_once_t g_init = PTHREAD_ONCE_INIT;
+static pthread_mutex_t g_lock_lcd = PTHREAD_MUTEX_INITIALIZER;
+
+char const*const g_lights_file_paths = "/sys/devices/virtual/backlight/panel0-backlight/brightness";
+static int g_lights_fds;
+
+void initialize_fds() {
+
+	LOGD("!@ initialize_fds : g_lights_file_paths : %s \n", g_lights_file_paths);
+	g_lights_fds = open(g_lights_file_paths, O_RDWR);
+
+	if (g_lights_fds >= 0) {
+		LOGD("!@ initialize_fds : FOUND! : 0x%x\n", g_lights_fds);
+	} else {
+		LOGE("!@ initialize_fds : g_lights_fds Open error! : [%d]\n", errno);
+	}
+}
+
+void deinitialize_fds() {
+}
+
+void init_globals(void)
+{
+	pthread_mutex_init(&g_lock_lcd, NULL);
+
+	initialize_fds();
+}
+
+static int write_int(int fd, int value)
+{
+	if (fd >= 0) {
+		char buffer[20];
+		int bytes = sprintf(buffer, "%d\n", value);
+
+		LOGD("lcd : %d\n", value);
+		int amt = write(fd, buffer, bytes);
+
+		return amt == -1 ? -errno : 0;
+	} else {
+		LOGE("write_int failed to open %d\n", fd);
+		return -errno;
+	}
+}
+
+static int rgb_to_brightness(struct light_state_t const* state)
+{
+	int color = state->color & 0x00ffffff;
+	return ((77 * ((color >> 16) & 0x00ff))
+		+ (150 * ((color >> 8) & 0x00ff)) + (29 * (color & 0x00ff))) >> 8;
+}
+
+static int set_light_backlight(struct light_device_t* dev,
+		struct light_state_t const* state)
+{
+	int err = 0;
+	int brightness = rgb_to_brightness(state);
+	if (!dev) {
+		return -1;
+	}
+	pthread_mutex_lock(&g_lock_lcd);
+	err = write_int(g_lights_fds, brightness);
+	pthread_mutex_unlock(&g_lock_lcd);
+
+	return err;
+}
+
+static int close_lights(struct light_device_t *dev)
+{
+	if (dev) {
+		free(dev);
+	}
+	return 0;
+}
+
+/******************************************************************************/
+static int open_lights(const struct hw_module_t* module, char const* name,
+		struct hw_device_t** device)
+{
+	int (*set_light)(struct light_device_t* dev,
+			struct light_state_t const* state);
+
+	if (0 == strcmp(LIGHT_ID_BACKLIGHT, name) && g_lights_fds >= 0) {
+		set_light = set_light_backlight;
+	} else {
+		return -EINVAL;
+	}
+
+	pthread_once(&g_init, init_globals);
+
+	struct light_device_t *dev = malloc(sizeof(struct light_device_t));
+	memset(dev, 0, sizeof(*dev));
+
+	dev->common.tag = HARDWARE_DEVICE_TAG;
+	dev->common.version = 0;
+	dev->common.module = (struct hw_module_t*)module;
+	dev->common.close = (int (*)(struct hw_device_t*))close_lights;
+	dev->set_light = set_light;
+
+	*device = (struct hw_device_t*)dev;
+
+	return 0;
+}
+
+static struct hw_module_methods_t lights_methods = {
+	.open =  open_lights,
+};
+
+struct hw_module_t HAL_MODULE_INFO_SYM = {
+	.tag = HARDWARE_MODULE_TAG,
+	.version_major = 1,
+	.version_minor = 0,
+	.id = LIGHTS_HARDWARE_MODULE_ID,
+	.name = "Samsung Lights HAL",
+	.author = "SEC",
+	.methods = &lights_methods,
+};

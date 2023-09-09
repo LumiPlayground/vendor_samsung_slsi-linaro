@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <string name="vendor.ims_handover_rove_in">geran{rssi=-94};utran{rscp=-104};eutran{rsrp=-104}</string>
+    <string name="vendor.ims_handover_rove_out">geran{rssi=-102};utran{rscp=-112};eutran{rsrp=-118}</string>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <int name="vendor.ims_handover_hysteresis_timer_volte" value="5"/>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="5"/>
+</vendor_config>

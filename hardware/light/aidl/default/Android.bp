@@ -1,0 +1,17 @@
+cc_binary {
+    name: "android.hardware.lights-service.exynos",
+    relative_install_path: "hw",
+    init_rc: ["lights-default-exynos.rc"],
+    vintf_fragments: ["lights-default-exynos.xml"],
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.light-V1-ndk",
+        "liblog",
+    ],
+    srcs: [
+        "Lights.cpp",
+        "main.cpp",
+    ],
+}

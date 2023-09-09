@@ -1,0 +1,63 @@
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.audio_dump",
+    path: "vendor/samsung_slsi/hardware/audio_dump",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.eden_runtime",
+    path: "vendor/samsung_slsi/hardware/eden_runtime",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.ExynosA2DPOffload",
+    path: "vendor/samsung_slsi/hardware/ExynosA2DPOffload",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.ExynosHWCServiceTW",
+    path: "vendor/samsung_slsi/hardware/ExynosHWCServiceTW",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.geoTransService",
+    path: "vendor/samsung_slsi/hardware/geoTransService",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.memlogservice",
+    path: "vendor/samsung_slsi/hardware/memlogservice",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.ofi",
+    path: "vendor/samsung_slsi/hardware/ofi",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.enn",
+    path: "vendor/samsung_slsi/hardware/enn",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.enn_aux",
+    path: "vendor/samsung_slsi/hardware/enn_aux",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.SbwcDecompService",
+    path: "vendor/samsung_slsi/hardware/SbwcDecompService",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.wifi.supplicant",
+    path: "vendor/samsung_slsi/hardware/wifi/supplicant",
+}
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.wifi.hostapd",
+    path: "vendor/samsung_slsi/hardware/wifi/hostapd",
+}
+
+hidl_package_root {
+    name: "vendor.samsung_slsi.hardware.exynosdisplayfeature",
+    path: "vendor/samsung_slsi/hardware/exynosdisplayfeature",
+}

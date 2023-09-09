@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.volte_supported_radio_technology">GSM,GPRS,EDGE,UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="30"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes256-sha256-sha512-prfsha256-modp2048-modp4096!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes256-sha256-sha512!</string>
+    <int name="vendor.epdg.retransmit_tries" value="5"/>
+</vendor_config>

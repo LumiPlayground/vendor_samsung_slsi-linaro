@@ -1,0 +1,17 @@
+LOCAL_PATH := $(call my-dir)
+ifneq ($(TARGET_PLATFORM_32BIT), true)
+use_arch := 64
+else
+use_arch := 32
+endif
+include $(CLEAR_VARS)
+LOCAL_MODULE := sLogReports
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MULTILIB := $(use_arch)
+include $(BUILD_PREBUILT)
+

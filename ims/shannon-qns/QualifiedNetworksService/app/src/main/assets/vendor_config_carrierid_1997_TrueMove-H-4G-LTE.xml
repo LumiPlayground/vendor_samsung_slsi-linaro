@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.ims_handover_rove_in">iwlan{rssi=-65}</string>
+    <string name="vendor.ims_handover_rove_out">iwlan{rssi=-75}</string>
+    <string name="vendor.epdg.servers">epdg.epc.mnc004.mcc520.pub.3gppnetwork.org</string>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+</vendor_config>

@@ -1,0 +1,72 @@
+type vendor_telephony_app, domain, mlstrustedsubject;
+
+app_domain(vendor_telephony_app);
+binder_use(vendor_telephony_app);
+
+set_prop(vendor_telephony_app, vendor_rild_prop);
+set_prop(vendor_telephony_app, vendor_slog_prop);
+set_prop(vendor_telephony_app, vendor_sys_default_prop);
+set_prop(vendor_telephony_app, vendor_persist_sys_default_prop);
+get_prop(vendor_telephony_app, vendor_ro_sys_default_prop);
+set_prop(vendor_telephony_app, vendor_config_default_prop);
+set_prop(vendor_telephony_app, vendor_persist_config_default_prop);
+get_prop(vendor_telephony_app, vendor_ro_config_default_prop);
+get_prop(vendor_telephony_app, vendor_default_prop);
+set_prop(vendor_telephony_app, vendor_persist_sys_default_prop);
+
+get_prop(vendor_telephony_app, usb_control_prop);
+set_prop(vendor_telephony_app, vendor_usb_config_prop);
+
+allow vendor_telephony_app vendor_telephony_log_file:dir create_dir_perms;
+allow vendor_telephony_app vendor_telephony_log_file:file create_file_perms;
+allow vendor_telephony_app vendor_telephony_data_file:dir create_dir_perms;
+allow vendor_telephony_app vendor_telephony_data_file:file create_file_perms;
+allow vendor_telephony_app system_app_data_file:dir create_dir_perms;
+allow vendor_telephony_app system_app_data_file:file create_file_perms;
+allow vendor_telephony_app cgroup:file rw_file_perms;
+allow vendor_telephony_app vendor_log_file:dir create_dir_perms;
+allow vendor_telephony_app vendor_cbd_log_file:dir create_dir_perms;
+allow vendor_telephony_app vendor_cbd_log_file:file create_file_perms;
+allow vendor_telephony_app vendor_slog_file:dir create_dir_perms;
+allow vendor_telephony_app vendor_slog_file:file create_file_perms;
+allow vendor_telephony_app debugfs_tracing:file { read open };
+
+allow vendor_telephony_app app_api_service:service_manager find;
+allow vendor_telephony_app radio_service:service_manager find;
+
+userdebug_or_eng(`
+# getenforce by SilentLogging
+allow vendor_telephony_app selinuxfs:file { read open };
+')
+
+# Telphony hal access
+allow vendor_telephony_app hal_vendor_oem_hwservice:hwservice_manager find;
+allow vendor_telephony_app hal_exynos_rild_hwservice:hwservice_manager find;
+binder_call(vendor_telephony_app, dmd)
+binder_call(vendor_telephony_app, rild)
+binder_call(vendor_telephony_app, sced)
+
+allow vendor_telephony_app adbd:dir search;
+allow vendor_telephony_app anr_data_file:dir { read open };
+allow vendor_telephony_app dumpstate_exec:file getattr;
+allow vendor_telephony_app hal_graphics_composer_default:dir { read search };
+allow vendor_telephony_app hwservicemanager:hwservice_manager list;
+allow vendor_telephony_app logd:dir search;
+allow vendor_telephony_app nfc:dir search;
+allow vendor_telephony_app priv_app:dir search;
+allow vendor_telephony_app priv_app:lnk_file read;
+allow vendor_telephony_app runtime_event_log_tags_file:file map;
+allow vendor_telephony_app self:netlink_route_socket create;
+allow vendor_telephony_app self:rawip_socket create;
+allow vendor_telephony_app servicemanager:dir { read search open };
+allow vendor_telephony_app servicemanager:lnk_file read;
+allow vendor_telephony_app servicemanager:service_manager list;
+allow vendor_telephony_app shell:dir search;
+allow vendor_telephony_app system_app:process signal;
+allow vendor_telephony_app system_file:file lock;
+allow vendor_telephony_app tombstone_data_file:dir read;
+allow vendor_telephony_app vendor_data_file:dir { rw_dir_perms };
+allow vendor_telephony_app vendor_data_file:file { create_file_perms rw_file_perms };
+allow vendor_telephony_app sysfs_vendor_uartcon:file {getattr read setattr write rw_file_perms};
+allow vendor_telephony_app vendor_rild_file:dir { rw_dir_perms };
+allow vendor_telephony_app vendor_rild_file:file { create_file_perms rw_file_perms };

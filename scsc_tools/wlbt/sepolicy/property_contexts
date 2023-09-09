@@ -1,0 +1,7 @@
+# For b/up, please append the below code to device/samsung/sepolicy/common/property_contexts
+
+## wlbt cnntlogger
+persist.vendor.wlbtlog.      u:object_r:vendor_wland_prop:s0
+vendor.wlbtlog.              u:object_r:vendor_wland_prop:s0
+vendor.sdcard.path.log       u:object_r:vendor_wland_prop:s0
+## wlbt cnntlogger

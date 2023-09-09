@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_vops_not_required_active_call" value="true"/>
+    <int name="vendor.epdg.ike_lifetime" value="86200"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-des-3des-md5-sha1-aesxcbc-prfsha1-prfaesxcbc-modp1536-modp2048!</string>
+    <int name="vendor.epdg.esp_lifetime" value="86200"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-des-3des-md5-sha1!</string>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+</vendor_config>

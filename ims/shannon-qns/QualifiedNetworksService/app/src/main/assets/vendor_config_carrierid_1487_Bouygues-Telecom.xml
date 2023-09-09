@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.volte_supported_radio_technology">GSM,GPRS,EDGE,UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <string name="vendor.ims_handover_rove_in">geran{rssi=-61};utran{rscp=-90};eutran{rsrp=-110}</string>
+    <string name="vendor.ims_handover_rove_out">geran{rssi=-71};utran{rscp=-100};eutran{rsrp=-120};iwlan{rssi=-79}</string>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <boolean name="vendor.mms_over_wifi_supported" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <string name="vendor.xcap_supported_radio_technology">UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <int name="vendor.epdg.ike_lifetime" value="14800"/>
+    <int name="vendor.epdg.esp_lifetime" value="7400"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes256-sha256-sha512-prfsha256-prfsha512-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes256-sha256!</string>
+    <string name="vendor.epdg.default_retry_timeout">10500:3600</string>
+</vendor_config>

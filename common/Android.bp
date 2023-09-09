@@ -1,0 +1,21 @@
+// For both cbd v1 and v2,
+// it uses bootstrap_go_package since "flags" variable
+bootstrap_go_package {
+    name: "soong-cbd_v1v2_plugin",
+    pkgPath: "android/soong/vendor/cbd_v1v2_plugin",
+    deps: [
+        "soong",
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "cbd_v1v2_plugin.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+// For cbd v3,
+// it does not use bootstrap_go_package anymore.
+// It will add another variable or runtime argument instead of "flags".
+
+subdirs = ["*"]

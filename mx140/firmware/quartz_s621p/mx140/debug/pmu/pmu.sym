@@ -1,0 +1,238 @@
+
+/var/jenkins/firmware_release_helper.2022.BP/build/fw/common/builds/pmu/quartz/pmu/boot_ram/pmu.elf-full:     file format elf32-littlearm
+
+SYMBOL TABLE:
+60000000 l    d  ramrp_pmu_shared_data	00000000 ramrp_pmu_shared_data
+60000100 l    d  ramrp_vector_table	00000000 ramrp_vector_table
+60000200 l    d  ramrp_catchall	00000000 ramrp_catchall
+600041dc l    d  ramrp_ipc_index	00000000 ramrp_ipc_index
+60004900 l    d  ramrp_ipc_storage	00000000 ramrp_ipc_storage
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    df *ABS*	00000000 pmu_bootram.c
+60000f14 l     F ramrp_catchall	00000008 pmu_delay_loop
+60000f1c l     F ramrp_catchall	00000018 pmu_tckr_config_enable_76_8
+60000f34 l     F ramrp_catchall	00000018 pmu_tckr_config_enable_52
+60000f4c l     F ramrp_catchall	00000010 pmu_wd_int_handler
+60000f5c l     F ramrp_catchall	0000002c apm_proto_spmi_check_valid_ack
+60000f88 l     F ramrp_catchall	00000020 pmu_wp_sleepdeep_init
+600022c4 l     F ramrp_catchall	00000074 pmu_wp_sleepdeep_int_handler
+60000fa8 l     F ramrp_catchall	00000084 pmu_sweeper_int_handler
+6000102c l     F ramrp_catchall	00000040 pmu_reset_wlaux_sys.part.1
+6000106c l     F ramrp_catchall	0000007c pmu_reset_wlp_sys.part.2
+600010e8 l     F ramrp_catchall	0000003c pmu_ap2pmu_mb_int_handler
+60001230 l     F ramrp_catchall	000000fc pmu_calibrate_rtc
+60001724 l     F ramrp_catchall	00000028 pmu_exit_sleep
+600017bc l     F ramrp_catchall	00000064 pmu_enter_sleep.part.8
+60002804 l     F ramrp_catchall	00000048 pmu_wl_sleep_ready_handler
+60001c00 l     F ramrp_catchall	000001d8 pmu_wait_for_interrupts
+600025c0 l     F ramrp_catchall	00000068 pmu_setup_pmic_common_on
+6000284c l     F ramrp_catchall	00000094 pmu_process_wake_events
+60002910 l     F ramrp_catchall	000000d8 pmu_slow_timer_int_handler
+60000e0c l     O ramrp_catchall	0000006c apm_requests
+60000e78 l     O ramrp_catchall	0000000b int_handlers
+6000020c l     O ramrp_catchall	00000004 pmu_tckr_config_enable
+60000210 l     O ramrp_catchall	00000001 apm_seq
+60000211 l     O ramrp_catchall	00000001 setup_done.12202
+00000000 l    df *ABS*	00000000 /var/jenkins/firmware_release_helper.2022.BP/build/fw/common/builds/pmu/quartz/pmu/boot_ram/bootram/vector_table.o
+000000c0 l       *ABS*	00000000 VECTOR_TABLE_STAMP_ADDRESS
+00000000 l       *ABS*	00000000 M0_VECTOR_TABLE_STAMP_VALUE
+00000000 l    df *ABS*	00000000 /var/jenkins/firmware_release_helper.2022.BP/build/fw/common/builds/pmu/quartz/pmu/boot_ram/bootram/crt0.o
+000000c0 l       *ABS*	00000000 VECTOR_TABLE_STAMP_ADDRESS
+00000000 l       *ABS*	00000000 M0_VECTOR_TABLE_STAMP_VALUE
+00000001 l       *ABS*	00000000 VECTOR_ID_RESET
+00000002 l       *ABS*	00000000 VECTOR_ID_NMI
+0000000b l       *ABS*	00000000 VECTOR_ID_SVC
+0000000e l       *ABS*	00000000 VECTOR_ID_PENDSV
+0000000f l       *ABS*	00000000 VECTOR_ID_SYSTICK
+60000ef2 l       ramrp_catchall	00000000 stack_on_msp
+60000ef6 l       ramrp_catchall	00000000 get_lr
+00000000 l    df *ABS*	00000000 pmu_api.c
+60002dfc l     F ramrp_catchall	00000020 pmu_set_subsys_nmi_fiq
+60002e1c l     F ramrp_catchall	000000c0 pmu_subsys_failed
+60002edc l     F ramrp_catchall	000001c0 pmu_wl_ipc_int_handler
+6000309c l     F ramrp_catchall	00000188 pmu_wp_ipc_int_handler
+00000000 l    df *ABS*	00000000 pmu_alarm.c
+60000214 l     O ramrp_catchall	00000004 alarm_count
+60000218 l     O ramrp_catchall	00000048 alarms
+00000000 l    df *ABS*	00000000 pmu_watchman.c
+00000000 l    df *ABS*	00000000 pmu_debug_pio.c
+00000000 l    df *ABS*	00000000 pmu_debug.c
+60000e84 l     O ramrp_catchall	00000030 resource
+00000000 l    df *ABS*	00000000 nvic.c
+00000000 l    df *ABS*	00000000 mpu.c
+00000000 l    df *ABS*	00000000 /var/jenkins/firmware_release_helper.2022.BP/build/fw/common/builds/pmu/quartz/pmu/boot_ram/bootram/pmu_bus_map.o
+50000000 l       *ABS*	00000000 _PERT
+58000000 l       *ABS*	00000000 _APM
+00000000 l    df *ABS*	00000000 /var/jenkins/firmware_release_helper.2022.BP/build/fw/common/builds/pmu/quartz/pmu/boot_ram/bootram/ipc_alloc.o
+60004800 l       ramrp_ipc_index	00000000 ipc_start1
+60004d00 l       ramrp_ipc_storage	00000000 ipc_mem_end1
+60004803 l       ramrp_ipc_index	00000000 ipc_start2
+60004d48 l       ramrp_ipc_storage	00000000 ipc_mem_end2
+60004806 l       ramrp_ipc_index	00000000 ipc_start4
+60004d68 l       ramrp_ipc_storage	00000000 ipc_mem_end4
+60004809 l       ramrp_ipc_index	00000000 ipc_start5
+60004d88 l       ramrp_ipc_storage	00000000 ipc_mem_end5
+6000480c l       ramrp_ipc_index	00000000 ipc_start6
+60004d90 l       ramrp_ipc_storage	00000000 ipc_mem_end6
+00000000 l    df *ABS*	00000000 _thumb1_case_uqi.o
+00000000 l    df *ABS*	00000000 _udivsi3.o
+60003bdc l       ramrp_catchall	00000000 .udivsi3_skip_div0_test
+00000000 l    df *ABS*	00000000 _dvmd_tls.o
+00000000 l    df *ABS*	00000000 _clzsi2.o
+00000000 l    df *ABS*	00000000 _aeabi_ldivmod.o
+00000000 l    df *ABS*	00000000 _aeabi_uldivmod.o
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 bpabi.c
+00000000 l    df *ABS*	00000000 _clzdi2.o
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 memset.c
+60000208 g     O ramrp_catchall	00000004 PMU_PERT
+6000249c g     F ramrp_catchall	00000074 pmu_send_apm_dcxo_req_blocking
+60003828 g     F ramrp_catchall	00000014 bucketset_insert
+60004000 g     F ramrp_catchall	000001cc .hidden __divdi3
+60003868 g     F ramrp_catchall	000000c8 pmu_init_dbg
+60000358 g     O ramrp_catchall	00000604 watchman
+50000000 g       *ABS*	00000000 PERT
+60000ee4 g     F ramrp_catchall	00000018 HardFault_Handler
+60003714 g     F ramrp_catchall	00000038 alarm_check
+60000f08 g     F ramrp_catchall	00000004 SysTick_Handler
+600037d0 g     F ramrp_catchall	0000000c bucket_reset
+6000480f g       ramrp_ipc_index	00000000 ld_ipc_index_end
+60000f04 g     F ramrp_catchall	00000004 PendSV_Handler
+60000ee0 g     F ramrp_catchall	00000004 NMI_Handler
+60000ec4 g     F ramrp_catchall	0000001c regInit
+600020f4 g     F ramrp_catchall	000001d0 pmu_reset_wpan_sys
+60000200 g     O ramrp_catchall	00000004 ramrp_vector_base
+60001bd8 g     F ramrp_catchall	00000028 hw_us_from_slowclock
+600032d4 g     F ramrp_catchall	0000001c pmu_subsys_get_subsys_reset
+600036d4 g     F ramrp_catchall	00000008 alarm_at
+60004d48 g       ramrp_ipc_storage	00000000 ipc_mem_start4
+60001124 g     F ramrp_catchall	00000018 default_trap_handler
+6000132c g     F ramrp_catchall	00000110 pmu_mif_req
+60003d78 g     F ramrp_catchall	0000003e .hidden __aeabi_uldivmod
+00004800 g       *ABS*	00000000 ld_ipc_index_offset
+6000095c g     O ramrp_catchall	000004ac dbg
+60005000 g       ramrp_ipc_storage	00000000 ld_ipc_storage_end
+60003bdc g     F ramrp_catchall	0000010a .hidden __udivsi3
+6000357c g     F ramrp_catchall	00000048 pmu_wp_ipc_init
+600035d4 g     F ramrp_catchall	00000004 timestamp_add
+600028e0 g     F ramrp_catchall	00000030 pmu_default_wake_interrupt
+60001dd8 g     F ramrp_catchall	00000048 pmu_set_wake_event_enables
+600035f2 g     F ramrp_catchall	00000006 timestamp_lt
+00004900 g       *ABS*	00000000 ld_ipc_storage_offset
+60003e0c g     F ramrp_catchall	000001a2 .hidden __udivmoddi4
+6000374c g     F ramrp_catchall	00000034 watchman_log_insert
+60003bc8 g     F ramrp_catchall	00000012 .hidden __gnu_thumb1_case_uqi
+60000000 g     O ramrp_pmu_shared_data	00000004 pmu_boot_flags_inbound
+60001e20 g     F ramrp_catchall	000002d4 pmu_reset_wlan_sys
+60000000 g       ramrp_pmu_shared_data	00000000 m0_ramrp_start
+60000204 g     O ramrp_catchall	00000004 PMU_APM
+60003db8 g     F ramrp_catchall	00000054 .hidden __aeabi_lmul
+60008000 g       *ABS*	00000000 ld_m0_stack_end
+60002628 g     F ramrp_catchall	000001dc pmu_start_wlan_sys
+60002510 g     F ramrp_catchall	000000b0 pmu_send_apm_spmi_blocking
+00000000 g       ramrp_pmu_shared_data	00000000 m0_romrp_start
+00000800 g       *ABS*	00000000 ld_ipc_area_size
+58000000 g       ramrp_pmu_shared_data	00000000 m0_apm_start
+600035c8 g     F ramrp_catchall	0000000c timestamp_get
+00000800 g       *ABS*	00000000 m0_ramrp_ipc_storage_allocation
+60000000 g       ramrp_pmu_shared_data	00000000 m0_apm_end
+60000eb4 g     F ramrp_catchall	0000000c Reset_Handler
+60003534 g     F ramrp_catchall	00000048 pmu_wl_ipc_init
+60000000 g       ramrp_pmu_shared_data	00000000 _ramrp_base
+60000260 g     O ramrp_catchall	00000001 alarms_active
+60003b68 g     F ramrp_catchall	00000038 mpu_region_configure
+60000100 g     O ramrp_vector_table	000000c0 vector_table
+60000264 g     O ramrp_catchall	000000f0 ppd
+58000000 g       ramrp_pmu_shared_data	00000000 m0_regst_end
+60003cf4 g     F ramrp_catchall	0000003c .hidden __clzsi2
+6000113c g     F ramrp_catchall	00000038 hard_fault_handler
+00008000 g       ramrp_pmu_shared_data	00000000 m0_romrp_end
+60004d68 g       ramrp_ipc_storage	00000000 ipc_mem_start5
+600035ea g     F ramrp_catchall	00000008 timestamp_ge
+60000f0c g     F ramrp_catchall	00000004 Default_Handler
+60000354 g     O ramrp_catchall	00000004 pmu_boot_flags
+58000000 g       *ABS*	00000000 APM
+6000337c g     F ramrp_catchall	000001b8 pmu_host_cmd
+60004900 g       ramrp_ipc_storage	00000000 ld_ipc_storage_begin
+00000800 g       *ABS*	00000000 ld_ipc_area_mpu_region_size
+6000378a g     F ramrp_catchall	00000028 log_delta
+e000e000 g       *ABS*	00000000 m0_ppb
+600036dc g     F ramrp_catchall	00000018 alarm_cancel
+00000700 g       *ABS*	00000000 ld_ipc_storage_size
+6000330c g     F ramrp_catchall	00000038 pmu_wlan_wdog_timeout
+60003958 g     F ramrp_catchall	000000bc apm_request
+60003618 g     F ramrp_catchall	00000014 alarm_expired
+60000100 g       ramrp_pmu_shared_data	00000000 _ramrp_vector_base
+60003cf0  w    F ramrp_catchall	00000002 .hidden __aeabi_ldiv0
+60003930 g     F ramrp_catchall	00000028 apm_log_tcxo
+600041cc g     F ramrp_catchall	00000010 memset
+600029e8 g     F ramrp_catchall	00000414 main
+60003b38 g     F ramrp_catchall	00000030 int_install_handler
+60003bdc g     F ramrp_catchall	00000000 .hidden __aeabi_uidiv
+600037dc g     F ramrp_catchall	0000003a bucket_insert
+60000f00 g     F ramrp_catchall	00000004 SVC_Handler
+60003a14 g     F ramrp_catchall	000000bc apm_release
+60005000 g       ramrp_ipc_storage	00000000 ld_ramrp_unallocated_start
+00000100 g       *ABS*	00000000 m0_romrp_vector_table_offset
+60003b04 g     F ramrp_catchall	00000034 int_install_handler_no_enable
+60003780 g     F ramrp_catchall	0000000a pmu_time_delta_init
+60004d88 g       ramrp_ipc_storage	00000000 ipc_mem_start6
+00000100 g       *ABS*	00000000 m0_pmu_shared_data_size
+600035dc g     F ramrp_catchall	00000004 timestamp_diff
+60004800 g       ramrp_ipc_index	00000000 ld_ipc_index_begin
+60004d00 g       ramrp_ipc_storage	00000000 ipc_mem_start2
+60008000 g       ramrp_pmu_shared_data	00000000 m0_ramrp_end
+600035c4 g     F ramrp_catchall	00000002 timestamp_to_u32
+60003816 g     F ramrp_catchall	00000012 bucketset_reset
+60003344 g     F ramrp_catchall	00000038 pmu_wpan_wdog_timeout
+60000e08 g     O ramrp_catchall	00000004 int_block_count
+60001bbc g     F ramrp_catchall	0000001c hw_slowclock_from_us
+60003ce8 g     F ramrp_catchall	00000008 .hidden __aeabi_uidivmod
+00000400 g       *ABS*	00000000 m0_ramrp_stack_size
+50000000 g       ramrp_pmu_shared_data	00000000 m0_regst_start
+600036a0 g     F ramrp_catchall	00000034 alarm_set
+6000362c g     F ramrp_catchall	00000074 alarm_schedule
+6000234c g     F ramrp_catchall	00000134 pmu_pd_sequence
+60003ad0 g     F ramrp_catchall	00000034 int_mpu_protect
+60004900 g       ramrp_ipc_storage	00000000 ipc_mem_start1
+60000000 g       ramrp_pmu_shared_data	00000000 m0_pmu_shared_data_start
+00000008 g       *ABS*	00000000 m0_mpu_sub_regions
+600032f0 g     F ramrp_catchall	0000001c pmu_subsys_get_subsys_monitor
+600036f4 g     F ramrp_catchall	00000020 alarm_after
+600035e0 g     F ramrp_catchall	0000000a timestamp_gt
+60003cf0  w    F ramrp_catchall	00000002 .hidden __aeabi_idiv0
+6000143c g     F ramrp_catchall	000000f4 pmu_update_mif
+60003ba0 g     F ramrp_catchall	00000028 mpu_region_disable
+60003224 g     F ramrp_catchall	00000090 pmu_init_subsys_pmu_api
+60001174 g     F ramrp_catchall	00000068 pmu_clk_switch_pll
+60003db8 g     F ramrp_catchall	00000054 .hidden __muldi3
+6000174c g     F ramrp_catchall	00000070 pmu_clock_reset
+600035f8 g     F ramrp_catchall	00000020 alarm_init
+60001820 g     F ramrp_catchall	0000017c pmu_start_wpan_sys
+60003fb0 g     F ramrp_catchall	00000036 .hidden __gnu_ldivmod_helper
+60002338 g     F ramrp_catchall	00000014 pmu_wd_disable
+60002480 g     F ramrp_catchall	0000001c pmu_cfg_send_msg_response
+600011dc g     F ramrp_catchall	00000054 pmu_delay_us
+60003fe8 g     F ramrp_catchall	00000016 .hidden __clzdi2
+60003d30 g     F ramrp_catchall	00000046 .hidden __aeabi_ldivmod
+6000199c g     F ramrp_catchall	00000220 pmu_start_wlwp_sys
+6000383c g     F ramrp_catchall	0000002c wake_events_summarise
+0000000f g       *ABS*	00000000 ld_ipc_index_size
+60001530 g     F ramrp_catchall	000001f4 pmu_clock_startup
+600035c6 g     F ramrp_catchall	00000002 timestamp_from_u32
+600032b4 g     F ramrp_catchall	00000020 pmu_subsys_set_subsys_reset
+600035d8 g     F ramrp_catchall	00000004 timestamp_sub
+600037b2 g     F ramrp_catchall	0000001e ipc_log
+
+

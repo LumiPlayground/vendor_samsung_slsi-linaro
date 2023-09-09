@@ -1,0 +1,6 @@
+# For b/up, please append the below code to device/samsung/sepolicy/common/genfs_contexts
+
+## wlbt cnntlogger
+# Map /driver/unifi0/build
+genfscon proc /driver/unifi0/build             u:object_r:vendor_wlbt_build:s0
+## wlbt cnntlogger

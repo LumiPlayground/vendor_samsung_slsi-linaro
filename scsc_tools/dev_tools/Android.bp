@@ -1,0 +1,215 @@
+cc_prebuilt_binary {
+    srcs: ["moredump"],
+    name: "moredump",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["wlbt_onoff.sh"],
+    name: "wlbt_onoff.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["trigger_moredump"],
+    name: "trigger_moredump",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["disable_auto_coredump"],
+    name: "disable_auto_coredump",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["scsc_get_platform_info.sh"],
+    name: "scsc_get_platform_info.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["omnicli"],
+    name: "omnicli",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["btcli"],
+    name: "btcli",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["wlan_debug_level.sh"],
+    name: "wlan_debug_level.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["disable_wlbt_log"],
+    name: "disable_wlbt_log",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["enable_wlbt_log"],
+    name: "enable_wlbt_log",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["scsc_enable_flight_mode.sh"],
+    name: "scsc_enable_flight_mode.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["if_unifi.so"],
+    name: "if_unifi.so",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["tgen"],
+    name: "tgen",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["mxdecoder"],
+    name: "mxdecoder",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["slsi_wlan_mib"],
+    name: "slsi_wlan_mib",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["slsi_wlan_udi_log"],
+    name: "slsi_wlan_udi_log",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["slsi_wlan_udi_log_decode"],
+    name: "slsi_wlan_udi_log_decode",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["slsi_wlan_src_sink"],
+    name: "slsi_wlan_src_sink",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["slsi_wlan_loopback_config"],
+    name: "slsi_wlan_loopback_config",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["vectordriverbroker"],
+    name: "vectordriverbroker",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["vectordriverbroker.bin"],
+    name: "vectordriverbroker.bin",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["devmem2"],
+    name: "devmem2",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["wlbt_ldos.sh"],
+    name: "wlbt_ldos.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}
+
+cc_prebuilt_binary {
+    srcs: ["cpu_stats.sh"],
+    name: "cpu_stats.sh",
+    proprietary: true,
+    shared_libs: ["liblog"],
+    allow_undefined_symbols: true,
+    strip: { none: true},
+}

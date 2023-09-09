@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <string name="vendor.epdg.xcap_keyid">hos</string>
+</vendor_config>

@@ -1,0 +1,90 @@
+/*
+ * Copyright (c) 2021 Samsung Electronics Co., Ltd All Rights Reserved
+ * PROPRIETARY/CONFIDENTIAL
+ *
+ * This software is the confidential and proprietary information of
+ * SAMSUNG ELECTRONICS ("Confidential Information").
+ *
+ * You shall not disclose such Confidential Information and shall use it
+ * only in accordance with the terms of the license agreement
+ * you entered into with SAMSUNG ELECTRONICS.
+ *
+ * SAMSUNG make no representations or warranties about the suitability of
+ * the software, either express or implied, including but not limited to
+ * the implied warranties of merchantability, fitness for a particular
+ * purpose, or non-infringement. SAMSUNG shall not be liable for any
+ * damages suffered by license as a result of using, modifying or
+ * distributing this software or its derivatives.
+ */
+
+#pragma once
+
+#include "radiodatacallback.h"
+#include "radioreturnstatus.h"
+#include "radioresponseutil.h"
+#include "binderdeathrecipient.h"
+
+namespace android::hardware::radio::impl {
+
+struct RadioDataResponse : public RadioDataResponseCallback,
+                            public RadioReturnStatus,
+                            public RemoteDiedHelper {
+    std::shared_ptr<::aidl::android::hardware::radio::data::IRadioDataResponse> mResponse;
+
+    SYNCHRONIZED_WRAPPER(so);
+
+    void onRemoteDied() override {
+        // no race-condition between onBinderDied and setResponseFunction.
+        setResponseFunction(nullptr);
+    }
+    void setResponseFunction(
+            const std::shared_ptr<::aidl::android::hardware::radio::data::IRadioDataResponse>&
+                    radioDataResponse);
+
+    void acknowledgeRequest(int32_t serial) override;
+
+    void allocatePduSessionIdResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info,
+        int id) override;
+
+    void setInitialAttachApnResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+
+    void cancelHandoverResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+    void deactivateDataCallResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+    void getDataCallListResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info,
+        const std::vector<
+            ::aidl::android::hardware::radio::data::SetupDataCallResult>
+            dcResponse) override;
+
+    void getSlicingConfigResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info,
+        const ::aidl::android::hardware::radio::data::SlicingConfig slicingConfig)
+        override;
+
+    void releasePduSessionIdResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+    void setDataAllowedResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+    void setDataThrottlingResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+    void setDataProfileResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+    void setupDataCallResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info,
+        const ::aidl::android::hardware::radio::data::SetupDataCallResult
+            dcResponse) override;
+    void startHandoverResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+    void startKeepaliveResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info,
+        const ::aidl::android::hardware::radio::data::KeepaliveStatus status)
+        override;
+    void stopKeepaliveResponse(
+        const ::aidl::android::hardware::radio::RadioResponseInfo &info) override;
+};
+} // namespace android::hardware::radio::impl
+

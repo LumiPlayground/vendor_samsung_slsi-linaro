@@ -1,0 +1,32 @@
+type bipchmgr, domain;
+type bipchmgr_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(bipchmgr);
+net_domain(bipchmgr);
+
+get_prop(bipchmgr, hwservicemanager_prop);
+
+get_prop(bipchmgr, vendor_rild_prop);
+set_prop(bipchmgr, vendor_rild_prop);
+
+get_prop(bipchmgr, vendor_sys_default_prop);
+set_prop(bipchmgr, vendor_sys_default_prop);
+
+get_prop(bipchmgr, vendor_config_default_prop);
+set_prop(bipchmgr, vendor_config_default_prop);
+
+# allow <scontext> <tcontext>:<tclass> <operation>
+allow bipchmgr self:capability { setuid net_raw net_admin };
+allow bipchmgr radio_device:chr_file rw_file_perms;
+allow bipchmgr hal_exynos_rild_hwservice:hwservice_manager find;
+allow bipchmgr hwservicemanager:binder { call transfer };
+allow bipchmgr rild:binder { call transfer };
+
+#allow bipchmgr node:rawip_socket node_bind;
+#allow bipchmgr self:netlink_route_socket nlmsg_write;
+#allow bipchmgr self:packet_socket { bind create read write getattr shutdown };
+
+allow bipchmgr netd:tcp_socket { create ioctl getopt setopt connect read write };
+allow bipchmgr netd:udp_socket { create ioctl getopt setopt read write };
+allow bipchmgr fwmarkd_socket:sock_file write;
+allow bipchmgr port:tcp_socket name_connect;

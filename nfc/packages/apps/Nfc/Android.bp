@@ -1,0 +1,33 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+genrule {
+    name: "statslog-NfcSec-java-gen",
+    tools: ["stats-log-api-gen"],
+    cmd: "$(location stats-log-api-gen) --java $(out) --module nfc --javaPackage com.android.nfc"
+        + " --javaClass NfcStatsLog",
+    out: ["com/android/nfc/NfcStatsLog.java"],
+}
+
+// NCI Configuration
+android_app {
+    overrides: ["NfcNci"],
+    name: "NfcSec",
+    srcs: [
+        "src/**/*.java",
+        "nci/**/*.java",
+        ":statslog-NfcSec-java-gen",
+        "src/**/*.aidl",
+    ],
+    platform_apis: true,
+    certificate: "platform",
+    jni_libs: ["libnfc_sec_jni"],
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "com.google.android.material_material",
+    ],
+    optimize: {
+        enabled: false,
+    },
+}

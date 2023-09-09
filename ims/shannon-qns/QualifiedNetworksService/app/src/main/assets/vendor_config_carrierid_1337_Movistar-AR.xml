@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="120"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <int name="vendor.epdg.ike_lifetime" value="43200"/>
+    <int name="vendor.epdg.esp_lifetime" value="43200"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-3des-md5-sha1-prfsha1-modp1024-modp1536-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-md5-sha1!</string>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+</vendor_config>

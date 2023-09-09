@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <string name="vendor.xcap_supported_radio_technology">LTE,LTE_CA,NR</string>
+    <int name="vendor.epdg.ike_dpd_interval" value="10"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes256-sha256-prfsha1-modp1536!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-sha1-sha256!</string>
+    <int name="vendor.epdg.esp_lifetime" value="1500"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+</vendor_config>

@@ -1,0 +1,75 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+cc_library_headers {
+    name: "vendor_ril_client_headers",
+    vendor_available: true,
+    export_include_dirs: ["."],
+}
+
+cc_library_static {
+    name: "librilclienthelper",
+    vendor: true,
+    srcs: [
+        "rilclienthelper.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libutils",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-DANDROID_MULTI_SIM",
+        "-DANDROID_SIM_COUNT_2",
+    ],
+    header_libs: [
+        "vendor_ril_headers",
+        "vendor_ril_client_headers"
+    ],
+    export_include_dirs: ["."],
+}
+
+cc_defaults {
+    name: "libsitril-client_defaults",
+    srcs: ["sitril-client.cpp"],
+    cflags: [
+        "-Wno-unused-parameter",
+        "-Wall",
+        "-Werror",
+        "-DANDROID_MULTI_SIM",
+        "-DANDROID_SIM_COUNT_2",
+    ],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libhidlbase",
+        "vendor.samsung_slsi.telephony.hardware.radioExternal@1.0",
+        "vendor.samsung_slsi.telephony.hardware.radioExternal@1.1",
+    ],
+}
+
+cc_library {
+    name: "libsitril-client",
+    defaults: ["libsitril-client_defaults"],
+    header_libs: [
+        "vendor_ril_headers",
+    ],
+    export_include_dirs: ["."],
+    proprietary: true,
+}
+
+cc_library {
+    name: "libsitril-client-system",
+    defaults: ["libsitril-client_defaults"],
+    header_libs: [
+        "vendor_ril_headers",
+    ],
+    export_include_dirs: ["."],
+}

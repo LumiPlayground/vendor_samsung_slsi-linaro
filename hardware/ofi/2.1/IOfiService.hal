@@ -1,0 +1,37 @@
+//------------------------------------------------------------------------------
+/// @file  IOfiService.hdl
+/// @ingroup  ofi_service
+///
+/// @brief HAL interface description for Ofi Service
+///
+/// @section copyright_section Copyright
+/// &copy; 2018, Samsung Electronics Co., Ltd.
+///
+/// @section license_section License
+//------------------------------------------------------------------------------
+
+package vendor.samsung_slsi.hardware.ofi@2.1;
+
+import @2.0::IOfiService;
+import @2.0::types;
+import @2.1::types;
+
+/**
+ * IOfiService is HAL interface for Ofi
+ */
+interface IOfiService extends @2.0::IOfiService {
+ /**
+   * @brief
+   * set preset
+   * @param[name] name
+   */
+  ofiSetPresets(string name) generates(int32_t ret);
+ /**
+   * @brief
+   * unset preset
+   * @param[name] name
+   */
+  ofiUnsetPresets(string name) generates(int32_t ret);
+
+  attachGraphToModelManager_2_1(OfiRawGraph graph_info) generates(int32_t ret);
+};

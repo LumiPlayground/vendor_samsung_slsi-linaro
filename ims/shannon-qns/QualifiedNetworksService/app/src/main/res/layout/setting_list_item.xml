@@ -1,0 +1,46 @@
+<!--
+  ~ Copyright (c) 2018 Samsung Electronics Co., Ltd.
+  ~
+  ~ This software is proprietary of Samsung Electronics.
+  ~ No part of this software, either material or conceptual may be copied or
+  ~ distributed, transmitted, transcribed, stored in a retrieval system or
+  ~ translated into any human or computer language in any form by any means,
+  ~ electronic, mechanical, manual or otherwise, or disclosed to third parties
+  ~ without the express written permission of Samsung Electronics.
+  -->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text_editor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/textEditorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Title"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textColor="?android:attr/textColorPrimary"
+            android:ellipsize="marquee"/>
+        <TextView
+            android:id="@+id/textEditorValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textEditorTitle"
+            android:layout_alignStart="@+id/textEditorTitle"
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+            android:textColor="?android:attr/textColorSecondary"
+            android:ellipsize="end"/>
+    </RelativeLayout>
+</FrameLayout>

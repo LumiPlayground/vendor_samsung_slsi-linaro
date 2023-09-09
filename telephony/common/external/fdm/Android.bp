@@ -1,0 +1,36 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+cc_defaults {
+    name: "fdm_defaults",
+    srcs: [
+        "fdm.cpp",
+        "resource.cpp",
+    ],
+    cflags: ["-Wno-unused-parameter"],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libhidlbase",
+        "vendor.samsung_slsi.telephony.hardware.oemservice@1.0",
+    ],
+}
+
+cc_library {
+    name: "libfdm",
+    defaults: ["fdm_defaults"],
+    cflags: ["-D__FACTORY_DM_SLIB__"],
+    proprietary: true,
+}
+
+cc_binary {
+    name: "fdm",
+    defaults: ["fdm_defaults"],
+    proprietary: true,
+}

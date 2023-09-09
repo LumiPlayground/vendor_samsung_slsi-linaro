@@ -1,0 +1,125 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+cc_defaults {
+    name: "dmd_cc_defaults",
+    srcs: [
+        "base/log.cpp",
+        "base/systemproperty.cpp",
+        "base/textutils.cpp",
+        "base/thread.cpp",
+        "datautils.cpp",
+        "dmagentcallbackimpl.cpp",
+        "dmstatefactoryimpl.cpp",
+        "dmstatemachine.cpp",
+        "dmstateimpl.cpp",
+        "memblock.cpp",
+        "onboardlogging.cpp",
+        "sdmdoc.cpp",
+        "sdmdocdirector.cpp",
+        "sdmdocenv.cpp",
+        "sdmdocmanager.cpp",
+        "sdmstream.cpp",
+        "silentlogging.cpp",
+        "timeutils.cpp",
+        "zipworker.cpp",
+        "OemServiceManager.cpp",
+        "DMAgent.cpp",
+        "DMFileManager.cpp",
+        "HostAgentManager.cpp",
+        "ModemProxy.cpp",
+    ],
+
+    local_include_dirs: [
+        "base",
+    ],
+
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "liblog",
+        "libziparchive",
+    ],
+}
+
+cc_binary {
+    name: "dmd",
+    init_rc: ["dmd.rc"],
+    vintf_fragments: ["dmd.xml"],
+    defaults: ["dmd_cc_defaults"],
+    local_include_dirs: [
+        "base",
+    ],
+    srcs: ["dmd_main.cpp",],
+    cflags: [
+        "-Wno-c++11-narrowing",
+        "-Wno-unused-parameter",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        // "-Wno-error=date-time",
+    ],
+    proprietary: true,
+
+    tidy: true,
+    tidy_checks: [
+        "-*",
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+    tidy_checks_as_errors: [
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+    sanitize: {
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+        diag: {
+            undefined: true,
+        },
+        cfi: true,
+    },
+}
+
+cc_test {
+    name: "dmd_tests",
+
+    defaults: [
+        "dmd_cc_defaults",
+    ],
+
+    srcs: [
+        "asan_options.cpp",
+        "datautils_test.cpp",
+        "dmagentcallbackimpl_test.cpp",
+        "dmstatemachine_test.cpp",
+        "memblock_test.cpp",
+        "postaction_test.cpp",
+        "sdmstream_test.cpp",
+        "sdmdoc_test.cpp",
+        "sdmdocenv_test.cpp",
+        "sdmdocmanager_test.cpp",
+        "zipworker_test.cpp",
+    ],
+
+    sanitize: {
+        misc_undefined: ["integer"],
+        address : true,
+        diag: {
+            undefined: true,
+        },
+        cfi: true,
+    },
+
+    proprietary: true,
+}

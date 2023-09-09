@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes256-sha1-sha256-prfsha1-prfsha256-modp1024!</string>
+    <int name="vendor.epdg.ike_lifetime" value="2880"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes256-sha1-sha256!</string>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <string name="vendor.epdg.ike_device_identity">attribute:16391</string>
+</vendor_config>

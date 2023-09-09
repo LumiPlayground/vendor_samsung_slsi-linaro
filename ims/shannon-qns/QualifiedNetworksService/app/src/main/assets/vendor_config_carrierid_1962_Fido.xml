@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.volte_supported_radio_technology">GSM,GPRS,EDGE,UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <boolean name="vendor.volte_vops_required" value="false"/>
+    <boolean name="vendor.ims_handover_use_profile_default_network" value="true"/>
+    <string name="vendor.ims_handover_supported_radio_technology">LTE,LTE_CA</string>
+    <string name="vendor.ims_handover_rove_in">iwlan{rssi=-65}</string>
+    <string name="vendor.ims_handover_rove_out">iwlan{rssi=-78}</string>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.xcap_handover_enabled" value="true"/>
+    <string name="vendor.epdg.servers">3gpp-location:plmn,3gpp-operator:sim</string>
+    <string name="vendor.epdg.servers_roaming">3gpp-operator:sim</string>
+    <boolean name="vendor.epdg.ike_original_tsi_for_rekey" value="true"/>
+    <int name="vendor.transport_iwlan_permanent_error_retry" value="2"/>
+    <int name="vendor.transport_iwlan_permanent_error_timeout" value="2"/>
+    <int name="vendor.transport_iwlan_permanent_error_handover_timeout" value="2"/>
+</vendor_config>

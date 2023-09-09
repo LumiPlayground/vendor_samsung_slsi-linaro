@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VendorTelephonyTester</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="str_get_nr_mode">Get NR mode</string>
+    <string name="str_set_nr_mode">Set NR mode</string>
+    <string name="key_get_nr_mode">key_get_nr_mode</string>
+    <string name="key_set_nr_mode">key_set_nr_mode</string>
+
+    <string-array name="array_nr_mode">
+        <item>None</item>
+        <item>NSA Only</item>
+        <item>SA Only</item>
+        <item>NSA SA</item>
+        <item>Reset Default</item>
+    </string-array>
+    <string-array name="array_nr_mode_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="str_get_sms_storage_on_sim">Get SMS storage on SIM</string>
+    <string name="key_get_sms_storage_on_sim">key_get_sms_storage_on_sim</string>
+
+    <string-array name="array_sim_type">
+        <item>SIM</item>
+        <item>RUIM</item>
+    </string-array>
+    <string-array name="array_sim_type_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="key_set_activate_vsim">key_set_activate_vsim</string>
+    <string name="str_set_activate_vsim">Set Activate Vsim</string>
+
+    <string name="key_setup_data_call">key_setup_data_call</string>
+    <string name="str_setup_data_call">Setup Data Call</string>
+</resources>

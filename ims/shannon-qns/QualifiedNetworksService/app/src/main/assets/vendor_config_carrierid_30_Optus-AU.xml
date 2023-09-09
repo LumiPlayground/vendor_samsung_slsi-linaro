@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <string name="vendor.ims_handover_rove_in">utran{rscp=-99};eutran{rsrp=-104}</string>
+    <string name="vendor.ims_handover_rove_out">utran{rscp=-108};eutran{rsrp=-113}</string>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_lifetime" value="3001"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="3600"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+</vendor_config>

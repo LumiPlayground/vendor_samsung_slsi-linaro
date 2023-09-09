@@ -1,0 +1,6 @@
+package vendor.samsung_slsi.hardware.audio_dump@1.0;
+
+interface IAudioDump {
+    startDump(uint32_t status);
+    stopDump();
+};

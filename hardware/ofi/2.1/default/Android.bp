@@ -1,0 +1,39 @@
+soong_namespace {
+    imports: [
+        "vendor/samsung_slsi/exynos/ofi/2.1",
+    ],
+}
+
+cc_prebuilt_binary {
+    name: "vendor.samsung_slsi.hardware.ofi@2.1-service",
+    srcs: [
+        "vendor.samsung_slsi.hardware.ofi@2.1-service"
+    ],
+    shared_libs: [
+        "android.hidl.memory@1.0",
+        "libc++",
+        "libc",
+        "libcutils",
+        "libdl",
+        "libfmq",
+        "libhidlbase",
+        "libhidlmemory",
+        "libion",
+        "libion_exynos",
+        "libdmabufheap",
+        "liblog",
+        "libm",
+        "libofi_rt_framework",
+        "libutils",
+        "vendor.samsung_slsi.hardware.ofi@2.0",
+        "vendor.samsung_slsi.hardware.ofi@2.1"
+    ],
+    vendor: true,
+    relative_install_path: "hw",
+    vintf_fragments: [
+        "vendor.samsung_slsi.hardware.ofi@2.1-service.xml"
+    ],
+    init_rc: [
+        "vendor.samsung_slsi.hardware.ofi@2.1-service.rc"
+    ],
+}

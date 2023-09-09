@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.shannon.networkservice">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="com.shannon.permission.IWLAN_CONFIGURATION"/>
+
+    <application
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:directBootAware="true"
+        android:persistent="true">
+
+        <receiver
+            android:name=".ConfigurationBroadcastReceiver"
+            android:directBootAware="true"
+            android:permission="com.shannon.permission.IWLAN_CONFIGURATION"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.shannon.ACTION.VCC.vendor_config_changed"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".ShannonNetworkService"
+            android:permission="android.permission.BIND_TELEPHONY_NETWORK_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telephony.NetworkService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

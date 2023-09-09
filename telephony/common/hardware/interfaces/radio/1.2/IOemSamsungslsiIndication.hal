@@ -1,0 +1,63 @@
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.samsung_slsi.telephony.hardware.radio@1.2;
+
+import android.hardware.radio@1.0::types;
+import @1.1::IOemSamsungslsiIndication;
+
+interface IOemSamsungslsiIndication extends @1.1::IOemSamsungslsiIndication {
+
+    /**
+     * Indicates data call contexts have changed.
+     *
+     * This indication is updated from IRadioIndication@1.5 to report the @1.6 version of
+     * SetupDataCallResult.
+     *
+     * @param type Type of radio indication
+     * @param dcList Array of SetupDataCallResult identical to that returned by
+     *        IRadio.getDataCallList(). It is the complete list of current data contexts including
+     *        new contexts that have been activated. A data call is only removed from this list
+     *        when any of the below conditions is matched.
+     *        1. The framework sends a IRadio.deactivateDataCall().
+     *        2. The radio is powered off/on.
+     *        3. Unsolicited disconnect from either modem or network side.
+     */
+    // Just use 1.5 DataCallListChanged from vendor RIL
+    // TBD: how to deliver new information of 1.6
+    //oneway dataCallListChanged_1_6(RadioIndicationType type, vec<SetupDataCallResult> dcList);
+
+    /**
+     * Indicates ursp have changed.
+     * @param slotIndex SIM card indicator
+     * @param dataType Data type,  0 means original URSP data,  1 means parsed TD data
+     * @param ursp Original URSP data, only available when dataType is 0
+     * @param precedence td priority
+     * @param td  The parsed TD data is only available when dataType is 1
+     */
+    oneway postUrsp_1_6(RadioIndicationType type, int32_t slotIndex, int32_t dataType, string originalUrsp, vec<UrspRule> urspList);
+
+    /**
+     * The modem can explicitly set SetupDataCallResult::suggestedRetryTime after a failure in
+     * IRadioData.SetupDataCall. During that time, no new calls are allowed to
+     * IRadioData.SetupDataCall that use the same APN. When IRadioDataIndication.unthrottleApn
+     * is sent, AOSP will no longer throttle calls to IRadioData.SetupDataCall for the given APN.
+     *
+     * @param type Type of radio indication
+     * @param dataProfileInfo Data profile info.
+     */
+    oneway unthrottleApn(RadioIndicationType type, DataProfileInfo dataProfileInfo);
+};

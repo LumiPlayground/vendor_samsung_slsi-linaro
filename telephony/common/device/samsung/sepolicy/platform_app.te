@@ -1,0 +1,7 @@
+get_prop(platform_app, vendor_rild_prop);
+get_prop(platform_app, usb_control_prop);
+set_prop(platform_app, usb_control_prop);
+
+allow platform_app vendor_telephony_data_file:dir getattr;
+allow platform_app hal_exynos_rild_hwservice:hwservice_manager find;
+allow platform_app rild:binder { call transfer };

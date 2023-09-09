@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <!--TMO Nokia lab-->
+    <boolean name="vendor.wifi_network_validation_required" value="false"/>
+    <boolean name="vendor.ims_handover_supported_roaming" value="false"/>
+    <boolean name="vendor.ims_handover_supported_in_call_roaming" value="false"/>
+    <string name="vendor.ims_handover_supported_radio_technology">LTE,LTE_CA,NR</string>
+    <string name="vendor.ims_handover_rove_in">geran{rssi=-95};utran{rscp=-100};eutran{rsrp=-109};ngran{rsrp=-109};iwlan{rssi=-70}</string>
+    <string name="vendor.ims_handover_rove_out">geran{rssi=-105};utran{rscp=-110,n=-15};eutran{rsrp=-114};ngran{rsrp=-114};iwlan{rssi=-80}</string>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+    <string name="vendor.epdg.servers">87.254.200.203</string>
+    <boolean name="vendor.epdg.force_udp_encapsulation" value="true"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="false"/>
+</vendor_config>

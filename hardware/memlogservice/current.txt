@@ -1,0 +1,3 @@
+cdcfa01f1a3e3f9f749e92869a09da20d196608f4b2db26cb362f64d02f9d80c vendor.samsung_slsi.hardware.memlogservice@1.0::types
+f11b75ba4ce53acebfb2821f4419a70e2cb91d1136fd6928275dda664d4414d8 vendor.samsung_slsi.hardware.memlogservice@1.0::IMemlogService
+134d1321b104133120eb1c950f87810e05042499c1b7d61f8f606063cf44e2ca vendor.samsung_slsi.hardware.memlogservice@1.0::IMemlogServiceCallback

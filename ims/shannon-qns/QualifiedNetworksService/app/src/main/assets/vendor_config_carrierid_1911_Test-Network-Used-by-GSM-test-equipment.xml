@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.wifi_network_validation_required" value="false"/>
+    <boolean name="vendor.volte_vops_required" value="false"/>
+</vendor_config>

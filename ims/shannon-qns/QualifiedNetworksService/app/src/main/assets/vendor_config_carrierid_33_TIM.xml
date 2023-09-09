@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.volte_supported_radio_technology">GSM,GPRS,EDGE,UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.volte_vops_required" value="false"/>
+    <boolean name="vendor.volte_vops_required_roaming" value="false"/>
+</vendor_config>

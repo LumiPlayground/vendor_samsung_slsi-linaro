@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <string name="vendor.ims_handover_rove_in">eutran{rsrp=-104};iwlan{rssi=-74}</string>
+    <string name="vendor.ims_handover_rove_out">eutran{rsrp=-113}</string>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="90"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+</vendor_config>

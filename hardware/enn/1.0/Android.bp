@@ -1,0 +1,14 @@
+
+hidl_interface {
+    name: "vendor.samsung_slsi.hardware.enn@1.0",
+    root: "vendor.samsung_slsi.hardware.enn",
+    srcs: [
+        "types.hal",
+        "IEnnInterface.hal",
+        "IEnnCallback.hal",
+    ],
+    interfaces: [
+        "android.hidl.base@1.0",
+    ],
+    gen_java: false,
+}

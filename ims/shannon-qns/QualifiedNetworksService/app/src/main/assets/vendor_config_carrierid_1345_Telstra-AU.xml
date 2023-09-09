@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.ims_handover_rove_in">utran{rscp=-106};eutran{rsrp=-110,rsrq=-14}</string>
+    <string name="vendor.ims_handover_rove_out">utran{rscp=-110};eutran{rsrp=-118,rsrq=-16}</string>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.sim_usim_only" value="true"/>
+    <string name="vendor.epdg.xcap_keyid">hos</string>
+    <boolean name="vendor.xcap_handover_enabled" value="true"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="1740"/>
+    <int name="vendor.epdg.ike_lifetime" value="79200"/>
+    <int name="vendor.epdg.esp_lifetime" value="79200"/>
+    <boolean name="vendor.epdg.ike_mobike_enabled" value="false"/>
+    <string name="vendor.epdg.ike_device_identity">notify</string>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes192-aes256-aes128ctr-aes192ctr-aes256ctr-sha256-sha384-sha512-prfsha256-prfsha384-prfsha512-modp2048-modp3072-modp4096!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes192-aes256-aes128ctr-aes192ctr-aes256ctr-sha256-sha384-sha512-modp2048-modp3072-modp4096!</string>
+</vendor_config>

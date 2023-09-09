@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="false"/>
+    <string name="vendor.epdg.servers">epdg.mobileone.net.sg</string>
+    <int name="vendor.epdg.esp_lifetime" value="8640"/>
+    <string name="vendor.epdg.xcap_keyid">xcap</string>
+</vendor_config>

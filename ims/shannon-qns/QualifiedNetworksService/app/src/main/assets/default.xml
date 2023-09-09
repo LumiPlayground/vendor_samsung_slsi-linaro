@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <!--WiFi-->
+    <boolean name="vendor.wifi_network_validation_required" value="true"/>
+    <boolean name="vendor.wifi_can_use_ipv6" value="false"/>
+    <boolean name="vendor.wifi_access_points_handover_supported" value="true"/>
+    <int name="vendor.wifi_access_points_handover_timeout" value="10"/>
+    <string name="vendor.wifi_ping_server"></string>
+    <int name="vendor.wifi_ping_period" value="0"/>
+    <int name="vendor.wifi_ping_interval" value="0"/>
+    <int name="vendor.wifi_ping_count" value="0"/>
+    <int name="vendor.wifi_ping_size" value="0"/>
+    <!--VoLTE-->
+    <string name="vendor.volte_supported_radio_technology">LTE,LTE_CA,NR</string>
+    <boolean name="vendor.volte_vops_required" value="true"/>
+    <boolean name="vendor.volte_vops_not_required_active_call" value="false"/>
+    <boolean name="vendor.volte_roaming_enabled" value="true"/>
+    <boolean name="vendor.volte_vops_required_roaming" value="true"/>
+    <string name="vendor.volte_roaming_allowed_networks"></string>
+    <string name="vendor.volte_domestic_roaming_allowed_networks"></string>
+    <!--VoWiFi-->
+    <boolean name="vendor.vowifi_oem_provisioning_enabled" value="false"/>
+    <boolean name="vendor.vowifi_roaming_enabled" value="true"/>
+    <boolean name="vendor.vowifi_use_roaming_settings" value="false"/>
+    <boolean name="vendor.vowifi_unknown_location_as_roaming" value="false"/>
+    <boolean name="vendor.vowifi_supported_in_airplane_mode" value="true"/>
+    <!--VoMobile-->
+    <boolean name="vendor.vomobile_enabled" value="false"/>
+    <string name="vendor.vomobile_supported_radio_technology">LTE,LTE_CA,NR</string>
+    <boolean name="vendor.vomobile_onroaming_enabled" value="false"/>
+    <int name="vendor.vomobile_current_cellular_signal_in" value="-115"/>
+    <int name="vendor.vomobile_current_cellular_signal_out" value="-125"/>
+    <boolean name="vendor.vomobile_roaming_override_signal_strength" value="true"/>
+    <int name="vendor.vomobile_other_cellular_signal_in" value="-110"/>
+    <int name="vendor.vomobile_other_cellular_signal_out" value="-116"/>
+    <boolean name="vendor.vomobile_ignore_cs_state" value="false"/>
+    <boolean name="vendor.vomobile_preferred" value="false"/>
+    <string name="vendor.vomobile_forbidden_networks_in_roaming"></string>
+    <boolean name="vendor.vomobile_interstack_handover_supported" value="false"/>
+    <!--IMS PDN handover-->
+    <boolean name="vendor.ims_handover_supported" value="true"/>
+    <boolean name="vendor.ims_handover_supported_in_call" value="true"/>
+    <boolean name="vendor.ims_handover_supported_roaming" value="true"/>
+    <boolean name="vendor.ims_handover_supported_in_call_roaming" value="true"/>
+    <string name="vendor.ims_handover_supported_radio_technology"></string>
+    <string name="vendor.ims_handover_restricted_radio_technology"></string>
+    <boolean name="vendor.ims_handover_use_profile_default_network" value="false"/>
+    <string name="vendor.ims_handover_default_in">cdma{rssi=-100};geran{rssi=-100};utran{rscp=-105};eutran{rsrp=-115};ngran{rsrp=-110};iwlan{rssi=-75}</string>
+    <string name="vendor.ims_handover_rove_in"></string>
+    <string name="vendor.ims_handover_rove_in_roaming"></string>
+    <string name="vendor.ims_handover_rove_in_hysteresis_on"></string>
+    <string name="vendor.ims_handover_rove_in_wifi_preferred"></string>
+    <string name="vendor.ims_handover_rove_in_cell_preferred"></string>
+    <string name="vendor.ims_handover_hand_in"></string>
+    <string name="vendor.ims_handover_hand_in_roaming"></string>
+    <string name="vendor.ims_handover_hand_in_hysteresis_on"></string>
+    <string name="vendor.ims_handover_hand_in_wifi_preferred"></string>
+    <string name="vendor.ims_handover_hand_in_cell_preferred"></string>
+    <string name="vendor.ims_handover_default_out">cdma{rssi=-105};geran{rssi=-105};utran{rscp=-115};eutran{rsrp=-120};ngran{rsrp=-115};iwlan{rssi=-80}</string>
+    <string name="vendor.ims_handover_rove_out"></string>
+    <string name="vendor.ims_handover_rove_out_hysteresis_on"></string>
+    <string name="vendor.ims_handover_rove_out_wifi_preferred"></string>
+    <string name="vendor.ims_handover_rove_out_cell_preferred"></string>
+    <string name="vendor.ims_handover_hand_out"></string>
+    <string name="vendor.ims_handover_hand_out_hysteresis_on"></string>
+    <string name="vendor.ims_handover_hand_out_wifi_preferred"></string>
+    <string name="vendor.ims_handover_hand_out_cell_preferred"></string>
+    <string name="vendor.ims_handover_cell_mid"></string>
+    <int name="vendor.ims_handover_wifi_ping_rtt" value="0"/>
+    <int name="vendor.ims_handover_rtp_downlink_interval" value="5"/>
+    <int name="vendor.ims_handover_rtp_downlink_lost_rate" value="40"/>
+    <int name="vendor.ims_handover_rtp_jitter_max" value="120"/>
+    <int name="vendor.ims_handover_no_rtp_interval" value="2"/>
+    <int name="vendor.ims_handover_hysteresis_timer_volte" value="30"/>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="30"/>
+    <int name="vendor.ims_handover_registration_timer" value="5"/>
+    <boolean name="vendor.ims_handover_ignore_call_downgrade" value="false"/>
+    <boolean name="vendor.ims_handover_ignore_call_upgrade" value="false"/>
+    <!--Emergency-->
+    <string name="vendor.emergency_handover_supported_radio_technology">LTE,LTE_CA,NR,IWLAN</string>
+    <boolean name="vendor.emergency_over_wifi_supported" value="true"/>
+    <boolean name="vendor.emergency_over_wifi_supported_roaming" value="true"/>
+    <boolean name="vendor.emergency_over_wifi_provisioning_enabled" value="false"/>
+    <boolean name="vendor.emergency_over_wifi_ignore_user_setting" value="true"/>
+    <boolean name="vendor.emergency_over_wifi_ignore_user_setting_for_handover" value="true"/>
+    <boolean name="vendor.emergency_handover_enabled" value="false"/>
+    <boolean name="vendor.emergency_handover_enabled_roaming" value="false"/>
+    <int name="vendor.emergency_handover_wifi_rssi_in" value="-65"/>
+    <int name="vendor.emergency_handover_wifi_rssi_out" value="-80"/>
+    <int name="vendor.emergency_handover_eutran_rsrp_in" value="-100"/>
+    <int name="vendor.emergency_handover_eutran_rsrp_out" value="-112"/>
+    <int name="vendor.emergency_handover_eutran_rsrp_mid" value="-115"/>
+    <!--CBS-->
+    <boolean name="vendor.cbs_over_wifi_supported" value="false"/>
+    <!--MMS-->
+    <boolean name="vendor.mms_over_wifi_supported" value="true"/>
+    <boolean name="vendor.mms_over_wifi_preferred" value="false"/>
+    <string name="vendor.mms_supported_radio_technology">GSM,GPRS,EDGE,UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <!--XCAP-->
+    <boolean name="vendor.xcap_over_wifi_supported" value="true"/>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="false"/>
+    <string name="vendor.xcap_supported_radio_technology">GSM,GPRS,EDGE,UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <boolean name="vendor.xcap_handover_enabled" value="false"/>
+    <boolean name="vendor.xcap_use_ims_precondition_for_wifi" value="false"/>
+    <!--hysteresis timers-->
+    <int name="vendor.hysteresis_timer_cellular" value="0"/>
+    <int name="vendor.hysteresis_timer_wifi" value="0"/>
+    <!--SIM-->
+    <boolean name="vendor.sim_usim_only" value="false"/>
+    <!--Network Interfaces-->
+    <string name="vendor.network_iwlan_interface_name">epdg</string>
+    <string name="vendor.network_cellular_interface_name">rmnet</string>
+    <!--ePDG-->
+    <string name="vendor.epdg.servers">3gpp-operator:sim</string>
+    <string name="vendor.epdg.servers_roaming"></string>
+    <string name="vendor.epdg.emergency_servers"></string>
+    <string name="vendor.epdg.emergency_servers_roaming"></string>
+    <string name="vendor.epdg.servers_blacklist"></string>
+    <boolean name="vendor.epdg.use_blacklisted_servers" value="true"/>
+    <string name="vendor.epdg.responder_id_format">keyid:%s</string>
+    <string name="vendor.epdg.responder_id_format_for_emergency"></string>
+    <string name="vendor.epdg.responder_id_format_for_mms"></string>
+    <string name="vendor.epdg.responder_id_format_for_xcap"></string>
+    <string name="vendor.epdg.emergency_keyid">sos</string>
+    <string name="vendor.epdg.mms_keyid"></string>
+    <string name="vendor.epdg.xcap_keyid"></string>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="20"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="21"/>
+    <string name="vendor.epdg.ike_device_identity"></string>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="20"/>
+    <boolean name="vendor.epdg.ike_keep_alive_offloaded" value="false"/>
+    <string name="vendor.epdg.default_retry_timeout"></string>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <int name="vendor.epdg.ike_dscp" value="0"/>
+    <int name="vendor.epdg.ike_lifetime" value="64800"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-aes128ctr-aes256ctr-des-3des-null-md5-sha1-aesxcbc-sha256-prfmd5-prfsha1-prfaesxcbc-prfsha256-modp1024-modp1536-modp2048!</string>
+    <boolean name="vendor.epdg.ike_certificate_enabled" value="false"/>
+    <boolean name="vendor.epdg.ike_fragmentation_enabled" value="false"/>
+    <boolean name="vendor.epdg.force_udp_encapsulation" value="false"/>
+    <boolean name="vendor.epdg.ike_mobike_enabled" value="true"/>
+    <boolean name="vendor.epdg.ike_initiator_id_has_mac_addr" value="false"/>
+    <boolean name="vendor.epdg.ike_original_tsi_for_rekey" value="false"/>
+    <int name="vendor.epdg.esp_lifetime" value="64800"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes192-aes256-aes128ctr-aes192ctr-aes256ctr-des-3des-null-md5-sha1-aesxcbc-sha256!</string>
+    <boolean name="vendor.epdg.request_pcscf_for_all_pdn" value="false"/>
+    <int name="vendor.epdg.retransmit_timeout" value="1"/>
+    <int name="vendor.epdg.retransmit_base" value="2"/>
+    <int name="vendor.epdg.retransmit_tries" value="3"/>
+    <int name="vendor.epdg.retransmit_tries_handover" value="1"/>
+    <string name="vendor.epdg.supported_pco_id_list"></string>
+    <string name="vendor.epdg.connection_retry_parameters"></string>
+    <boolean name="vendor.epdg.pmtu_discovery" value="true"/>
+    <!--Transport-->
+    <int name="vendor.transport_cellular_permanent_error_retry" value="3"/>
+    <int name="vendor.transport_cellular_permanent_error_timeout" value="720"/>
+    <int name="vendor.transport_cellular_permanent_error_handover_timeout" value="120"/>
+    <int name="vendor.transport_iwlan_permanent_error_retry" value="3"/>
+    <int name="vendor.transport_iwlan_permanent_error_timeout" value="720"/>
+    <int name="vendor.transport_iwlan_permanent_error_handover_timeout" value="120"/>
+    <int name="vendor.transport_initial_non_permanent_error_max_retry" value="3"/>
+    <int name="vendor.transport_initial_non_permanent_error_timeout" value="30"/>
+    <int name="vendor.transport_handover_non_permanent_error_max_retry" value="10"/>
+    <int name="vendor.transport_handover_non_permanent_error_timeout" value="30"/>
+    <int name="vendor.transport_initial_attach_timeout" value="10"/>
+</vendor_config>

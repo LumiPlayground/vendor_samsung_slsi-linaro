@@ -1,0 +1,54 @@
+SoundTriggerGtest is implemented in order to verify Samsung Voice Trigger System.
+This tool can check some conditions of VTS driver, XML, Mixer and so on.
+
+User's Guide:
+1. Setup build environment and build SoundTriggerGtest using 'm SoundTriggerGtest' or 'mm' command.
+
+2. The image file will be located in below path.
+out/target/product/universal9925/data/nativetest/SoundTriggerGtest/
+
+3. Push the image using adb command.
+adb push SoundTriggerGtest /data/
+
+4. Change permissions.
+adb shell "chmod 777 /data/SoundTriggerTest"
+
+5. Run the test program.
+adb shell "./data/SoundTriggerGtest"
+
+6. Check the result.
+
+Ex)
+
+Running main() from external/googletest/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from VtsDev
+[ RUN      ] VtsDev.openFdTest
+[       OK ] VtsDev.openFdTest (0 ms)
+[----------] 1 test from VtsDev (0 ms total)
+
+[----------] 2 tests from LoadSoundModel
+[ RUN      ] LoadSoundModel.actualSizeOverFlowTest
+[       OK ] LoadSoundModel.actualSizeOverFlowTest (0 ms)
+[ RUN      ] LoadSoundModel.actualSizeUnderFlowTest
+[       OK ] LoadSoundModel.actualSizeUnderFlowTest (0 ms)
+[----------] 2 tests from LoadSoundModel (0 ms total)
+
+[----------] 1 test from XMLTest
+[ RUN      ] XMLTest.configValidationTest
+[       OK ] XMLTest.configValidationTest (1 ms)
+[----------] 1 test from XMLTest (1 ms total)
+
+[----------] 1 test from MixerTest
+[ RUN      ] MixerTest.mixerOpenTest
+[       OK ] MixerTest.mixerOpenTest (3 ms)
+[----------] 1 test from MixerTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 4 test suites ran. (5 ms total)
+[  PASSED  ] 5 tests.
+
+
+* GoogleTest User's Guide: https://google.github.io/googletest/
+

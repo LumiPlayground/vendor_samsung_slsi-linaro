@@ -1,0 +1,50 @@
+cc_library {
+    name: "libaviextractor",
+    srcs: ["AVIExtractor.cpp"],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright/include",
+        "frameworks/av/media/libstagefright/flac/dec",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libmediandk",
+        "libbinder",
+        "libcutils",
+    ],
+
+    static_libs: [
+        "libstagefright_foundation",
+        "libstagefright_esds",
+        "libstagefright_id3",
+        "libstagefright_metadatautils",
+        "libutils",
+        "libfifo",
+        "libmedia",
+    ],
+
+    header_libs:[
+        "media_ndk_headers",
+    ],
+
+    relative_install_path: "extractors",
+
+    compile_multilib: "both",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+
+}

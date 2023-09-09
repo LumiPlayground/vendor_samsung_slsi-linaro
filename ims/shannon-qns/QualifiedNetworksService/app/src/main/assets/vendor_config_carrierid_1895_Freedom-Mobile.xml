@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.emergency_over_wifi_supported_roaming" value="false"/>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+    <int name="vendor.epdg.ike_lifetime" value="8000"/>
+    <int name="vendor.epdg.esp_lifetime" value="8000"/>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="50"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <string name="vendor.epdg.emergency_keyid"></string>
+</vendor_config>

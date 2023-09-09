@@ -1,0 +1,184 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+// *** THIS PACKAGE HAS SPECIAL LICENSING CONDITIONS.  PLEASE
+//     CONSULT THE OWNERS AND opensource-licensing@google.com BEFORE
+//     DEPENDING ON IT IN YOUR PROJECT. ***
+package {
+    // See: http://go/android-license-faq
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // all of the 'license_kinds' from "vendor_samsung_slsi_telephony_exynos-ril_license"
+    // to get the below license kinds:
+    //   legacy_by_exception_only (by exception only)
+    //   legacy_proprietary (by exception only)
+    default_applicable_licenses: [
+        "vendor_samsung_slsi_telephony_exynos-ril_license",
+    ],
+}
+
+soong_config_module_type_import {
+    from: "vendor/samsung_slsi/telephony/exynos-ril/Android.bp",
+    module_types: ["vendor_ril_feature_cc_defaults"],
+}
+
+vendor_ril_feature_cc_defaults {
+    name: "librilvendorutils_cc_defaults",
+
+    soong_config_variables: {
+        use_radio_hal_1_6: {
+            cflags: [
+                "-D__RADIO_HAL_V1_6__",
+            ],
+        },
+        use_radio_hal_2_0: {
+            cflags: [
+                "-D__RADIO_HAL_AIDL__",
+            ],
+        },
+    },
+}
+
+cc_library_static {
+    name: "librilvendorutils",
+    vendor: true,
+
+    defaults: [
+        "librilvendorutils_cc_defaults",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libutils",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+
+    header_libs: ["vendor_ril_headers"],
+    export_include_dirs: ["include"],
+
+    srcs: [
+        "radio_conv_utils.cpp",
+        "textutils.cpp",
+        "systemproperty.cpp",
+        "osallog.cpp",
+        "osalutils.cpp",
+        "aospsystemlogger.cpp",
+        "vendor.cpp",
+    ],
+
+    tidy: true,
+    tidy_checks: [
+        "-*",
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+}
+
+vendor_ril_feature_cc_defaults {
+    name: "librilvendorhalutils_cc_defaults",
+    soong_config_variables: {
+        use_radio_hal_1_6: {
+            cflags: [
+                "-D__RADIO_HAL_V1_6__",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.6",
+            ],
+            srcs: ["radio_hal_utils_1_6.cpp",],
+        },
+        use_radio_hal_2_0: {
+            cflags: [
+                "-D__RADIO_HAL_AIDL__",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.6",
+            ],
+            srcs: ["radio_hal_utils_1_6.cpp",
+            ],
+        },
+    },
+}
+
+cc_library_static {
+    name: "librilvendorhalutils",
+    vendor: true,
+    defaults: [
+        "librilvendorhalutils_cc_defaults",
+    ],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libhardware_legacy",
+        "libhidlbase",
+        "android.hardware.radio@1.0",
+        "android.hardware.radio@1.1",
+        "android.hardware.radio@1.2",
+        "android.hardware.radio@1.3",
+        "android.hardware.radio@1.4",
+        "android.hardware.radio@1.5",
+        "android.hardware.radio.config@1.0",
+        "android.hardware.radio.config@1.1",
+        "android.hardware.radio.config@1.2",
+        "vendor.samsung_slsi.telephony.hardware.radio@1.0",
+        "vendor.samsung_slsi.telephony.hardware.radio@1.1",
+        "vendor.samsung_slsi.telephony.hardware.radio@1.2",
+        "vendor.samsung_slsi.telephony.hardware.radioExternal@1.0",
+        "vendor.samsung_slsi.telephony.hardware.radioExternal@1.1",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+
+    header_libs: ["vendor_ril_headers"],
+    export_include_dirs: ["include"],
+
+    srcs: [
+        "radio_hal_utils.cpp",
+        "radio_oemhal_utils_1_2.cpp",
+    ],
+
+    tidy: true,
+    tidy_checks: [
+        "-*",
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+}
+
+cc_test {
+    name: "librilvendorhalutils_tests",
+    vendor: true,
+    srcs: [
+    "radio_hal_utils_test.cpp",
+    ],
+    shared_libs: [
+        "libhidlbase",
+        "android.hardware.radio@1.5",
+    ],
+    static_libs: [
+        "librilvendorhalutils"
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Wno-unused-parameter",
+        "-Werror",
+    ],
+    header_libs: ["vendor_ril_headers"],
+}

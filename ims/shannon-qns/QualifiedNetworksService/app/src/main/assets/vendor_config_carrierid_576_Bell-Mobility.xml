@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_vops_required" value="false"/>
+    <boolean name="vendor.volte_vops_required_roaming" value="false"/>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_lifetime" value="80000"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="20"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes256-aes256ctr-sha1-sha256-prfsha1-prfsha256-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes256-aes256ctr-sha1-sha256-modp2048!</string>
+    <string name="vendor.epdg.xcap_keyid">apps.bell.ca</string>
+</vendor_config>

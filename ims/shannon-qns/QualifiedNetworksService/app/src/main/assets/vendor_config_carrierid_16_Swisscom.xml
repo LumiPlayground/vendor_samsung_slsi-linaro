@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <string name="vendor.ims_handover_rove_in">geran{rssi=-92};utran{rscp=-105};eutran{rsrp=-105};iwlan{rssi=-60}</string>
+    <string name="vendor.ims_handover_rove_in_roaming">iwlan{rssi=-70}</string>
+    <string name="vendor.ims_handover_rove_out">geran{rssi=-100};utran{rscp=-114};eutran{rsrp=-122};iwlan{rssi=-78}</string>
+    <string name="vendor.ims_handover_rove_out_hysteresis_on">geran{rssi=-102};utran{rscp=-116};eutran{rsrp=-124};</string>
+    <string name="vendor.ims_handover_hand_in">iwlan{rssi=-55}</string>
+    <string name="vendor.ims_handover_hand_in_hysteresis_on">iwlan{rssi=-55}</string>
+    <string name="vendor.ims_handover_hand_in_roaming">iwlan{rssi=-65}</string>
+    <string name="vendor.ims_handover_hand_out">iwlan{rssi=-75}</string>
+    <string name="vendor.ims_handover_hand_out_hysteresis_on">iwlan{rssi=-75}</string>
+    <int name="vendor.ims_handover_hysteresis_timer_volte" value="120"/>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="120"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_lifetime" value="82800"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-sha1-aesxcbc-sha256-prfsha1-prfaesxcbc-prfsha256-modp1024-modp2048!</string>
+    <int name="vendor.epdg.esp_lifetime" value="14400"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-sha1-aesxcbc-sha256!</string>
+</vendor_config>

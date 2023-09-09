@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <string name="vendor.volte_domestic_roaming_allowed_networks">23430,23433</string>
+</vendor_config>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.epdg.servers">ims-operator:sim</string>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-des-3des-md5-sha1-aesxcbc-prfsha1-prfaesxcbc-modp1024-modp1536-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-des-3des-md5-sha1!</string>
+</vendor_config>

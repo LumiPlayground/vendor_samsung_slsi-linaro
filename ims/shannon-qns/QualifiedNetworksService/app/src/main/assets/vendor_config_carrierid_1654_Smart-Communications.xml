@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.ims_handover_rove_in">iwlan{rssi=-70}</string>
+    <string name="vendor.ims_handover_rove_out">iwlan{rssi=-77}</string>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_lifetime" value="3600"/>
+    <int name="vendor.epdg.esp_lifetime" value="3600"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+</vendor_config>

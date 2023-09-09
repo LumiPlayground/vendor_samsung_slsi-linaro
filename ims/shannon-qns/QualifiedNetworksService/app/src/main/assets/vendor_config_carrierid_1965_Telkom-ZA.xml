@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.epdg.ike_original_tsi_for_rekey" value="true"/>
+</vendor_config>

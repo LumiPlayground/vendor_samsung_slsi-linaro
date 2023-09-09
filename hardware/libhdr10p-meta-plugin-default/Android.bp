@@ -1,0 +1,8 @@
+cc_library {
+    name: "libhdr10p_meta_plugin_default",
+    proprietary: true,
+    srcs: ["libhdr10p_meta_plugin_default.cpp"],
+    shared_libs: ["liblog"],
+    header_libs: ["libhdr10p_meta_interface_header", "libsystem_headers"],
+    cflags: ["-Werror"],
+}

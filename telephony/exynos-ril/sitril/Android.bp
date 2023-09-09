@@ -1,0 +1,452 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+
+soong_config_module_type_import {
+    from: "vendor/samsung_slsi/telephony/exynos-ril/Android.bp",
+    module_types: ["vendor_ril_feature_cc_defaults"],
+}
+
+vendor_ril_feature_cc_defaults {
+    name: "vendor_sitril_cc_defaults",
+    soong_config_variables: {
+        multisim: {
+            cflags: [
+                "-DANDROID_MULTI_SIM",
+                "-DANDROID_SIM_COUNT_2",
+            ],
+        },
+        support_nr: {
+            cflags: [
+                "-DSUPPORT_NR",
+            ],
+        },
+        disable_emulate_ims_permanent_failure: {
+            cflags: [
+                "-DDISABLE_EMULATE_IMS_PERMANENT_FAILURE"
+            ],
+        },
+        auto_verify_pin_with_cp: {
+            cflags: [
+                "-DAUTO_VERIFY_PIN_WITH_CP"
+            ],
+        },
+    },
+}
+
+filegroup {
+    name: "basefiles",
+    srcs: [
+        "base/apnsetting.cpp",
+        "base/build.cpp",
+        "base/mcctable.cpp",
+        "base/modemcontrol.cpp",
+        "base/modemstatemonitor.cpp",
+        "base/reset_util.cpp",
+        "base/rilapplication.cpp",
+        "base/rildata.cpp",
+        "base/rilexternalresponselistener.cpp",
+        "base/rillog.cpp",
+        "base/rillogcapture.cpp",
+        "base/rilproperty.cpp",
+        "base/rilresponselistener.cpp",
+        "base/rilversioninfo.cpp",         // to add RIL library build date/time info
+        "base/sapresponselistener.cpp",
+        "base/secure_c.cpp",               // secure c library
+        "base/signal_handler.cpp",
+        "base/thread.cpp",
+        "base/tokengen.cpp",
+        "base/ts25table.cpp",
+        "base/carrierloader.cpp",
+        "base/telephonystatustracker.cpp",
+        "base/telephonystatuslogging.cpp",
+    ],
+}
+
+filegroup {
+    name: "corefiles",
+    srcs: [
+        "core/message.cpp",
+        "core/productfactory.cpp",
+        "core/rilcontextwrapper.cpp",
+        "core/rilcontextwrapperhandler.cpp",
+        "core/rildatabuilder.cpp",
+        "core/service.cpp",
+        "core/servicefactory.cpp",
+        "core/servicehandler.cpp",
+        "core/servicehandlerbase.cpp",
+        "core/servicecallbacknotifier.cpp",
+        "core/serviceinterface.cpp",
+        "core/servicemgr.cpp",
+        "core/servicemonitorrunnable.cpp",
+        "core/servicestate.cpp",
+        "core/simcardstatus.cpp",
+        "core/timerlist.cpp",
+        "core/rilparser.cpp",
+        "core/waitlist.cpp",
+
+        "core/service/audioservice.cpp",
+        "core/service/calldata.cpp",
+        "core/service/cscservice.cpp",
+        "core/service/defaultservicefactory.cpp",
+        "core/service/embmsservice.cpp",
+        "core/service/gpsservice.cpp",
+        "core/service/imsservice.cpp",
+        "core/service/miscservice.cpp",
+        "core/service/networkservice.cpp",
+        "core/service/networkservicebase.cpp",
+        "core/service/sapservice.cpp",
+        "core/service/simioservice.cpp",
+        "core/service/simservice.cpp",
+        "core/service/stkservice.cpp",
+        "core/service/smsservice.cpp",
+        "core/service/supplementaryservice.cpp",
+        "core/service/timezoneid.cpp",
+        "core/service/vsimservice.cpp",
+
+        // audio handler
+        "core/service/audio/audiohandler.cpp",
+        "core/service/audio/audiohandlerfactory.cpp",
+
+        // common
+        "core/service/common/DeprecatedAddress.cpp",
+        "core/service/common/netifcontroller.cpp",
+        "core/service/common/pdpcontext.cpp",
+        "core/service/common/PsUtil.cpp",
+
+        // cs handler
+        "core/service/cs/callhandler.cpp",
+        "core/service/cs/cschandlerfactory.cpp",
+        "core/service/cs/cscserviceproxy.cpp",
+        "core/service/emergency/dbeccinfoloader.cpp",
+        "core/service/emergency/emergencynumbermanager.cpp",
+        "core/service/emergency/emergencynumberupdater.cpp",
+        "core/service/emergency/emergencycallhelper.cpp",
+
+        // ims handler
+        "core/service/ims/imshandler.cpp",
+        "core/service/ims/imshandlerfactory.cpp",
+        "core/service/ims/imsmediahandler.cpp",
+        "core/service/ims/apimshandler.cpp",
+        "core/service/ims/apimshandlerfactory.cpp",
+
+        // misc handler
+        "core/service/misc/carrierconfighandler.cpp",
+        "core/service/misc/deviceconfighandlerfactory.cpp",
+        "core/service/misc/deviceinfo.cpp",
+        "core/service/misc/dtmf.cpp",
+        "core/service/misc/miscdebug.cpp",
+        "core/service/misc/mischandlerfactory.cpp",
+        "core/service/misc/miscserviceproxy.cpp",
+        "core/service/misc/oem_deviceinfo.cpp",
+        "core/service/misc/oemmischandlerfactory.cpp",
+        "core/service/misc/oem_modeminfo.cpp",
+        "core/service/misc/oem_omadm.cpp",
+        "core/service/misc/ttymode.cpp",
+        "core/service/misc/nvhandler.cpp",
+
+        // network handler
+        "core/service/network/cdmainfo.cpp",
+        "core/service/network/miscnetwork.cpp",
+        "core/service/network/networkhandler.cpp",
+        "core/service/network/networkhandlerfactory.cpp",
+        "core/service/network/miscnetworkhandlerfactory.cpp",
+        "core/service/network/networkregistrationinfo.cpp",
+        "core/service/network/networkserviceproxy.cpp",
+        "core/service/network/oem_miscnetwork.cpp",
+        "core/service/network/radiopower.cpp",
+        "core/service/network/cellinfodecorator.cpp",
+
+        // ps handler
+        "core/service/ps/datahandler.cpp",
+        "core/service/ps/pdpcontextManager.cpp",
+        "core/service/ps/psDataCallListChangedHandler.cpp",
+        "core/service/ps/psDeactDataCallHandler.cpp",
+        "core/service/ps/PsDedicatedBearerInfoUpdatedHandler.cpp",
+        // No more used LegacyHandler. It's changed from S version in Modem side
+        // and never have been used in older version
+        //"core/service/ps/psDedicatedBearerInfoUpdatedLegacyHandler.cpp",
+        "core/service/ps/psDetachHandler.cpp",
+        "core/service/ps/psGetDataCallListHandler.cpp",
+        "core/service/ps/pshandlerfactory.cpp",
+        "core/service/ps/PsInitialAttachApnHandler.cpp",
+        "core/service/ps/psIpAddrStatusHandler.cpp",
+        "core/service/ps/psNasTimerStatusChangedHandler.cpp",
+        "core/service/ps/psPcoDataHandler.cpp",
+        "core/service/ps/psservice.cpp",
+        "core/service/ps/psserviceproxy.cpp",
+        "core/service/ps/psSetDataProfileHandler.cpp",
+        "core/service/ps/psSetPreferredDataModemHandler.cpp",
+        "core/service/ps/PsSetupDataCallHandler.cpp",
+        "core/service/ps/PsSlicingConfigHandler.cpp",
+        "core/service/ps/PsSlicingConfigUpdatedHandler.cpp",
+        "core/service/ps/PsTestHandler.cpp",
+
+        // radioconfig handler
+        "core/service/radioconfig/radioconfighandler.cpp",
+        "core/service/radioconfig/radioconfighandlerfactory.cpp",
+
+        // sap handler
+        "core/service/sap/saphandler.cpp",
+        "core/service/sap/saphandlerfactory.cpp",
+
+        // sms handler
+        "core/service/sms/smshandler.cpp",
+        "core/service/sms/smshandlerfactory.cpp",
+        "core/service/sms/smsserviceproxy.cpp",
+
+        // supp handler
+        "core/service/supp/supphandler.cpp",
+        "core/service/supp/supphandlerfactory.cpp",
+        "core/service/supp/suppserviceproxy.cpp",
+
+        // uicc handler
+        "core/service/uicc/simautoverifypinhandler.cpp",
+        "core/service/uicc/simserviceproxy.cpp",
+        "core/service/uicc/simlockhandler.cpp",
+        "core/service/uicc/uicchandler_bow.cpp",
+        "core/service/uicc/uicchandlerfactory.cpp",
+        "core/service/uicc/uicchandler_misc.cpp",
+        "core/service/uicc/uicchandler_oem.cpp",
+        "core/service/uicc/uicchandler_secureelement.cpp",
+        "core/service/uicc/uiccphonebookhandler.cpp",
+
+        // vsim handler
+        "core/service/vsim/vsimhandler.cpp",
+        "core/service/vsim/vsimhandlerfactory.cpp",
+    ],
+}
+
+filegroup {
+    name: "fwfiles",
+    srcs: [
+        "fw/callreqdata.cpp",
+        "fw/cdmasmsdata.cpp",    // DEVICE_SUPPORT_CDMA
+        "fw/datacallreqdata.cpp",
+        "fw/embmsdata.cpp",
+        "fw/embmsdatabuilder.cpp",
+        "fw/imsdatabuilder.cpp",
+        "fw/miscdata.cpp",
+        "fw/miscdatabuilder.cpp",
+        "fw/netdata.cpp",
+        "fw/netdatabuilder.cpp",
+        "fw/nvitemdata.cpp",
+        "fw/oemreqdata.cpp",
+        "fw/psdatabuilder.cpp",
+        "fw/radioconfigbuilder.cpp",
+        "fw/requestdata.cpp",
+        "fw/simdata.cpp",
+        "fw/simdatabuilder.cpp",
+        "fw/smsdata.cpp",
+        "fw/smsdatabuilder.cpp",
+        "fw/sounddatabuilder.cpp",
+        "fw/stkdata.cpp",
+        "fw/stkdatabuilder.cpp",
+        "fw/vsimdata.cpp",
+        "fw/vsimdatabuilder.cpp",
+        "fw/imsdata.cpp",
+    ],
+}
+
+filegroup {
+    name: "modelfiles",
+    srcs: [
+        "model/default/rilapplicationfactory.cpp",
+    ],
+}
+
+filegroup {
+    name: "protocolfiles",
+    srcs: [
+        "protocol/rcmmgr.cpp",
+        "protocol/io/iochannel.cpp",
+        "protocol/sit/**/*.cpp",
+        "protocol/test/testpacketbuilder.cpp",
+    ],
+}
+
+filegroup {
+    name: "simrecordfiles",
+    srcs: [
+        "simRecord/eonsResolver.cpp",
+        "simRecord/oplRecords.cpp",
+        "simRecord/pnnRecords.cpp",
+    ],
+}
+
+filegroup {
+    name: "stkfiles",
+    srcs: [
+        "stk/ber.cpp",
+        "stk/comprehension.cpp",
+        //"stk/socket.cpp",
+        //"stk/stkmodule.cpp",
+        "stk/tlv.cpp",
+        //"stk/tlvbuilder.cpp",
+        "stk/tlvparser.cpp",
+    ],
+}
+
+filegroup {
+    name: "stkparserfiles",
+    srcs: [
+        "core/service/stkparser/stkdataparser.cpp",
+    ],
+}
+
+filegroup {
+    name: "utilfiles",
+    srcs: [
+        "util/bitwiseiostream.cpp",        // DEVICE_SUPPORT_CDMA
+        "util/iccUtil.cpp",
+        "util/MccMncChanger.cpp",
+        "util/networkutils.cpp",
+        "util/open_carrier.cpp",
+        "util/operatortable.cpp",
+        "util/sms_util.cpp",
+        "util/util.cpp",
+        "util/operatorinfo.cpp",
+        "util/operatorinforesolver.cpp",
+        "util/operatorinforesolverule.cpp",
+        "util/DataWriter.cpp",
+        "util/callutils.cpp",
+    ],
+}
+
+filegroup {
+    name: "carrierconfigfiles",
+    srcs: [
+        "carrierconfig/carrierconfigloader.cpp",
+        "carrierconfig/carrierconfigmanager.cpp",
+        "carrierconfig/carrierconfigprovider.cpp",
+        "carrierconfig/carriermanifest.cpp",
+        "carrierconfig/testcarrierconfigprovider.cpp",
+    ],
+}
+
+cc_library_shared {
+    name: "libsitril",
+    vendor: true,
+    defaults: [
+        "vendor_sitril_cc_defaults",
+    ],
+
+    local_include_dirs: [
+        ".",
+        "base/",
+        "core/",
+        "core/service/",
+        "core/service/common",
+        "core/service/emergency",
+        "core/service/cs",
+        "core/service/network",
+        "core/service/ps",
+        "core/service/uicc",
+        "core/service/stkparser",
+        "database/",
+        "fw/",
+        "protocol/",
+        "protocol/io",
+        "protocol/sit/",
+        "protocol/sit/factory",
+        "protocol/sit/base/",
+        "protocol/sit/base/json",
+        "protocol/sit/base/json/cs",
+        "protocol/sit/base/json/misc",
+        "protocol/sit/base/json/network",
+        "protocol/sit/base/json/ps",
+        "protocol/sit/base/legacy",
+        "protocol/sit/base/legacy/cs",
+        "protocol/sit/base/legacy/misc",
+        "protocol/sit/base/legacy/network",
+        "protocol/sit/base/legacy/ps",
+        "protocol/sit/json/",
+        "protocol/sit/json/ps",
+        "protocol/sit/legacy/misc/",
+        "protocol/sit/legacy/network/",
+        "protocol/sit/legacy/ps",
+        "protocol/sit/ps/",
+        "protocol/test/",
+        "oem/",
+        "simRecord/",
+        "stk/",
+        "util/",
+    ],
+
+    srcs: [
+        "libril.cpp",
+        ":basefiles",
+        ":corefiles",
+        ":fwfiles",
+        ":modelfiles",
+        ":protocolfiles",
+        ":simrecordfiles",
+        ":stkfiles",
+        ":stkparserfiles",
+        ":utilfiles",
+        ":carrierconfigfiles",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libsqlite",
+        "libjsoncpp",
+        "libcrypto",
+        "libhardware_legacy",
+        "libnetutils",
+        "librilutils",
+        "libxml2",
+    ],
+
+    static_libs: [
+        "libprotobuf-c-nano-enable_malloc-32bit",
+        "librilvendorutils",
+    ],
+
+    header_libs: ["vendor_ril_headers"],
+
+    // error: comparison of address of 'this->mReq_header' not equal to a null pointer is always true [-Werror,-Wtautological-pointer-compare]
+    cflags: [
+        "-DPB_FIELD_32BIT",
+        "-DRIL_SHLIB",
+        "-DRIL_FEATURE_FUNCTION_CHECK_CURRENT_STACK_BUSY",
+        "-DRIL_FEATURE_NO_EXTENTION_USSD_DCS",
+        "-Wno-date-time",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        // "-Wno-error=date-time",
+    ],
+
+    tidy: true,
+    tidy_checks: [
+        "-*",
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+    // exclude list
+    // warning: declaration uses identifier '_*', which is reserved in the global namespace [cert-dcl37-c,cert-dcl51-cpp]
+    // TBD: below warning is reasonable, need to change code
+    // warning: using declarations in the global namespace in headers are prohibited [google-global-names-in-headers]
+    // warning: 'fscanf' used to convert a string to an unsigned integer value, but function will not report conversion errors; consider using 'strtoul' instead [cert-err34-c]
+    // using namespace std;
+    // error: do not define a C-style variadic function; consider using a function parameter pack or currying instead [cert-dcl50-cpp,-warnings-as-errors]
+    // error: operator=() does not handle self-assignment properly [cert-oop54-cpp,-warnings-as-errors]
+    // error: prefer pipe2() with O_CLOEXEC to avoid leaking file descriptors to child processes [android-cloexec-pipe,-warnings-as-errors]
+    // error: Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119 [clang-analyzer-security.insecureAPI.strcpy,-warnings-as-errors]^
+    tidy_checks_as_errors: [
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+}

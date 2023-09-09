@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.xcap_use_ims_precondition_for_wifi" value="true"/>
+    <boolean name="vendor.emergency_handover_enabled" value="true"/>
+    <string name="vendor.emergency_handover_supported_radio_technology">LTE,LTE_CA,NR</string>
+    <int name="vendor.epdg.ike_lifetime" value="1200"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-sha1-sha256-prfsha1-prfsha256-modp2048!</string>
+    <int name="vendor.epdg.esp_lifetime" value="3000"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes256-sha1!</string>
+</vendor_config>

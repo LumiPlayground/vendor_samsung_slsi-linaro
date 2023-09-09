@@ -1,0 +1,3 @@
+type vendor_rild_file, file_type, data_file_type, mlstrustedobject;
+type vendor_radio_file, file_type, data_file_type;
+type vendor_slog_file, file_type, data_file_type, mlstrustedobject;

@@ -1,0 +1,32 @@
+type wland, domain, mlstrustedobject, mlstrustedsubject;
+type wland_exec, exec_type, vendor_file_type, file_type, mlstrustedobject, mlstrustedsubject;
+init_daemon_domain(wland);
+
+# For property
+set_prop(wland, vendor_wland_prop);
+allow wland vendor_wland_prop:file { read getattr open map };
+
+# For samsg, log-level-control, hip4-sample, udi
+allow wland vendor_wlbtd_device:chr_file rw_file_perms;
+allow wland vendor_wlbt_sysfs_mxlog_filter:file rw_file_perms;
+allow wland vendor_wlbt_sysfs_mxlog_filter:dir r_dir_perms;
+allow wland vendor_wlbt_hip4_device:chr_file { read write open ioctl };
+allow wland vendor_wlbt_udi_device:chr_file { read write open ioctl };
+
+# For mx_release
+allow wland vendor_wlbt_build:file { open read getattr };
+
+# For log output dir
+allow wland vendor_wlbt_log_file:dir create_dir_perms;
+allow wland vendor_wlbt_log_file:file create_file_perms;
+allow wland vendor_log_file:dir create_dir_perms;
+allow wland vendor_log_file:file create_file_perms;
+allow wland vendor_data_file:dir { setattr };
+
+# For logging command execution
+allow wland vendor_file:file execute_no_trans;
+allow wland vendor_toolbox_exec:file execute_no_trans;
+allow wland vendor_shell_exec:file execute_no_trans;
+
+# For unix domain socket
+allow wland self:capability { fowner };

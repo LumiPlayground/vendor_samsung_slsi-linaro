@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/time_entries"
+        android:entryValues="@array/time_entries"
+        android:key="@string/key_answer_time"
+        android:title="@string/str_answer_time"
+        app:iconSpaceReserved="false" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/key_auto_mode"
+        android:summaryOff="Off"
+        android:summaryOn="On"
+        android:title="@string/str_auto_mode"
+        app:iconSpaceReserved="false" />
+
+</androidx.preference.PreferenceScreen>

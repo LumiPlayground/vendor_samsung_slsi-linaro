@@ -1,0 +1,33 @@
+package vendor.samsung_slsi.hardware.wifi.hostapd@1.0;
+
+import android.hardware.wifi.hostapd@1.0::IHostapd;
+import android.hardware.wifi.hostapd@1.0::types;
+import vendor.samsung_slsi.hardware.wifi.hostapd@1.0::IHostapdVendorIfaceCallback;
+
+/**
+ * Vendor Interface exposed by the hostapd HIDL service registered
+ * with the hardware service manager.
+ * This is the root level object for any vendor specific hostapd interactions.
+ */
+interface IHostapdVendor {
+
+    /**
+     * Register for vendorcallback from this interface.
+     *
+     * These callbacks are invoked for events that are specific to this interface.
+     * Registration of multiple vendor callback objects is supported. These objects
+     * must be automatically deleted when the corresponding client process is dead or
+     * if this interface is removed.
+     *
+     * @param ifaceName Name of the interface.
+     * @param callback An instance of the |IHostapdVendorIfaceCallback| HIDL
+     *        interface object.
+     * @return status Status of the operation.
+     *         Possible status codes:
+     *         |HostapdStatusCode.SUCCESS|,
+     *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+     *         |HostapdStatusCode.FAILURE_IFACE_UNKNOWN|
+     */
+    registerVendorCallback(string ifaceName, IHostapdVendorIfaceCallback callback)
+        generates (HostapdStatus status);
+};

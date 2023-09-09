@@ -1,0 +1,120 @@
+//
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+//
+
+// RilDataTests
+cc_defaults {
+    name: "rildatatests_cc_defaults",
+    srcs: [
+        "rildata_test.cpp",
+        "netdata_test.cpp",
+        "netdatabuilder_test.cpp",
+        "tlv_test.cpp",
+        "servicestate_test.cpp",
+        "networkutils_test.cpp",
+        "networkutils_compare_test.cpp",
+        "requestdata_test.cpp",
+        "operatortable_test.cpp",
+        "rilparser_test.cpp",
+        "mcctable_test.cpp",
+        "miscdata_test.cpp",
+        "miscdatabuilder_test.cpp",
+        "callreqdata_test.cpp",
+        "embmsdata_test.cpp",
+        "nvitemdata_test.cpp",
+        "simdata_test.cpp",
+        "simdatabuilder_test.cpp",
+        "datacallreqdata_test.cpp",
+        "sounddatabuilder_test.cpp",
+        "operatorinforesolverule_test.cpp",
+        "cellinfodecorator_test.cpp",
+        "simcardstatus_test.cpp",
+        "smsdata_test.cpp",
+        "thread_test.cpp",
+        "telephonystatustracker_test.cpp",
+        "tlvparser_test.cpp",
+        "PsEntityClassTest.cpp",
+        "pstestutil.cpp",
+        "podchecker_test.cpp",
+        "imsdata_test.cpp",
+        "imsdatabuilder_test.cpp",
+    ],
+
+    // test-targeted library
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "libsitril",
+        "librilutils",
+        "liblog",
+        "android.hardware.radio@1.2", // for ISAP
+    ],
+
+    static_libs: [
+        "librilvendorutils",
+        "libvendortestbase",
+    ],
+
+    header_libs: ["vendor_ril_headers"],
+    include_dirs: [
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/base",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service/common",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service/network",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/simRecord",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/fw",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/oem",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/protocol/sit",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/util",
+        "vendor/samsung_slsi/telephony/exynos-ril/tests/testlib",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    tidy: false,
+    tidy_checks: [
+        "-*",
+        //"cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+}
+
+cc_test {
+    name: "RilDataTests",
+
+    defaults: [
+        "rildatatests_cc_defaults",
+    ],
+    srcs: [
+        "asan_options.cpp",
+    ],
+    sanitize: {
+        misc_undefined: ["integer"],
+        address : true,
+        diag: {
+            misc_undefined: ["integer"],
+        },
+    },
+    proprietary: true,
+}
+
+cc_test_library {
+    name: "librildatatests",
+    vendor: true,
+
+    defaults: [
+        "rildatatests_cc_defaults",
+    ],
+}

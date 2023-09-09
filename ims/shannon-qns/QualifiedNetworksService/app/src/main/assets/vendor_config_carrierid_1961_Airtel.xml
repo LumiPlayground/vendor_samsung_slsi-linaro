@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.ims_handover_rove_in">iwlan{rssi=-65}</string>
+    <boolean name="vendor.vowifi_supported_in_airplane_mode" value="false"/>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <int name="vendor.epdg.esp_lifetime" value="28800"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-3des-md5-sha1-aesxcbc-sha256-sha384-sha512-prfmd5-prfsha1-prfaesxcbc-modp1024-modp1536-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes192-aes256-3des-md5-sha1-aesxcbc-sha256-sha384-sha512-modp1024-modp1536-modp2048!</string>
+</vendor_config>

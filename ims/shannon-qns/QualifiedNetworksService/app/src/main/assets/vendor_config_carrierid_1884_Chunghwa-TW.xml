@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.epdg.ike_lifetime" value="3600"/>
+    <int name="vendor.epdg.esp_lifetime" value="7200"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="600"/>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+</vendor_config>

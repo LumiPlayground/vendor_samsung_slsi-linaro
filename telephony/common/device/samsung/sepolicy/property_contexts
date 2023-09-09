@@ -1,0 +1,31 @@
+#vendor_rild_prop
+vendor.radio.                     u:object_r:vendor_rild_prop:s0
+
+# for rild
+persist.vendor.debug_level       u:object_r:vendor_rild_prop:s0
+persist.vendor.ril.              u:object_r:vendor_rild_prop:s0
+persist.vendor.radio.            u:object_r:vendor_rild_prop:s0
+vendor.radio.ril.                u:object_r:vendor_rild_prop:s0
+vendor.sys.rild_reset            u:object_r:vendor_rild_prop:s0
+vendor.ril.                      u:object_r:vendor_rild_prop:s0
+
+# for dmd
+persist.vendor.sys.dm.                     u:object_r:vendor_diag_prop:s0
+persist.vendor.sys.diag.                   u:object_r:vendor_diag_prop:s0
+vendor.sys.dmd.                            u:object_r:vendor_diag_prop:s0
+vendor.sys.diag.                           u:object_r:vendor_diag_prop:s0
+vendor.sys.exynos.slog.path                u:object_r:vendor_diag_prop:s0
+persist.vendor.sys.autolog.size            u:object_r:vendor_diag_prop:s0
+persist.vendor.config.diag_host_vdbg       u:object_r:vendor_diag_prop:s0
+persist.vendor.config.dm_server_port       u:object_r:vendor_diag_prop:s0
+persist.vendor.config.tcp.port.disable     u:object_r:vendor_diag_prop:s0
+persist.vendor.config.diag_modem_vdbg      u:object_r:vendor_diag_prop:s0
+persist.vendor.config.diag_raw_dump        u:object_r:vendor_diag_prop:s0
+persist.vendor.config.sdm_local_header     u:object_r:vendor_diag_prop:s0
+persist.vendor.config.sdm_type2            u:object_r:vendor_diag_prop:s0
+persist.vendor.config.dm.autostart         u:object_r:vendor_diag_prop:s0
+
+# for silentlog
+vendor.sys.silentlog.                      u:object_r:vendor_slog_prop:s0
+vendor.sys.exynos.slog.                    u:object_r:vendor_slog_prop:s0
+persist.vendor.sys.silentlog               u:object_r:vendor_slog_prop:s0

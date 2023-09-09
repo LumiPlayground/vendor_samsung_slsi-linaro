@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.epdg.ike_lifetime" value="128500"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-des-3des-md5-sha1-aesxcbc-prfsha1-prfaesxcbc-modp1024-modp1536-modp2048!</string>
+    <int name="vendor.epdg.esp_lifetime" value="128500"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-des-3des-md5-sha1-sha256!</string>
+</vendor_config>

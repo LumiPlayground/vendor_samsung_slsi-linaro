@@ -1,0 +1,10 @@
+on post-fs-data
+    mkdir /data/vendor/slog 0771 system log
+    mkdir /data/vendor/rild 0771 radio system
+    mkdir /data/vendor/radio 773 radio system
+
+service init-radio-sh /vendor/bin/init.radio.sh
+    class late_start
+    user radio
+    group root radio
+    oneshot

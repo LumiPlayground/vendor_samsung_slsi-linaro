@@ -1,0 +1,162 @@
+//
+// Copyright (c) 2021 Samsung Electronics Co., Ltd All Rights Reserved
+// PROPRIETARY/CONFIDENTIAL
+//
+// This software is the confidential and proprietary information of
+// SAMSUNG ELECTRONICS ("Confidential Information").
+//
+// You shall not disclose such Confidential Information and shall use it
+// only in accordance with the terms of the license agreement
+// you entered into with SAMSUNG ELECTRONICS.
+//
+// SAMSUNG make no representations or warranties about the suitability of
+// the software, either express or implied, including but not limited to
+// the implied warranties of merchantability, fitness for a particular
+// purpose, or non-infringement. SAMSUNG shall not be liable for any
+// damages suffered by license as a result of using, modifying or
+// distributing this software or its derivatives.
+
+//====== PsServiceTest
+soong_config_module_type_import {
+    from: "vendor/samsung_slsi/telephony/exynos-ril/Android.bp",
+    module_types: ["vendor_ril_feature_cc_defaults"],
+}
+
+vendor_ril_feature_cc_defaults {
+    name: "psservicetest_cc_defaults",
+    soong_config_variables: {
+        multisim: {
+            cflags: [
+                "-DANDROID_SIM_COUNT_2",
+                "-DANDROID_MULTI_SIM",
+            ],
+        },
+        use_radio_hal_1_6: {
+            cflags: [
+                "-D__RADIO_HAL_V1_6__",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.6",
+            ],
+        },
+        use_radio_hal_2_0: {
+            cflags: [
+                "-D__RADIO_HAL_AIDL__",
+            ],
+            shared_libs: [
+                "android.hardware.radio@1.6",
+                // aidl
+                "libril-aidl",
+                "libbase",
+                "android.hardware.radio.data-V1-ndk",
+                "android.hardware.radio.messaging-V1-ndk",
+                "android.hardware.radio.modem-V1-ndk",
+                "android.hardware.radio.network-V1-ndk",
+                "android.hardware.radio.sim-V1-ndk",
+                "android.hardware.radio.voice-V1-ndk",
+                "libbinder_ndk",
+            ],
+        },
+    },
+}
+
+cc_test {
+    name: "PsServiceTest",
+    defaults: ["psservicetest_cc_defaults"],
+
+    srcs: [
+        "PsServiceTest.cpp",
+        "asan_options.cpp",
+    ],
+
+    // Modem SIT Layer Dependency (should be shared)
+    shared_libs: [
+        "libsitril",
+        //"libcutils",
+    ],
+
+    // Test Framework Dependency (should be static)
+    // Android Dependencies which is used in rild
+    static_libs: ["libgmock"],
+
+    include_dirs: [
+        "vendor/samsung_slsi/telephony/exynos-ril/include",
+        //"vendor/samsung_slsi/telephony/exynos-ril/libril",
+        //"vendor/samsung_slsi/telephony/exynos-ril/libril/radioconfig",
+        //"vendor/samsung_slsi/telephony/exynos-ril/libril/slsi",
+        "vendor/samsung_slsi/telephony/exynos-ril/librilutils/include",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/fw",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/base",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service/common",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service/ps",
+        //"vendor/samsung_slsi/telephony/exynos-ril/sitril/fw",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/oem",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/protocol/sit",
+        //"vendor/samsung_slsi/telephony/exynos-ril/sitril/util",
+    ],
+
+    proprietary: true,
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+
+    header_libs: ["vendor_ril_headers"],
+    vendor: true,
+    sanitize: {
+        address: true,
+        misc_undefined: ["integer"],
+    },
+    tidy: false,
+    tidy_checks: [
+        "-*",
+        "cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+}
+
+cc_test_library {
+    name: "psservice_tests_static",
+    defaults: [
+        "psservicetest_cc_defaults",
+    ],
+    srcs: [
+        "PsServiceTest.cpp",
+        "asan_options.cpp",
+    ],
+    // Modem SIT Layer Dependency (should be shared)
+    shared_libs: [
+        "libsitril",
+        //"libcutils",
+    ],
+    vendor: true,
+
+    // Test Framework Dependency (should be static)
+    // Android Dependencies which is used in rild
+    static_libs: ["libgmock"],
+
+    include_dirs: [
+        "vendor/samsung_slsi/telephony/exynos-ril/include",
+        //"vendor/samsung_slsi/telephony/exynos-ril/libril",
+        //"vendor/samsung_slsi/telephony/exynos-ril/libril/radioconfig",
+        //"vendor/samsung_slsi/telephony/exynos-ril/libril/slsi",
+        "vendor/samsung_slsi/telephony/exynos-ril/librilutils/include",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/fw",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/base",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service/common",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/core/service/ps",
+        //"vendor/samsung_slsi/telephony/exynos-ril/sitril/fw",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/oem",
+        "vendor/samsung_slsi/telephony/exynos-ril/sitril/protocol/sit",
+        //"vendor/samsung_slsi/telephony/exynos-ril/sitril/util",
+    ],
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="false"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-sha1-prfsha1-modp1024!</string>
+</vendor_config>

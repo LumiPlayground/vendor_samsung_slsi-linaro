@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.ims_handover_rove_in">utran{rscp=-108};eutran{rsrp=-118}</string>
+    <string name="vendor.ims_handover_rove_out">utran{rscp=-109};eutran{rsrp=-119}</string>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="180"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="10"/>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+</vendor_config>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.shannon.qualifiednetworksservice"
+    android:allowBackup="false">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.NETWORK_SIGNAL_STRENGTH_WAKEUP"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRECISE_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="com.shannon.permission.IWLAN_CONFIGURATION"/>
+
+    <protected-broadcast android:name="com.shannon.ACTION.VCC.request_vendor_config"/>
+    <protected-broadcast android:name="com.shannon.ACTION.VCC.vendor_config_changed"/>
+    <protected-broadcast android:name="com.shannon.ACTION.VCC.vendor_config_media_mounted"/>
+
+    <permission
+        android:name="com.shannon.permission.IWLAN_CONFIGURATION"
+        android:protectionLevel="signature"/>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:defaultToDeviceProtectedStorage="true"
+        android:directBootAware="true"
+        android:persistent="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="androidx">
+        <activity
+          android:name=".MainActivity"
+          android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+          android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+	<receiver
+          android:name="com.shannon.vendorcarrierconfig.settings.IwlanSettingKeyStringReceiver"
+          android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data
+                  android:host="0407"
+                  android:scheme="android_secret_code"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".ConfigurationBroadcastReceiver"
+            android:directBootAware="true"
+            android:permission="com.shannon.permission.IWLAN_CONFIGURATION"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.shannon.ACTION.VCC.vendor_config_changed"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.shannon.vendorcarrierconfig.MediaMountBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+          <intent-filter>
+            <action android:name="android.intent.action.MEDIA_MOUNTED" />
+            <data android:scheme="file"/>
+          </intent-filter>
+        </receiver>
+
+        <activity
+          android:name="com.shannon.vendorcarrierconfig.settings.IwlanSettingActivity"
+          android:label="IwlanSetting"
+          android:theme="@style/Theme.AppCompat"
+          android:screenOrientation="portrait"
+          android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".ShannonQualifiedNetworksService"
+            android:permission="android.permission.BIND_TELEPHONY_DATA_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telephony.data.QualifiedNetworksService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

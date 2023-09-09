@@ -1,0 +1,11 @@
+service wland /system/bin/wland
+    class main
+    user system
+    group system wifi inet log misc
+
+on init
+    chmod 0660 /dev/samsg
+    chmod 0660 /dev/samlog
+    chown wifi wifi /dev/samsg
+    chown wifi wifi /dev/samlog
+

@@ -1,0 +1,35 @@
+// Copyright Samsung Electronics Co., LTD.
+//
+// This software is proprietary of Samsung Electronics.
+// No part of this software, either material or conceptual may be copied or distributed, transmitted,
+// transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+// electronic, mechanical, manual or otherwise, or disclosed
+// to third parties without the express written permission of Samsung Electronics.
+
+java_library {
+    name: "exynos-telephony-common",
+    installable: true,
+    system_ext_specific: true,
+
+    srcs: [
+        "src/**/*.java",
+        "src/**/I*.aidl",
+    ],
+    libs: [
+        "telephony-common",
+        "ims-common",
+        "unsupportedappusage",
+    ],
+
+    static_libs: [
+        "telephony-protos",
+        "ecc-protos-lite",
+    ],
+}
+
+prebuilt_etc_xml {
+    name: "exynos-telephony-common.xml",
+    sub_dir: "permissions",
+    src: "exynos-telephony-common.xml",
+    system_ext_specific: true,
+}

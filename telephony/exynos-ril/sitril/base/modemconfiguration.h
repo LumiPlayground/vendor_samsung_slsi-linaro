@@ -1,0 +1,106 @@
+/*
+ * Copyright Samsung Electronics Co., LTD.
+ *
+ * This software is proprietary of Samsung Electronics.
+ * No part of this software, either material or conceptual may be copied or distributed, transmitted,
+ * transcribed, stored in a retrieval system or translated into any human or computer language in any form by any means,
+ * electronic, mechanical, manual or otherwise, or disclosed
+ * to third parties without the express written permission of Samsung Electronics.
+ */
+
+#ifndef __MODEM_CONFIGURATION_H__
+#define __MODEM_CONFIGURATION_H__
+
+enum TargetOperatorValue {
+    TARGET_OPER_CHNOPEN = 0,
+    TARGET_OPER_CHNOPEN_GCF = 1,
+
+    TARGET_OPER_CMCC = 100,
+    TARGET_OPER_CTC = 101,
+    TARGET_OPER_CU = 102,
+
+    TARGET_OPER_ATT = 200,
+    TARGET_OPER_TMO = 201,
+    TARGET_OPER_VZW = 202,
+    TARGET_OPER_SPR = 203,
+    TARGET_OPER_NA_GCF = 207,
+    TARGET_OPER_DISH = 208,
+
+    TARGET_OPER_LATIN = 300,
+    TARGET_OPER_LATIN_GCF = 301,
+
+    TARGET_OPER_EUROPEN = 400,
+    TARGET_OPER_EUROPEN_GCF = 401,
+
+    TARGET_OPER_VIOLET = 500,
+    TARGET_OPER_NTT = 501,
+    TARGET_OPER_KDDI = 502,
+    TARGET_OPER_SBM = 503,
+    TARGET_OPER_RKT = 504,
+
+    TARGET_OPER_CLARO_AR = 601,
+    TARGET_OPER_MOV_AR = 602,
+    TARGET_OPER_TUENTI_AR = 603,
+    TARGET_OPER_NII_AR = 604,
+    TARGET_OPER_NUESTRO_AR = 605,
+    TARGET_OPER_PERSONAL_AR = 606,
+    TARGET_OPER_TIGO_BO = 607,
+    TARGET_OPER_VIVA_BO = 608,
+    TARGET_OPER_CLARO_BR = 609,
+    TARGET_OPER_VIVO_BR = 610,
+    TARGET_OPER_NII_BR = 611,
+    TARGET_OPER_OI_BR = 612,
+    TARGET_OPER_PORTO_CONECTA_BR = 613,
+    TARGET_OPER_SURF_BR = 614,
+    TARGET_OPER_TIM_BR = 615,
+    TARGET_OPER_CLARO_CL = 616,
+    TARGET_OPER_MOV_CL = 617,
+    TARGET_OPER_ENTEL_CL = 618,
+    TARGET_OPER_WOM_CL = 619,
+    TARGET_OPER_CLARO_CO = 620,
+    TARGET_OPER_MOV_CO = 621,
+    TARGET_OPER_AVANTEL_CO = 622,
+    TARGET_OPER_ETB_CO = 623,
+    TARGET_OPER_TIGO_CO = 624,
+    TARGET_OPER_CLARO_CR = 625,
+    TARGET_OPER_CLARO_DO = 626,
+    TARGET_OPER_CLARO_EC = 627,
+    TARGET_OPER_MOV_EC = 628,
+    TARGET_OPER_CNT_EC = 629,
+    TARGET_OPER_CLARO_SV = 630,
+    TARGET_OPER_TIGO_SV = 631,
+    TARGET_OPER_CLARO_GT = 632,
+    TARGET_OPER_TIGO_GT = 633,
+    TARGET_OPER_CLARO_HN = 634,
+    TARGET_OPER_TIGO_HO = 635,
+    TARGET_OPER_TELCEL_MX = 636,
+    TARGET_OPER_MOV_MX = 637,
+    TARGET_OPER_ALTAN_MX = 638,
+    TARGET_OPER_ATT_MX = 639,
+    TARGET_OPER_CLARO_NI = 640,
+    TARGET_OPER_CLARO_PA = 641,
+    TARGET_OPER_CLARO_PY = 642,
+    TARGET_OPER_PERSONAL_PY = 643,
+    TARGET_OPER_TIGO_PY = 644,
+    TARGET_OPER_CLARO_PE = 645,
+    TARGET_OPER_MOV_PE = 646,
+    TARGET_OPER_ENTEL_PE = 647,
+    TARGET_OPER_CLARO_PR = 648,
+    TARGET_OPER_OPEN_MOBILE_PR = 649,
+    TARGET_OPER_CLARO_UY = 650,
+    TARGET_OPER_MOV_UY = 651,
+    TARGET_OPER_ANTEL_UY = 652,
+    TARGET_OPER_MOV_UZ = 653,
+
+    TARGET_OPER_BELL = 801,
+    TARGET_OPER_TELUS = 802,
+    TARGET_OPER_ROGERS = 803,
+    TARGET_OPER_FREEDOM = 804,
+
+    TARGET_OPER_KT = 901,
+    TARGET_OPER_LGU = 902,
+    TARGET_OPER_KOROPEN = 903,
+    TARGET_OPER_SKT = 904,
+};
+
+#endif  // __MODEM_CONFIGURATION_H__

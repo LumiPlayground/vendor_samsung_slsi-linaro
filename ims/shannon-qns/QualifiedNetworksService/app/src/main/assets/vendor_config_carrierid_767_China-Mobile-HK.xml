@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16384"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16386"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="600"/>
+    <int name="vendor.epdg.ike_lifetime" value="3600"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes192-aes256-des-3des-md5-sha1-sha256-sha384-sha512-prfmd5-prfsha1-modp1024-modp1536-modp2048-modp3072-modp4096!</string>
+    <boolean name="vendor.epdg.ike_mobike_enabled" value="false"/>
+    <boolean name="vendor.epdg.ike_initiator_id_has_mac_addr" value="true"/>
+    <int name="vendor.epdg.esp_lifetime" value="7200"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes192-aes256-des-3des-md5-sha1-sha256-sha384-sha512!</string>
+    <int name="vendor.epdg.retransmit_timeout" value="5"/>
+    <int name="vendor.epdg.retransmit_base" value="1"/>
+</vendor_config>

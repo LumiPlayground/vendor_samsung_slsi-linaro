@@ -1,0 +1,2 @@
+libeden_rt_stub.edensdk.samsung.so
+libeden_gpu_boost_stub.edensdk.samsung.so

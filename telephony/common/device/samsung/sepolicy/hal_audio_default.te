@@ -1,0 +1,2 @@
+allow hal_audio_default hal_exynos_rild_hwservice:hwservice_manager find;
+binder_call(hal_audio_default, rild)

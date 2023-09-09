@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <!--Nokia VZW VoLTE/VoWiFi lab @NJ-->
+    <boolean name="vendor.cbs_over_wifi_supported" value="true"/>
+    <string name="vendor.epdg.servers">wo.vzwwo.com</string>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes256-sha1-prfsha1-modp1024-modp1536-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-sha1!</string>
+    <string name="vendor.epdg.supported_pco_id_list">ff01,ff02</string>
+    <string name="vendor.epdg.ike_device_identity">attribute:device_identity</string>
+</vendor_config>

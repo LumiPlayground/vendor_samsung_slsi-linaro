@@ -1,0 +1,2 @@
+vendor_restricted_prop(vendor_diag_prop)
+vendor_restricted_prop(vendor_slog_prop)

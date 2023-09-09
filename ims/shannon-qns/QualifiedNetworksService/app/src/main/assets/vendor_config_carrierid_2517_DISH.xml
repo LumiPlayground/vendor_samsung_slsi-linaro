@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.epdg.responder_id_format_for_emergency">fqdn:%s</string>
+    <string name="vendor.epdg.emergency_keyid">EMERGENCY</string>
+    <string name="vendor.ims_handover_rove_in">iwlan{rssi=-72}</string>
+    <string name="vendor.ims_handover_rove_out">iwlan{rssi=-78}</string>
+    <int name="vendor.ims_handover_rtp_jitter_max" value="20"/>
+    <int name="vendor.ims_handover_hysteresis_timer_volte" value="5"/>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="5"/>
+</vendor_config>

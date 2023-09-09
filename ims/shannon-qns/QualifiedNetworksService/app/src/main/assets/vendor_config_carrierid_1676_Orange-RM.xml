@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.volte_roaming_enabled" value="false"/>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <string name="vendor.ims_handover_rove_in">iwlan{rssi=-65}</string>
+    <string name="vendor.ims_handover_rove_out">iwlan{rssi=-75}</string>
+    <string name="vendor.epdg.xcap_keyid">orangeut</string>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <int name="vendor.epdg.ike_dscp" value="48"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-sha256-prfsha256-modp1536-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-sha256-modp1536-modp2048!</string>
+</vendor_config>

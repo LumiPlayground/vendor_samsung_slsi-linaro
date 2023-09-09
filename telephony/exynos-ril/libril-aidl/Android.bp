@@ -1,0 +1,134 @@
+// Copyright 2006 The Android Open Source Project
+
+// *** THIS PACKAGE HAS SPECIAL LICENSING CONDITIONS.  PLEASE
+//     CONSULT THE OWNERS AND opensource-licensing@google.com BEFORE
+//     DEPENDING ON IT IN YOUR PROJECT. ***
+package {
+    default_applicable_licenses: [
+        "vendor_samsung_slsi_telephony_exynos-ril_libril-aidl_license",
+    ],
+}
+
+// Added automatically by a large-scale-change that took the approach of
+// 'apply every license found to every target'. While this makes sure we respect
+// every license restriction, it may not be entirely correct.
+//
+// e.g. GPL in an MIT project might only apply to the contrib/ directory.
+//
+// Please consider splitting the single license below into multiple licenses,
+// taking care not to lose any license_kind information, and overriding the
+// default license using the 'licenses: [...]' property on targets as needed.
+//
+// For unused files, consider creating a 'fileGroup' with "//visibility:private"
+// to attach the license to, and including a comment whether the files may be
+// used in the current project.
+// See: http://go/android-license-faq
+license {
+    name: "vendor_samsung_slsi_telephony_exynos-ril_libril-aidl_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "legacy_by_exception_only", // by exception only
+        "legacy_proprietary", // by exception only
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+soong_config_module_type_import {
+    from: "vendor/samsung_slsi/telephony/exynos-ril/Android.bp",
+    module_types: ["vendor_ril_feature_cc_defaults"],
+}
+
+vendor_ril_feature_cc_defaults {
+    name: "vendor_libril-aidl_cc_defaults",
+    soong_config_variables: {
+        multisim: {
+            cflags: [
+                "-DANDROID_SIM_COUNT_2",
+                "-DANDROID_MULTI_SIM",
+            ],
+        },
+        use_radio_hal_2_0: {
+            cflags: [
+                "-D__RADIO_HAL_AIDL__",
+            ],
+            shared_libs: [
+                "libbase",
+                "android.hardware.radio.config-V1-ndk",
+                "android.hardware.radio.data-V1-ndk",
+                "android.hardware.radio.messaging-V1-ndk",
+                "android.hardware.radio.modem-V1-ndk",
+                "android.hardware.radio.network-V1-ndk",
+                "android.hardware.radio.sim-V1-ndk",
+                "android.hardware.radio.voice-V1-ndk",
+                "libbinder_ndk",
+            ],
+            srcs: [
+                "config/radioconfig.cpp",
+                "config/radioconfigindication.cpp",
+                "config/radioconfigresponse.cpp",
+                "modem/radiomodem.cpp",
+                "modem/radiomodemindication.cpp",
+                "modem/radiomodemresponse.cpp",
+                "data/radiodata.cpp",
+                "data/radiodataindication.cpp",
+                "data/radiodataresponse.cpp",
+                "sim/radiosim.cpp",
+                "sim/radiosimindication.cpp",
+                "sim/radiosimresponse.cpp",
+                "network/radionetwork.cpp",
+                "network/radionetworkindication.cpp",
+                "network/radionetworkresponse.cpp",
+                "messaging/radiomessaging.cpp",
+                "messaging/radiomessagingindication.cpp",
+                "messaging/radiomessagingresponse.cpp",
+                "voice/radiovoice.cpp",
+                "voice/radiovoiceindication.cpp",
+                "voice/radiovoiceresponse.cpp",
+                "binderdeathrecipient.cpp",
+            ],
+        },
+    },
+}
+
+cc_library_shared {
+    name: "libril-aidl",
+    vendor: true,
+    defaults: [
+        "vendor_libril-aidl_cc_defaults",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libhardware_legacy",
+        "librilutils",
+    ],
+
+    static_libs: [
+        "librilvendorutils",
+    ],
+
+    export_include_dirs: ["include"],
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Wno-unused-parameter",
+        "-Werror",
+    ],
+
+    sanitize: {
+        misc_undefined: ["integer"],
+    },
+    tidy: true,
+    tidy_checks: [
+        "-*",
+        //"cert-*",
+        "clang-analyzer-security*",
+        "android-*",
+    ],
+}

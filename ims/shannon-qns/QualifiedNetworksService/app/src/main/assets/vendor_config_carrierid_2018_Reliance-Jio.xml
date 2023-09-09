@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="600"/>
+    <string name="vendor.wifi_ping_server">EPDG.EPC.MNC.MCC</string>
+    <int name="vendor.wifi_ping_period" value="1800"/>
+    <int name="vendor.wifi_ping_interval" value="100"/>
+    <int name="vendor.wifi_ping_count" value="5"/>
+    <int name="vendor.wifi_ping_size" value="32"/>
+    <boolean name="vendor.vowifi_supported_in_airplane_mode" value="false"/>
+    <int name="vendor.ims_handover_wifi_ping_rtt" value="50"/>
+    <string name="vendor.epdg.ike_device_identity">attribute:16391</string>
+    <string name="vendor.epdg.xcap_keyid">jionet</string>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+</vendor_config>

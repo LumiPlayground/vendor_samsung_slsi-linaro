@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.samsung.slsi.exynos.memlogcontroller" >
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/refresh"
+        android:title="settings"
+        android:showAsAction="always"
+        android:visible="true"></item>
+
+    <item
+        android:id="@+id/action_transaction"
+        android:icon="@drawable/ic_settings"
+        android:title="settings"
+        android:showAsAction="always"
+        android:visible="true"></item>
+
+</menu>

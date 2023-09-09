@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">USBDebugMode</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- usb_debug_mode -->
+    <string name="title_usb_debug_mode">USB Debug Mode</string>
+    <string name="key_usb_debug_mode">key_usb_debug_mode</string>
+    <string name="summary_usb_debug_mode_on">on</string>
+    <string name="summary_usb_debug_mode_off">off</string>
+
+    <!-- persist_usb_debug_mode -->
+    <string name="title_persist_usb_debug_mode">USB Debug Mode is on after rebooting</string>
+    <string name="key_persist_usb_debug_mode">key_persist_usb_debug_mode</string>
+
+</resources>

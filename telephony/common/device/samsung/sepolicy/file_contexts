@@ -1,0 +1,20 @@
+/(vendor|system/vendor)/bin/dmd                u:object_r:dmd_exec:s0
+/(vendor|system/vendor)/bin/rfsd               u:object_r:rfsd_exec:s0
+/(vendor|system/vendor)/bin/sced               u:object_r:sced_exec:s0
+/(vendor|system/vendor)/bin/vcd                u:object_r:vcd_exec:s0
+/(vendor|system/vendor)/bin/tcpdump_vendor     u:object_r:tcpdump_vendor_exec:s0
+
+# Data
+/data/vendor/slog(/.*)?        u:object_r:vendor_slog_file:s0
+
+# Secure Element
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.2\-service-uicc              u:object_r:hal_secure_element_default_exec:s0
+
+# BIP over WIFI
+/(vendor|system/vendor)/bin/bipchmgr           u:object_r:bipchmgr_exec:s0
+
+/data/vendor/rild(/.*)? u:object_r:vendor_rild_file:s0
+/data/vendor/radio(/.*)?                 u:object_r:vendor_radio_file:s0
+
+# Emergency number update
+/(vendor|system/vendor)/bin/init\.radio\.sh     u:object_r:init_radio_exec:s0

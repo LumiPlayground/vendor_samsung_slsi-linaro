@@ -1,0 +1,10 @@
+# Samsung S.LSI telephony
+user=system seinfo=platform name=com.samsung.slsi.telephony.testmode domain=vendor_telephony_app type=system_app_data_file levelFrom=all
+user=system seinfo=platform name=com.samsung.slsi.telephony.uartswitch domain=vendor_telephony_app type=system_app_data_file levelFrom=all
+user=system seinfo=platform name=com.samsung.slsi.sysdebugmode domain=vendor_telephony_app type=system_app_data_file levelFrom=all
+user=system seinfo=platform name=com.samsung.slsi.telephony.networktestmode domain=vendor_telephony_app type=system_app_data_file levelFrom=all
+user=system seinfo=platform name=com.samsung.slsi.telephony.usbmodemanager domain=vendor_telephony_app levelFrom=all
+
+# SilentLogging
+user=system seinfo=platform name=com.samsung.slsi.telephony.silentlogging domain=vendor_telephony_silentlogging_app levelFrom=all
+user=system seinfo=platform name=com.samsung.slsi.telephony.silentlogging:remote domain=vendor_telephony_silentlogging_app levelFrom=all

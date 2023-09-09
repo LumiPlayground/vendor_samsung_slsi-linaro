@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <boolean name="vendor.mms_over_wifi_supported" value="false"/>
+    <string name="vendor.ims_handover_rove_in">eutran{rsrp=-109};iwlan{rssi=-74}</string>
+    <string name="vendor.ims_handover_rove_out">eutran{rsrp=-116};iwlan{rssi=-80}</string>
+    <string name="vendor.xcap_supported_radio_technology">LTE,LTE_CA,NR</string>
+</vendor_config>

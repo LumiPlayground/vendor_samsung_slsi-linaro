@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <!--Ericsson ATT LAB-->
+    <string name="vendor.volte_supported_radio_technology">UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <boolean name="vendor.volte_vops_required" value="false"/>
+    <string name="vendor.ims_handover_rove_in">utran{rscp=-73,ecno=-11};eutran{rsrp=-90,rssnr=2};ngran{rsrp=-90};iwlan{rssi=-75}</string>
+    <string name="vendor.ims_handover_rove_out">utran{rscp=-93,ecno=-15};eutran{rsrp=-108,rssnr=-3};ngran{rsrp=-108};iwlan{rssi=-80}</string>
+    <boolean name="vendor.wifi_network_validation_required" value="false"/>
+    <int name="vendor.ims_handover_rtp_downlink_lost_rate" value="30"/>
+    <int name="vendor.ims_handover_rtp_downlink_interval" value="15"/>
+    <int name="vendor.ims_handover_rtp_jitter_max" value="100"/>
+    <boolean name="vendor.ims_handover_ignore_call_downgrade" value="true"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16384"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16386"/>
+    <boolean name="vendor.sim_usim_only" value="true"/>
+    <string name="vendor.epdg.mms_keyid">nxtgenphone</string>
+    <string name="vendor.epdg.xcap_keyid">nxtgenphone</string>
+    <string name="vendor.epdg.default_retry_timeout">36:180</string>
+    <boolean name="vendor.volte_vops_required_roaming" value="false"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-sha256-prfsha256-modp2048!</string>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-sha256-prfsha256!</string>
+</vendor_config>

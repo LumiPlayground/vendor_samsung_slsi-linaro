@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.ims_handover_rove_in_cell_preferred">eutran{rsrp=-114}</string>
+    <string name="vendor.ims_handover_rove_out_cell_preferred">eutran{rsrp=-120}</string>
+    <string name="vendor.ims_handover_rove_in_wifi_preferred">iwlan{rssi=-74}</string>
+    <string name="vendor.ims_handover_rove_out_wifi_preferred">iwlan{rssi=-80}</string>
+</vendor_config>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:title="@string/str_ursp_setting" >
+
+    <SwitchPreference
+       android:key="@string/key_usrp_test_mode"
+       android:title="@string/str_usrp_test_mode"/>
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_ursp_os_id"
+        android:key="@string/key_ursp_os"
+        android:singleLine="true"
+        android:title="@string/str_ursp_os_id" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_ursp_app_id"
+        android:key="@string/key_ursp_app"
+        android:singleLine="true"
+        android:title="@string/str_ursp_app_id" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_fqdn"
+        android:key="@string/key_fqdn"
+        android:singleLine="true"
+        android:title="@string/str_fqdn" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_ipv4_addr"
+        android:key="@string/key_ipv4_addr"
+        android:singleLine="true"
+        android:title="@string/str_ipv4_addr" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_ipv4_mask"
+        android:key="@string/key_ipv4_mask"
+        android:singleLine="true"
+        android:title="@string/str_ipv4_mask" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_ipv6_addr"
+        android:key="@string/key_ipv6_addr"
+        android:singleLine="true"
+        android:title="@string/str_ipv6_addr" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_prefix_len"
+        android:inputType="number"
+        android:key="@string/key_prefix_len"
+        android:singleLine="true"
+        android:title="@string/str_prefix_len" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_next_ip_hdr"
+        android:inputType="number"
+        android:key="@string/key_next_ip_hdr"
+        android:singleLine="true"
+        android:title="@string/str_next_ip_hdr" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_single_port_range"
+        android:inputType="number"
+        android:key="@string/key_single_port_range"
+        android:singleLine="true"
+        android:title="@string/str_single_port_range" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_port_range_low_limit"
+        android:inputType="number"
+        android:key="@string/key_port_range_low_limit"
+        android:singleLine="true"
+        android:title="@string/str_port_range_low_limit" />
+
+    <EditTextPreference
+        android:dialogTitle="@string/str_port_range_high_limit"
+        android:inputType="number"
+        android:key="@string/key_port_range_high_limit"
+        android:singleLine="true"
+        android:title="@string/str_port_range_high_limit" />
+
+</PreferenceScreen>

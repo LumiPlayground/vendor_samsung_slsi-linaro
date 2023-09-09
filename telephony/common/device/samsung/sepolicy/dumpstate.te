@@ -1,0 +1,2 @@
+allow dumpstate vendor_diag_prop:file { getattr open };
+allow dumpstate vendor_slog_prop:file { getattr open };

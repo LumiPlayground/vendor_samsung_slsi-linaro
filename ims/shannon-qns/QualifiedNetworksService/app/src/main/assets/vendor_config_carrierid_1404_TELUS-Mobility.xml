@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.volte_supported_radio_technology">UMTS,HSDPA,HSUPA,HSPA,HSPA+,LTE,LTE_CA,NR</string>
+    <boolean name="vendor.volte_vops_required" value="false"/>
+    <boolean name="vendor.volte_vops_required_roaming" value="false"/>
+    <string name="vendor.ims_handover_supported_radio_technology">LTE,LTE_CA,NR</string>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <string name="vendor.ims_handover_rove_in">utran{rscp=-100};eutran{rsrp=-106}</string>
+    <string name="vendor.ims_handover_rove_out">utran{rscp=-105};eutran{rsrp=-116}</string>
+    <boolean name="vendor.emergency_over_wifi_supported_roaming" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_preferred" value="true"/>
+    <boolean name="vendor.mms_over_wifi_preferred" value="true"/>
+    <int name="vendor.epdg.ike_attr_pcscf4" value="16389"/>
+    <int name="vendor.epdg.ike_attr_pcscf6" value="16390"/>
+    <int name="vendor.epdg.ike_lifetime" value="7200"/>
+    <int name="vendor.epdg.esp_lifetime" value="7200"/>
+    <string name="vendor.epdg.ike_device_identity">attribute:16391</string>
+    <string name="vendor.epdg.xcap_keyid">services.telus.com</string>
+</vendor_config>

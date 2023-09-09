@@ -1,0 +1,2 @@
+64dc8390df60d68bd2e96d8ddaabbd09e451a2ef647bee288c1a25d87b50174a vendor.samsung_slsi.hardware.wifi.hostapd@1.0::IHostapdVendor
+1f2f0188230442ec3fbdeaf919b2cfd3f5458ae1562c16b121b660ab74c95f20 vendor.samsung_slsi.hardware.wifi.hostapd@1.0::IHostapdVendorIfaceCallback

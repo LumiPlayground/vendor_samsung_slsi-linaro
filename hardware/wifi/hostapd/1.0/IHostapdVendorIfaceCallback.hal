@@ -1,0 +1,11 @@
+package vendor.samsung_slsi.hardware.wifi.hostapd@1.0;
+
+import android.hardware.wifi.hostapd@1.0::types;
+
+/**
+ * Vendor Hostapd  Callback Interface
+ */
+interface IHostapdVendorIfaceCallback {
+
+	oneway onVendorDriverHang(string state, string msg);
+};

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.epdg.ike_dpd_interval" value="120"/>
+    <int name="vendor.epdg.ike_lifetime" value="3000"/>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <boolean name="vendor.epdg.ike_initiator_id_has_mac_addr" value="true"/>
+</vendor_config>

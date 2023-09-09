@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.epdg.ike_lifetime" value="14400"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-des-3des-md5-sha1-aesxcbc-prfsha1-prfaesxcbc-modp1024-modp1536-modp2048!</string>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-des-3des-md5-sha1!</string>
+    <boolean name="vendor.vowifi_roaming_enabled" value="false"/>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <boolean name="vendor.mms_over_wifi_supported" value="false"/>
+    <int name="vendor.epdg.ike_keep_alive_interval" value="30"/>
+    <int name="vendor.ims_handover_hysteresis_timer_volte" value="5"/>
+    <int name="vendor.ims_handover_hysteresis_timer_vowifi" value="5"/>
+</vendor_config>

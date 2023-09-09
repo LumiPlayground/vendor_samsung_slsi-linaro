@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <string name="vendor.epdg.xcap_keyid">stm-us</string>
+    <string name="vendor.ims_handover_restricted_radio_technology">LTE|LTE_CA|NR>IWLAN</string>
+</vendor_config>

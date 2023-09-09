@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<vendor_config>
+    <int name="vendor.epdg.ike_lifetime" value="86400"/>
+    <string name="vendor.epdg.ike_algorithm_list">aes128-aes256-sha1-sha256-prfsha256-modp1024-modp2048!</string>
+    <int name="vendor.epdg.esp_lifetime" value="86400"/>
+    <string name="vendor.epdg.esp_algorithm_list">aes128-aes256-sha1-sha256!</string>
+    <boolean name="vendor.xcap_over_wifi_supported" value="false"/>
+    <boolean name="vendor.emergency_over_wifi_supported" value="false"/>
+</vendor_config>

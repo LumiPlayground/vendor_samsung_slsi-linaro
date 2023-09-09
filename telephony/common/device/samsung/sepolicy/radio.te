@@ -1,0 +1,9 @@
+get_prop(radio, vendor_ro_config_default_prop);
+get_prop(radio, vendor_rild_prop);
+# get_prop(radio, vendor_default_prop);
+get_prop(radio, vendor_sys_default_prop);
+
+allow radio sims_service:service_manager find;
+allow radio system_app_data_file:dir getattr;
+
+allow radio hal_exynos_rild_hwservice:hwservice_manager find;
