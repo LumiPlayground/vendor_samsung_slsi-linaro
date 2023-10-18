@@ -1,0 +1,217 @@
+//
+// Copyright (C) 2012 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+soong_namespace {
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLES_mali",
+
+    compile_multilib: "both",
+
+    vendor: true,
+    proprietary: true,
+    soc_specific: true,
+
+    owner: "samsung_arm",
+    multilib: {
+        lib64: {
+            srcs: ["lib64/egl/libGLES_mali.so"],
+        },
+        lib32: {
+            srcs: ["lib/egl/libGLES_mali.so"],
+        },
+    },
+    shared_libs: [
+        "liblog",
+        "libz",
+        "libnativewindow",
+        "libcutils",
+        "android.hardware.graphics.common@1.0",
+        "libdrm",
+        "android.hardware.graphics.common-V1-ndk",
+        "android.hardware.graphics.common@1.2",
+        "libion_exynos",
+    ],
+    relative_install_path: "egl",
+    strip: {
+        all: true,
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "vulkan.mali",
+
+    compile_multilib: "both",
+
+    owner: "samsung_arm",
+    multilib: {
+        lib64: {
+            srcs: ["lib64/hw/vulkan.mali.so"],
+        },
+        lib32: {
+            srcs: ["lib/hw/vulkan.mali.so"],
+        },
+    },
+
+    shared_libs: ["libGLES_mali"],
+    relative_install_path: "hw",
+    vendor: true,
+    proprietary: true,
+    soc_specific: true,
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "vulkan.erd9815_r",
+
+    compile_multilib: "both",
+
+    owner: "samsung_arm",
+    multilib: {
+        lib64: {
+            srcs: ["lib64/hw/vulkan.erd9815_r.so"],
+        },
+        lib32: {
+            srcs: ["lib/hw/vulkan.erd9815_r.so"],
+        },
+    },
+
+    shared_libs: ["libGLES_mali"],
+    relative_install_path: "hw",
+    vendor: true,
+    proprietary: true,
+    soc_specific: true,
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbccArm_valhall",
+
+    compile_multilib: "64",
+    vendor: true,
+    proprietary: true,
+
+    owner: "samsung_arm",
+
+    multilib: {
+        lib64: {
+            srcs: ["lib64/libbccArm_valhall.so"],
+        },
+    },
+
+    shared_libs: [
+        "liblog",
+        "libLLVM_android_mali",
+        "libbcc_mali",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libbccArm_valhall_nt",
+
+    compile_multilib: "64",
+    vendor: true,
+    proprietary: true,
+    owner: "samsung_arm",
+
+    multilib: {
+        lib64: {
+            srcs: ["lib64/libbccArm_valhall_nt.so"],
+        },
+    },
+
+    shared_libs: [
+        "liblog",
+        "libLLVM_android",
+        "libbcc",
+    ],
+}
+
+cc_library_shared {
+    name: "libLLVM_android_mali",
+    vendor: true,
+    whole_static_libs: ["libLLVM_android"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libbcc_mali",
+
+    compile_multilib: "both",
+    vendor: true,
+
+    owner: "samsung_arm",
+    multilib: {
+        lib64: {
+            srcs: ["lib64/libbcc_mali.so"],
+        },
+        lib32: {
+            srcs: ["lib/libbcc_mali.so"],
+        },
+    },
+    shared_libs: [
+        "libbcinfo",
+        "libLLVM_android_mali",
+        "libdl",
+        "liblog",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libRSDriverArm",
+
+    compile_multilib: "both",
+    vendor: true,
+
+    owner: "samsung_arm",
+    multilib: {
+        lib64: {
+            srcs: ["lib64/libRSDriverArm.so"],
+        },
+        lib32: {
+            srcs: ["lib/libRSDriverArm.so"],
+        },
+    },
+    shared_libs: [
+        "libRSCpuRef",
+        "libRS_internal",
+        "libbcinfo",
+        "liblog",
+        "libnativewindow",
+    ],
+}
+
+cc_binary {
+    name: "bcc_mali",
+    vendor: true,
+    static_libs: ["libbcc_binary"],
+    shared_libs: [
+        "libbcc_mali",
+        "libbcinfo",
+        "libLLVM_android_mali",
+    ],
+
+    header_libs: ["slang_headers"],
+
+    target: {
+        android: {
+            shared_libs: [
+                "liblog",
+                "libvndksupport",
+            ],
+        },
+    },
+}

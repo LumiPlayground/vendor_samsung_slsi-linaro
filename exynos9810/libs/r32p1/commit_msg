@@ -1,0 +1,180 @@
+r32p1-01bet1
+
+210910_154417
+
+5e206a1e1b MALIDRV-393: profiles: 9810: enable LSI features and AGI
+67b96318e9 Merge pull request #46 in MALIUNIDRV/mali from MALIDRV-349-nacho-s-products-porting-to-ddk-version-r32p1-01bet1 to master
+f06190acc3 [MALIDRV-349]: Added bldsys profile for Nacho QRS MR Products
+a389059dbd Merge branch 'master' of ssh://bitbucket.itplatform.samsungds.net:7999/maliunidrv/mali into MALIDRV-349-nacho-s-products-porting-to-ddk-version-r32p1-01bet1
+5c3ffa1d0a Merge pull request #44 in MALIUNIDRV/mali from MALIDRV-371-s21-android-s-sbwc-issue to master
+23ad4eef4d MALIDRV-371: Bugfix SBWC decompress skip solution
+365d834707 Merge pull request #43 in MALIUNIDRV/mali from bugfix/MALIDRV-382-shareability-fault-to-s2mpu-or-watchdog-reset-after-wake-up-from-suspend to master
+962571916a MALIDRV-382: check g3d power state before mmu invalidate
+ec27773ba1 [MALIDRV-349]: Added bldsys profile for Nacho S Launching Products
+ab6c2faff4 Merge pull request #42 in MALIUNIDRV/mali from debugfs-compile-fix to master
+9ad4b4f725 fix compile error when DEBUG_FS is disabled
+6fb9bd1631 improved code copy script
+df78a4dd62 Merge pull request #40 in MALIUNIDRV/mali from MALIDRV-338-secure-rendering-tls-w-a-enable-for-olympus-r32p1 to master
+de55cce650 MALIDRV-338: profiles: enable secure rendering TLS WA for Olympus
+491f423eb5 Merge pull request #39 in MALIUNIDRV/mali from bugfix/MALIDRV-247-olympus-s-os-s2mpu-fault to master
+3caf1c2bd4 MALIDRV-247: fix S2MPU fault when LLC + ACE_LITE enabled
+ab514ef65f Merge pull request #38 in MALIUNIDRV/mali from feature/MALIDRV-360-non-conformat-rgba1010102-egl-config to master
+70b1b86e9d MALIDRV-360: Change EGL Config not to choose RGBA1010102
+0a0bf0ca41 Merge pull request #37 in MALIUNIDRV/mali from feature/MALIDRV-330-add-mbs2-version-info-to-gpu-version-string to master
+c1f6b57604 MALIDRV-330: add MBS2 version to mali DDK version string
+d4818b0fb5 Merge pull request #34 in MALIUNIDRV/mali from feature/MALIDRV-329-allow-memtrack-without-debugfs to master
+ecdccf3b98 Merge pull request #36 in MALIUNIDRV/mali from topic/gpu_profiler to master
+01fb16dd77 Merge pull request #30 in MALIUNIDRV/mali from MALIDRV-251-r32p1-agi-support to master
+3946022f29 Whitespace fix mali_kbase_defs.h edited online with Bitbucket
+2b69a2225b Merge pull request #35 in MALIUNIDRV/mali from feature/MALIDRV-285-amigo-refactor to topic/gpu_profiler
+672b8ea54e Merge pull request #33 in MALIUNIDRV/mali from feature/MALIDRV-285-amigo-refactor to topic/gpu_profiler
+9c42205ec2 MALIDRV-329: gpu memory usage info to kernel space without debugfs
+a1c08f83fc MALIDRV-329: [UAPI] add IOCTL number for reporting Mali mem usage
+733e6fb630 MALIDRV-285: fix mali_exynos fucntion in jd/js
+9a3ceffb85 Merge pull request #32 in MALIUNIDRV/mali from MALIDRV-320-deqp-vk.protected_memory.stack-stacksize_-fails to master
+1de556ea8b Merge pull request #31 in MALIUNIDRV/mali from MALIDRV-323-update-to-r32p1_01bet1 to master
+535755ccad MALIDRV-323: KMD copy script
+f8258ed3ba MALIDRV-251: Add guide for checking AGI
+e6876738f9 MALIDRV-251: Add perfetto source code for AGI
+5b81f47ec9 MALIDRV-251: Enable AGI support for universal2100
+73891a5615 MALIDRV-323: BOB update for r32p1_01bet1
+25d2aa0939 MALIDRV-323: [CR] SBWC r32p1_01bet1 CR
+dadae0b619 MALIDRV-323: [CR] KMD Kconfig r32p1_01bet1 CR
+ec1f1ead3e Merge branch 'samsung/dev/bv_r32p1' into MALIDRV-323-update-to-r32p1_01bet1
+db7023aad1 MALIDRV-320:  Added fix for failed cts deqp-vk.protected_memory.stack-stacksize_* cases in Papaya
+b8747a40bd MALIDRV-285: remove TSG Dependency
+0851935fa6 Merge pull request #28 in MALIUNIDRV/mali from MALIDRV-312-use-close_fd-instead-of-sys_close-in-linux-5.10-kernel to master
+e59f243226 MALIDRV-312: use close_fd instead of sys_close for 5.10 kernels
+47f0bc0a8b Mali Bifrost and Valhall Android DDK r32p1-01bet1
+454f889cc1 Merge pull request #22 in MALIUNIDRV/mali from feature/MALIDRV-60-add-amigo-code to topic/gpu_profiler
+dbf1650f19 Merge pull request #27 in MALIUNIDRV/mali from bob_update_r32p1_01bet0 to master
+4f6b91621d bob update for r32p1_01bet0
+4f3ead5739 Merge pull request #25 in MALIUNIDRV/mali from MALIDRV-300-r32p1-01bet0-release to master
+18948498dd MALIDRV-300: do not include test kconfig
+4f31722b4f MALIDRV-300: include exynos integration kconfig
+84761b4e4a MALIDRV-300: local symlink in kbase to external uapi directory
+8cc819a48f Merge pull request #23 in MALIUNIDRV/mali from bugfix/compile_error_fix_and_erd8825_profile_update to master
+33497d13e8 Merge pull request #24 in MALIUNIDRV/mali from r32p1-01beta0 to master
+efa7cd6a6c [CR] r32p1-01beta0 merge conflict resolution
+9048937815 Merge remote-tracking branch 'mpg-mali-gpu-ddk/samsung/dev/bv_r32p1'
+e97db935c1 MALIDRV-298: VBO repack u8 u16 u32 type error fix
+3a83975321 MALIDRV-60: [KMD] GPU Profiler uapi ioctl
+6c5f0b7acc MALIDRV-60: GPU Profiler for AMIGO
+273fc07b0c config_interface: fix s32 and u32 type compile error.
+37424dc695 profiles: erd8825_s: enable Renderscript and disable non-coherent flush
+4ad4695b30 Merge pull request #20 in MALIUNIDRV/mali from feature/add-default-conversion to master
+1255f066f1 Mali Bifrost and Valhall Android DDK r32p1-01bet0
+409d5de9d0 MALIDRV-252: set default dataspace conversion/range
+4a08ff377d Merge pull request #18 in MALIUNIDRV/mali from feature/MALIDRV-59-add-graphic-task-scheduler-code to master
+2cb0918dc1 profiles: enable GTS for exynos2100
+c4796f5d9b MALIDRV-59: GPU Task Scheduler
+fad82b95a6 MALIDRV-59: [KMD] GTS uapi ioctl and GTS calls to vendor integration
+9a89c2f27b MALIDRV-238: set cmar thread priority to custom value
+b783f03898 MIDCET-3372: Disable subpass merge (modified for r32p1)
+f429565485 Merge pull request #17 in MALIUNIDRV/mali from bugfix/MALIDRV-224-secure-rendering-io-coherency-fix to master
+f2cdb17a07 MALIDRV-224: [KMD] secure rendering cache sync fix
+120ce09720 MALIDRV-224: MIDCET-3023 Force off coherency for vulkan
+bfa2a2b147 Merge pull request #16 in MALIUNIDRV/mali from bugfix/MALIDRV-187-pro-video-9-21_fhd120-stuttering to master
+2a378a72f8 MALIDRV-187 skip duplicated SBWC decompression requests
+7b72c043aa Merge pull request #15 in MALIUNIDRV/mali from MALIDRV-161-papaya-r32p1_beta1-upgrade-secure-rendering-enable to master
+afe90fee9a profiles: erd8825_s: enable LSI features (secure rendering, SBWC, Optimization)
+fb977e0cde profiles: disable ANDROID_SYSPROP in all Exynos SOCs
+5e3e69da96 Merge pull request #14 in MALIUNIDRV/mali from MALIDRV-149-r32p1-porting-release to master
+42ee29c108 Merge branch 'samsung/dev/bv_r32p1' (r32p1-00bet1) into MALIDRV-149-r32p1-porting-release
+927a6ef7a2 [S.LSI] config_interface: remove dependency on arm.graphics aidl
+ce5faf84b8 [S.LSI] vbo repack fix for r32p1
+a457b5bbd9 [S.LSI] r33p0 update: type change u32 -> uint32_t
+27124d4147 [kbase] disable arbitration
+823168b630 profiles: disable SYSPROP exynos2100
+38f2e3d2cd compile fix: arm.graphics-V1-ndk_platform already declared in r32p1
+a60cebbccb [SWBC] remove deprecated libhwbinder and libdrm
+c2e22c0e59 remove files that should be tracked in kbase_exynos repository
+3bc87b536d [SBWC] r33p0 update: integer type change u64 -> uint64_t
+2677a7ab16 [CR] vbo repacking: conflict resolution for r32p1
+d4989e42f0 [CR] Secure Rendering conflict resolution for r32p1
+7d31dbc498 Mali Bifrost and Valhall Android DDK r32p1-00bet1
+6ff390b60c [CR] r32p1 merge conflict resolution
+1a39bf62a7 Merge branch 'samsung/dev/bv_r32p1_00bet0'
+8342d7d387 Revert "khronos original headers from r31p0_ks0001"
+f9465013ff Merge pull request #11 in MALIUNIDRV/mali from release/MALIDRV-114-mali-unified-driver-r31p0-mcd-release-31.0.0 to master
+ef3e6abf4d [SBWC] vulkan modifications
+933876984e [SBWC] gles modifications
+da22045311 [SBWC] egl modifications
+d75db1b76b [SBWC] android winsys modifications
+00b86bc715 [SBWC] config_interface modifications
+edcbc07e51 profiles: enable SLSI features for exynos2100
+f4ceeea10e [S.LSI] texture optimization with version data
+fa4df3a871 [S.LSI] vertex buffer repacking
+6d00e2c3bb [S.LSI] change the number of mali_utility_thread to 4
+7f21602f24 [S.LSI] set TILER_HIERARCHICAL_DEFAULT_LEVEL_MASK to 0xCA
+aa4dc4cee2 TEMPITA for bv_r31p0_eac
+e3fdf4fea7 BOB for bv_r31p0_EAC
+dac2182d12 khronos original headers from r31p0_ks0001
+f19354828c config interface build bp compile fix for r31
+0168ef546e [KMD] kernel kbuild compile fix for exynos2100
+4f42fe3099 [KMD] call update job load for platform_exynos
+16f7e8b3d9 MALIDRV-66 conditional compilation in config interface
+5461b4fe32 [Mali]: removed ksys_close cal and used close_fd for GKI compatibility(kernel version >= 5.10)
+0db14047cc [KMD] Mali coherency & LLC
+02965a5112 [profiles] 2100: enable NONCOHERENT_PROTECTED
+47535aa9c9 MIDCET-3023 apply iff NONCOHERENT_PROTECTED customer feature is enabled
+284b7ba818 MIDCET-3023 Force sync secure context memory (sticky) (keystone modified)
+42f4f46fc7 Change setting gpex_pm state API
+4eea94e84e Add setting gpex_pm state on resume
+9f1361bc38 Modify Kbuild to point to external platform_exynos directory
+d88a57c659 Fix SPDX identifier in UAPI headers
+3f0d28c702 add UMD build profiles
+b2b0eeca69 add UMD Mconfig for vendor integration
+a871a47669 Add protected memory allocator compatible with Exynos
+0f8646b1aa add interface header file for use by other drivers
+2b05d5738c kbase exynos integration (modifications to ARM original code)
+999dd2f02c Initial config_interface code 21.05.26
+a38312230c Merge branch 'collab/EAC/bv_r31p0' into EAC
+6138591a28 Android Reference Gralloc for DDK r32p1-00bet0
+6933a63794 Khronos headers for DDK r32p1-00bet0
+e5aca675d2 Mali Bifrost and Valhall Android DDK r32p1-00bet0
+e16255d1e2 Mali Bifrost and Valhall Android DDK r31p0-01eac0
+174856460e Merge branch 'EAC/bv_r30p0' from collaborate
+2708d441cb Initial Commit
+b41fcd7843 Mali Bifrost and Valhall Android DDK r30p0-01eac0
+50ad80d8ee Mali Bifrost and Valhall Android DDK r29p0-01eac0
+fb0127d5b0 Mali Bifrost and Valhall Android DDK r28p0-01eac0
+e62cd43a66 Mali Bifrost and Valhall Android DDK r27p0-01eac0
+009a7d86a9 Mali Valhall DDK r26p0-01eac0
+82d477f3c6 Mali Valhall DDK r25p1-01bet0
+9cfdd95c8c Mali Valhall DDK r25p0 additions
+395644cb0a Mali Valhall DDK r25p0
+c5a37f014e Mali Valhall DDK r24p0
+9410210207 Mali Valhall DDK r23p0
+6425105ecd Mali Valhall DDK r22p0
+055b0c4d81 Mali Valhall DDK r21p0
+f3deff212a Adds missing Integration Manual
+ebc3e977f7 Mali Valhall DDK r20p0
+95928c7e8f Mali Valhall DDK r19p0
+d441d721ac Mali Bifrost DDK r19p0
+ee36a66873 Mali Bifrost DDK r18p0
+789dfe7c7f Mali Bifrost DDK r17p0
+aa8b3ff0f4 Mali Bifrost DDK r16p0
+c4c373c4f0 Mali Bifrost DDK r15p0
+37fe8262c2 Mali Bifrost DDK r14p0
+3968980121 Mali Bifrost DDK r13p0
+875d9aa9b4 Mali Bifrost DDK r12p0
+b1581ebda4 Mali Bifrost DDK r11p0
+27ee08eb40 Mali Bifrost DDK r10p0
+b336f554dd Mali Bifrost DDK r9p0
+a0013c5223 Mali Bifrost DDK r8p0
+cbfad67c83 Mali Bifrost DDK r7p0
+b67d8663ab Mali Bifrost DDK r6p0
+927c9ef15a Mali Bifrost DDK r5p0
+e126eb313f Mali Bifrost DDK r4p0
+7ee75b28d0 Mali Bifrost DDK r3p0
+6aec14e960 Mali Bifrost DDK r2p0
+9f8289b337 Mali Bifrost DDK r1p0
+6fe4d9f9aa Mali Bifrost DDK r0p0
+
+On branch MALIDRV-393-9810_q_launching-r32p1-kernel-driver-sqe-pr
+Your branch is ahead of 'origin/MALIDRV-393-9810_q_launching-r32p1-kernel-driver-sqe-pr' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+

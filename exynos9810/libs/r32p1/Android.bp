@@ -1,0 +1,137 @@
+//
+// Copyright (C) 2012 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+soong_namespace {
+}
+
+cc_defaults {
+    name: "libmali_prebuilt_defaults",
+    stem: "libGLES_mali",
+    compile_multilib: "both",
+    soc_specific: true,
+    owner: "samsung_arm",
+    shared_libs: [
+        "libbase",
+        "libc++",
+        "libcutils",
+        "libion_exynos",
+        "liblog",
+        "libnativewindow",
+        "libz"
+    ],
+    relative_install_path: "egl",
+}
+
+cc_defaults {
+    name: "libOpenCL_prebuilt_defaults",
+    stem: "libOpenCL",
+    compile_multilib: "both",
+    soc_specific: true,
+    owner: "samsung_arm",
+    shared_libs: [
+        "libGLES_mali",
+        "libc++",
+        "libc",
+        "libdl",
+        "libm",
+    ],
+}
+
+cc_defaults {
+    name: "vulkan.mali_prebuilt_defaults",
+    stem: "vulkan.mali",
+    compile_multilib: "both",
+    soc_specific: true,
+    owner: "samsung_arm",
+    relative_install_path: "hw",
+    shared_libs: [
+        "libGLES_mali",
+        "libc++",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLES_mali",
+    defaults: [
+        "libmali_prebuilt_defaults",
+    ],
+    multilib: {
+        lib64: {
+            srcs: ["lib64/egl/libGLES_mali.so"],
+        },
+        lib32: {
+            srcs: ["lib/egl/libGLES_mali.so"],
+        },
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "libOpenCL_prebuilt",
+    defaults: [
+        "libOpenCL_prebuilt_defaults",
+    ],
+    multilib: {
+        lib64: {
+            srcs: ["lib64/libOpenCL.so"],
+        },
+        lib32: {
+            srcs: ["lib/libOpenCL.so"],
+        },
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "vulkan.mali_prebuilt",
+    defaults: [
+        "vulkan.mali_prebuilt_defaults",
+    ],
+    multilib: {
+        lib64: {
+            srcs: ["lib64/hw/vulkan.mali.so"],
+        },
+        lib32: {
+            srcs: ["lib/hw/vulkan.mali.so"],
+        },
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "libgpudataproducer",
+
+    compile_multilib: "both",
+
+    owner: "samsung_arm",
+    multilib: {
+        lib64: {
+            srcs: ["lib64/libgpudataproducer.so"],
+        },
+        lib32: {
+            srcs: ["lib/libgpudataproducer.so"],
+        },
+    },
+    shared_libs: [
+        "libc++",
+        "libc",
+        "libdl",
+        "libion_exynos",
+        "liblog",
+        "libm"
+    ],
+    vendor: true,
+    proprietary: true,
+    soc_specific: true,
+    check_elf_files: true,
+}

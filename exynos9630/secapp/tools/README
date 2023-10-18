@@ -1,0 +1,43 @@
+Copyright (c) 2019 Samsung Electronics Co., Ltd.
+
+This software is proprietary of Samsung Electronics.
+No part of this software, either material or conceptual may be copied
+or distributed, transmitted, transcribed, stored in a retrieval system
+or translated into any human or computer language in any form by any means,
+electronic, mechanical, manual or otherwise, or disclosed to third parties
+without the express written permission of Samsung Electronics.
+
+---------------------------------------- KEY ATTESTATION GUIDE ----------------------------------------
+
+1. "km_keybox_attestation" should be located on /data/vendor
+
+2. keybox.xml file should be also located on /data/vendor
+
+3. Execute binary like this:
+	./binary <xmlfile> <deviceNumber>
+	ex) ./km_keybox_attestation keybox.xml 3
+
+The criteria for device number are order.
+The first device ID in the xml file is 1.
+If the number of device IDs is N, the last device ID is N.
+
+4. Then, you can check keybox_sample.so in mnt/vendor/persist
+This path is pre-defined in our code, So If you want to change path, execute like this
+	./binary <xmlfile> <deviceNumber> <path>
+	ex) ./km_keybox_attestation keybox.xml 3 /data/vendor/
+
+5. If you want to check key provisioning,
+	./km_keybox_attestation -check <path>
+	<path> is option. default path is /mnt/vendor/persist/keybox_sample.so
+	1) "OK" : It has no problem
+	2) "ERROR" : It has problem. you can see log through logcat.
+	ex) ./km_keybox_attestation -check /data/vendor/keybox_sample.so
+
+6. After execute "km_keybox_attestation",
+	1) "OK" : It has no problem
+	2) " "(nothing print) : It has problem. you can see log through logcat.
+
+7. You can also excute through adb shell
+	ex) adb shell km_keybox_attestation -check
+	ex) adb shell km_keybox_attestation <xmlfile> <deviceNumber>
+--------------------------------------------------------------------------------------------------------

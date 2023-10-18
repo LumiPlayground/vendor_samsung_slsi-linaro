@@ -1,0 +1,11 @@
+soong_namespace{
+}
+
+prebuilt_etc {
+    name: "whitelist",
+    owner: "samsung",
+    src: "public.libraries.txt",
+    proprietary: true,
+    soc_specific: true,
+    filename_from_src: true,
+}
