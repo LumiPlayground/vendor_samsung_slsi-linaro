@@ -17,7 +17,7 @@ LOCAL_PRELINK_MODULE := true
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_PREBUILT_LIBS := lib32/libarcsoft_dualcam_refocus.so
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_MULTI_PREBUILT)
 
 else
@@ -35,7 +35,7 @@ LOCAL_SRC_FILES_$(TARGET_ARCH) := lib64/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib32/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_MULTILIB := 32
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_PREBUILT)
 endif
 
@@ -48,7 +48,7 @@ LOCAL_PRELINK_MODULE := true
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_PREBUILT_LIBS := lib32/libdualcam_video_optical_zoom.so
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_MULTI_PREBUILT)
 
 else
@@ -66,7 +66,7 @@ LOCAL_SRC_FILES_$(TARGET_ARCH) := lib64/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib32/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_MULTILIB := 32
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_PREBUILT)
 endif
 endif
@@ -81,7 +81,7 @@ LOCAL_PRELINK_MODULE := true
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_PREBUILT_LIBS := lib32/libmpbase.so
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_MULTI_PREBUILT)
 
 else
@@ -99,7 +99,7 @@ LOCAL_SRC_FILES_$(TARGET_ARCH) := lib64/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib32/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_MULTILIB := 32
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_PREBUILT)
 endif
 endif
@@ -135,8 +135,8 @@ LOCAL_MODULE := libexynoscamera_arcsoftfusion
 LOCAL_C_INCLUDES += \
 	$(TOP)/system/core/libion/include \
     $(TOP)/hardware/libhardware/include/ \
-	$(TOP)/hardware/samsung_slsi/exynos/include \
-	$(TOP)/hardware/samsung_slsi/exynos/include/hardware/exynos \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include/hardware/exynos \
 	$(CAMERA_PATH)/core/src/common_v2/PlugIn/include \
 	$(CAMERA_PATH)/core/src/common_v2/PlugIn/libs/libArcsoftCali/include \
 	$(LOCAL_PATH)/../include \
@@ -152,5 +152,5 @@ endif
 
 LOCAL_MULTILIB := 32
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

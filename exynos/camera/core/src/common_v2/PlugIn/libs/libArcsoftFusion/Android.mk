@@ -49,8 +49,8 @@ LOCAL_MODULE := libexynoscamera_arcsoftfusion_plugin
 LOCAL_C_INCLUDES += \
 	$(TOP)/system/core/libion/include \
     $(TOP)/hardware/libhardware/include \
-	$(TOP)/hardware/samsung_slsi/exynos/include \
-	$(TOP)/hardware/samsung_slsi/exynos/include/hardware/exynos \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include/hardware/exynos \
 	$(CAMERA_PATH)/core/src/common_v2/ \
 	$(CAMERA_PATH)/core/src/common_v2/PlugIn/ \
 	$(CAMERA_PATH)/core/src/common_v2/PlugIn/include \

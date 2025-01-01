@@ -17,7 +17,7 @@ LOCAL_SHARED_LIBRARIES := libutils libcutils liblog libexynosutils
 LOCAL_MODULE := libexynoscamera_fakemultiframe
 
 LOCAL_C_INCLUDES += \
-	$(TOP)/hardware/samsung_slsi/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
 	$(CAMERA_PATH)/core/src/common_v2/PlugIn/include \
 	$(LOCAL_PATH)/include
 

@@ -186,9 +186,9 @@ LOCAL_C_INCLUDES += \
 	$(CAMERA_PATH)/core/src/common_v2/Tuning/LEDCalibration \
 	$(CAMERA_PATH)/core/src/common_v2/Tuning/SensorGyro \
 	$(CAMERA_PATH)/hal3/common_v2/Sec \
-	$(TOP)/hardware/samsung_slsi/exynos/include \
-	$(TOP)/hardware/samsung_slsi/exynos5/include \
-	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC_BASE)/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos5/include \
+	$(TOP)/hardware/samsung_slsi-linaro/$(TARGET_SOC_BASE)/include \
 	$(TOP)/hardware/libhardware_legacy/include/hardware_legacy \
 	$(TOP)/bionic \
 	$(TOP)/external/expat/lib \
@@ -198,7 +198,7 @@ LOCAL_C_INCLUDES += \
 	$(TOP)/frameworks/native/libs/nativebase/include \
 	$(TOP)/frameworks/av/include \
 	$(TOP)/hardware/interfaces/camera/common/1.0/default/include \
-	$(TOP)/hardware/samsung_slsi/exynos/libion/include
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/libion/include
 
 ifeq ($(BOARD_CAMERA_USES_SLSI_PLUGIN), true)
 LOCAL_CFLAGS += -DUSE_SLSI_PLUGIN
@@ -408,7 +408,7 @@ LOCAL_LDFLAGS :=  -Wl,-Bsymbolic
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := libexynoscamera3
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 
 ifeq ($(BOARD_CAMERA_USES_SLSI_PLUGIN), true)
 include $(CAMERA_PATH)/core/src/common_v2/PlugIn/converter/libs/Android.mk
@@ -458,15 +458,15 @@ LOCAL_C_INCLUDES += \
 	$(CAMERA_PATH)/core/src/common_v2/Tuning/LEDCalibration \
 	$(CAMERA_PATH)/core/src/common_v2/Tuning/SensorGyro \
 	$(CAMERA_PATH)/hal3/common_v2/Sec \
-	$(TOP)/hardware/samsung_slsi/exynos/include \
-	$(TOP)/hardware/samsung_slsi/exynos5/include \
-	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC_BASE)/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos5/include \
+	$(TOP)/hardware/samsung_slsi-linaro/$(TARGET_SOC_BASE)/include \
 	$(TOP)/external/libcxx/include \
 	$(TOP)/bionic \
 	$(TOP)/frameworks/native/include \
 	$(TOP)/frameworks/native/libs/nativebase/include \
 	$(TOP)/frameworks/native/libs/arect/include \
-	$(TOP)/hardware/samsung_slsi/exynos/libion/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/libion/include \
 	$(TOP)/hardware/interfaces/camera/common/1.0/default/include
 
 ifeq ($(BOARD_CAMERA_USES_DUAL_CAMERA), true)
@@ -661,7 +661,7 @@ $(foreach file,$(LOCAL_SRC_FILES),$(shell touch '$(LOCAL_PATH)/$(file)'))
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := camera.$(TARGET_SOC)
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
 
 $(warning #############################################)

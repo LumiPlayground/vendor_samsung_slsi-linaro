@@ -14,7 +14,7 @@ LOCAL_MODULE := libvdis
 LOCAL_CAMERA_PATH := $(TOP)/vendor/samsung_slsi/exynos/camera
 
 LOCAL_C_INCLUDES += \
-	$(TOP)/hardware/samsung_slsi/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
 	$(LOCAL_CAMERA_PATH)/core/src/9xxx \
 	$(LOCAL_CAMERA_PATH)/core/src/common_v2/PlugIn/include \
 	$(LOCAL_PATH)/../include \
@@ -24,5 +24,5 @@ LOCAL_CFLAGS += -Wno-error=date-time
 LOCAL_CFLAGS += -Wno-date-time
 LOCAL_CFLAGS += -Wno-unused-variable
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

@@ -13,7 +13,7 @@ LOCAL_PRELINK_MODULE := true
 
 LOCAL_PREBUILT_LIBS := lib32/libexynoscamera_fakefusion.so
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_MULTI_PREBUILT)
 
 else
@@ -31,7 +31,7 @@ LOCAL_SRC_FILES_$(TARGET_ARCH) := lib64/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib32/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_MULTILIB := both
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_PREBUILT)
 endif
 
@@ -51,7 +51,7 @@ LOCAL_SHARED_LIBRARIES := libutils libcutils liblog libexynoscamera_plugin libex
 LOCAL_MODULE := libexynoscamera_fakefusion_plugin
 
 LOCAL_C_INCLUDES += \
-	$(TOP)/hardware/samsung_slsi/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
 	$(CAMERA_PATH)/core/src/common_v2/ \
 	$(CAMERA_PATH)/core/src/common_v2/PlugIn/ \
 	$(CAMERA_PATH)/core/src/common_v2/PlugIn/include \
@@ -62,7 +62,7 @@ LOCAL_CFLAGS := -Wno-unused-parameter
 LOCAL_CFLAGS += -Wno-error=date-time
 LOCAL_CFLAGS += -Wno-unused-variable
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
 
 # build sources to make builtin fakefusion lib

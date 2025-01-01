@@ -27,7 +27,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := true
 LOCAL_PREBUILT_LIBS := lib32/libvpl.so
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_MULTI_PREBUILT)
 else
 include $(CLEAR_VARS)
@@ -38,7 +38,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES_$(TARGET_ARCH) := lib64/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib32/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 LOCAL_MULTILIB := both
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_PREBUILT)
 endif
 
@@ -59,7 +59,7 @@ LOCAL_C_INCLUDES += \
 LOCAL_CFLAGS := -Wno-unused-parameter
 LOCAL_CFLAGS += -Wno-date-time
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
 
 endif

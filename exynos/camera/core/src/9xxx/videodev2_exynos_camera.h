@@ -1424,7 +1424,7 @@ struct v4l2_recognition {
 #define VIDIOC_G_RECOGNITION	_IOR('V', 86, struct v4l2_recognition)
 
 /* SBWC : Stride is in bits */
-/* reference : hardware/samsung_slsi/exynos/gralloc1/gralloc_helper.h */
+/* reference : hardware/samsung_slsi-linaro/exynos/gralloc1/gralloc_helper.h */
 
 #define SBWC_8B_STRIDE(w)       (128 * (((w) + 31) / 32))
 #define SBWC_10B_STRIDE(w)      (160 * (((w) + 31) / 32))

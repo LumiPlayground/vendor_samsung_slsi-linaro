@@ -24,7 +24,7 @@ LOCAL_CFLAGS += -Wno-error=date-time
 LOCAL_CFLAGS += -Wno-overloaded-virtual
 LOCAL_CFLAGS += -Wno-unused-variable
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -47,7 +47,7 @@ LOCAL_CFLAGS := -Wno-unused-parameter
 LOCAL_CFLAGS += -Wno-error=date-time
 LOCAL_CFLAGS += -Wno-overloaded-virtual
 
-include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
+include $(TOP)/hardware/samsung_slsi-linaro/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
 
 # external plugins
