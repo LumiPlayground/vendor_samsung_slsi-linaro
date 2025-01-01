@@ -1,5 +1,0 @@
-service WLAN-daemon /vendor/bin/wland
-    class main
-    user root
-    group system
-    seclabel u:r:wland:s0
