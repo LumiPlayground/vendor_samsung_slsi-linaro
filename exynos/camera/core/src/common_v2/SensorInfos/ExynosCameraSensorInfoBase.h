@@ -34,7 +34,7 @@
 #endif
 
 #if defined(SUPPORT_X10_ZOOM)
-#define MAX_ZOOM_RATIO (8000)
+#define MAX_ZOOM_RATIO (10000)
 #define MAX_ZOOM_RATIO_FRONT (4000)
 #define MAX_ZOOM_RATIO_VENDOR (10000)
 #elif defined(SUPPORT_X8_ZOOM)
