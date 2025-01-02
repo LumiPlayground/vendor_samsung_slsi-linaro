@@ -348,10 +348,6 @@ ExynosCameraSensorIMX576::ExynosCameraSensorIMX576(int sensorId) : ExynosCameraS
 ExynosCameraSensor2L3::ExynosCameraSensor2L3(int sensorId) : ExynosCameraSensor2L3Base(sensorId)
 {
     /* Optional capabilities : vendor feature */
-    supportedHwLevel = ANDROID_INFO_SUPPORTED_HARDWARE_LEVEL_FULL;
-
-    supportedCapabilities |= (CAPABILITIES_PRIVATE_REPROCESSING | CAPABILITIES_RAW |
-                                CAPABILITIES_CONSTRAINED_HIGH_SPEED_VIDEO);
 };
 
 ExynosCameraSensor3J1::ExynosCameraSensor3J1(int sensorId) : ExynosCameraSensor3J1Base(sensorId)

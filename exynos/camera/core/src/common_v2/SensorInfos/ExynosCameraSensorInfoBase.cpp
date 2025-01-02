@@ -1436,7 +1436,7 @@ ExynosCameraSensorIMX333_2L2Base::ExynosCameraSensorIMX333_2L2Base(__unused int 
     supportedHwLevel = ANDROID_INFO_SUPPORTED_HARDWARE_LEVEL_FULL;
     /* FULL-Level default capabilities */
     supportedCapabilities = (CAPABILITIES_MANUAL_SENSOR | CAPABILITIES_MANUAL_POST_PROCESSING |
-                            CAPABILITIES_BURST_CAPTURE);
+                            CAPABILITIES_BURST_CAPTURE | CAPABILITIES_RAW);
     requestKeys = AVAILABLE_REQUEST_KEYS_BASIC;
     resultKeys = AVAILABLE_RESULT_KEYS_BASIC;
     characteristicsKeys = AVAILABLE_CHARACTERISTICS_KEYS_BASIC;
