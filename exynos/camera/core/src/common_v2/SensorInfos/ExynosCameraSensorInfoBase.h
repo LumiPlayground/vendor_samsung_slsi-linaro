@@ -831,6 +831,11 @@ public:
     ExynosCameraSensor3M3Base(int sensorId);
 };
 
+struct ExynosCameraSensorS5K5E6Base : public ExynosCameraSensorInfoBase {
+public:
+    ExynosCameraSensorS5K5E6Base(int sensorId);
+};
+
 struct ExynosCameraSensorS5K5F1Base : public ExynosCameraSensorInfoBase {
 public:
     ExynosCameraSensorS5K5F1Base(int sensorId);

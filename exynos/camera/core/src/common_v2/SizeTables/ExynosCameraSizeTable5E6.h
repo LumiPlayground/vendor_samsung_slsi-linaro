@@ -449,6 +449,13 @@ static int S5K5E6_THUMBNAIL_LIST[][SIZE_OF_RESOLUTION] =
     {    0,    0, SIZE_RATIO_1_1}
 };
 
+static camera_metadata_rational COLOR_MATRIX_5E6_3X3[] =
+{
+    {128, 128}, {0, 128}, {0, 128},
+    {0, 128}, {128, 128}, {0, 128},
+    {0, 128}, {0, 128}, {128, 128}
+};
+
 /* vendor static info : width, height, min_fps, max_fps, vdis width, vdis height, recording limit time(sec) */
 static int S5K5E6_AVAILABLE_VIDEO_LIST[][7] =
 {

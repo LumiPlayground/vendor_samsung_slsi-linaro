@@ -127,7 +127,7 @@ typedef enum
     SENSOR_NAME_SR352            = 303,
     SENSOR_NAME_SR130PC20        = 304,
 
-    SENSOR_NAME_S5K5E6           = 305, // IRIS Camera Sensor
+    SENSOR_NAME_S5K5E6           = 254, // IRIS Camera Sensor
     SENSOR_NAME_S5K5F1           = 306, // STAR IRIS Sensor
 
     SENSOR_NAME_VIRTUAL_ZEBU     = 901,

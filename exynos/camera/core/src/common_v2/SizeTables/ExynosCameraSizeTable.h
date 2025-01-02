@@ -97,6 +97,7 @@ enum PD_IMAGE_SIZE_LUT_INDEX {
 #include "ExynosCameraSizeTable_2T7SX_WQHD.h"
 #include "ExynosCameraSizeTable3P9.h"
 #include "ExynosCameraSizeTable4HA.h"
+#include "ExynosCameraSizeTable5E6.h"
 #include "ExynosCameraSizeTable5E9.h"
 #include "ExynosCameraSizeTable3L2.h"
 #include "ExynosCameraSizeTable3L6.h"

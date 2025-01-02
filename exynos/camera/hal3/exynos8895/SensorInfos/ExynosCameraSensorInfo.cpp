@@ -201,6 +201,10 @@ struct ExynosCameraSensorInfoBase *createExynosCameraSensorInfo(int cameraId, __
         sensorInfo = new ExynosCameraSensor4HA(sensorId);
         snprintf(sensorInfo->name, sizeof(sensorInfo->name), "S5K4HA");
         break;
+    case SENSOR_NAME_S5K5E6:
+        sensorInfo = new ExynosCameraSensorS5K5E6(sensorId);
+        snprintf(sensorInfo->name, sizeof(sensorInfo->name), "S5K5E6");
+        break;
     case SENSOR_NAME_S5K5E9:
         sensorInfo = new ExynosCameraSensor5E9(sensorId);
         snprintf(sensorInfo->name, sizeof(sensorInfo->name), "S5K5E9");
@@ -360,6 +364,28 @@ ExynosCameraSensor3J1::ExynosCameraSensor3J1(int sensorId) : ExynosCameraSensor3
 ExynosCameraSensor3M3::ExynosCameraSensor3M3(int sensorId) : ExynosCameraSensor3M3Base(sensorId)
 {
     /* Use ExynosCameraSensorS5K3M3Base Constructor */
+};
+
+ExynosCameraSensorS5K5E6::ExynosCameraSensorS5K5E6(int sensorId) : ExynosCameraSensorS5K5E6Base(sensorId)
+{
+    /* Use ExynosCameraSensorS5K5E6 Constructor */
+    gain = 20;                      // 2.0;
+    exposureTime = 332 * 100000;    // 33.2ms;
+    ledCurrent = 5;                 // 450mA
+    ledPulseDelay = 0 * 100000;     // 0ms
+    ledPulseWidth = 240 * 100000;   // 24ms
+    ledMaxTime = 10 * 1000;         // 10s;
+
+    gainRange[MIN] = 1;
+    gainRange[MAX] = 160;
+    ledCurrentRange[MIN] = 1;                // 0mA
+    ledCurrentRange[MAX] = 10;               // 950mA
+    ledPulseDelayRange[MIN] = 0 * 100000;    // 0.0ms
+    ledPulseDelayRange[MAX] = 1000 * 100000; // 100.0ms
+    ledPulseWidthRange[MIN] = 0 * 100000;    // 0.0ms
+    ledPulseWidthRange[MAX] = 333 * 100000;  // 33.3ms
+    ledMaxTimeRange[MIN] = 1 * 1000;         // 1s
+    ledMaxTimeRange[MAX] = 10 * 1000;        // 10s
 };
 
 ExynosCameraSensorS5K5F1::ExynosCameraSensorS5K5F1(int sensorId) : ExynosCameraSensorS5K5F1Base(sensorId)
