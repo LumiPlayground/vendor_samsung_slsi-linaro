@@ -32,6 +32,12 @@
 #include "videodev2_exynos_media.h"
 #include "ExynosCameraBuffer.h"
 
+#define V4L2_PIX_FMT_Z16 v4l2_fourcc('Z', '1', '6', ' ')
+#define NV16M_Y_SIZE(w,h) (__ALIGN_UP((w), 64) * __ALIGN_UP((h), 16) + 256)
+#define NV16M_CBCR_SIZE(w,h) (__ALIGN_UP((w), 64) * __ALIGN_UP((h), 16) + 256)
+#define NV16M_Y_2B_SIZE(w,h) (__ALIGN_UP((w / 4), 16) * __ALIGN_UP((h), 16) + 256)
+#define NV16M_CBCR_2B_SIZE(w,h) (__ALIGN_UP((w / 4), 16) * __ALIGN_UP((h), 16) + 256)
+
 //#define USE_INTERNAL_ALLOC_DEBUG
 #ifdef USE_INTERNAL_ALLOC_DEBUG
 //#define ALLOC_INFO_DUMP

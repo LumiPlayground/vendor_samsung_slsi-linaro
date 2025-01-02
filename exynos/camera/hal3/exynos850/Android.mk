@@ -26,7 +26,7 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
-LOCAL_SHARED_LIBRARIES:= libutils libcutils liblog libui libcamera_metadata
+LOCAL_SHARED_LIBRARIES := libbinder libui libutils libcutils liblog libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libexynosutils libhwjpeg libexynosv4l2 libion_exynos libsync libcsc
 LOCAL_SHARED_LIBRARIES += libdl
 LOCAL_SHARED_LIBRARIES += android.hardware.graphics.allocator@2.0 android.hardware.graphics.mapper@2.0 libGrallocWrapper
@@ -217,6 +217,7 @@ LOCAL_C_INCLUDES += \
 	$(TOP)/frameworks/native/include \
 	$(TOP)/frameworks/native/libs/arect/include \
 	$(TOP)/frameworks/native/libs/nativebase/include \
+	$(TOP)/frameworks/native/libs/ui/include \
 	$(TOP)/frameworks/av/include \
 	$(TOP)/hardware/interfaces/camera/common/1.0/default/include \
 	$(TOP)/hardware/samsung_slsi-linaro/exynos/libion/include
@@ -472,6 +473,7 @@ LOCAL_C_INCLUDES += \
 	$(TOP)/frameworks/native/include \
 	$(TOP)/frameworks/native/libs/nativebase/include \
 	$(TOP)/frameworks/native/libs/arect/include \
+	$(TOP)/frameworks/native/libs/ui/include \
 	$(TOP)/hardware/samsung_slsi-linaro/exynos/libion/include \
 	$(TOP)/hardware/interfaces/camera/common/1.0/default/include
 
@@ -680,7 +682,7 @@ LOCAL_C_INCLUDES += \
 	$(TOP)/hardware/samsung_slsi-linaro/graphics/base/giantmscl/include
 endif
 
-LOCAL_SHARED_LIBRARIES:= liblog libhardware libutils libion_exynos libhwjpeg libnativewindow
+LOCAL_SHARED_LIBRARIES := libbinder libui liblog libhardware libutils libion_exynos libhwjpeg libnativewindow
 LOCAL_SHARED_LIBRARIES += libexynoscamera3
 LOCAL_SHARED_LIBRARIES += android.hardware.graphics.allocator@2.0
 

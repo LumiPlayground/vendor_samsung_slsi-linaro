@@ -202,16 +202,15 @@
 #else
 #define NUM_FUSION_BUFFERS              (0)
 #endif
-#define DUAL_TRANSITION_FRAME_COUNT     (30)
-#define DUAL_CAMERA_TELE_RATIO          (2)
-
 #define DUAL_SWITCH_TRANSITION_FRAME_COUNT (10)
 #define DUAL_TRANSITION_FRAME_COUNT     (30)
 #define DUAL_CAPTURE_LOCK_COUNT         (30)
-#define DUAL_CAMERA_TELE_RATIO          (2)
 #define SYNC_WAITING_COUNT              (2)
-
+#define MULTI_REAR_CAMERA_MAIN_RATIO    (2.0f) //tele
+#define MULTI_REAR_CAMERA_SUB_RATIO     (1.0f) //wide
+#define MULTI_REAR_CAMERA_SUB2_RATIO    (4.0f) //ultratele
 #endif
+
 
 #ifdef BOARD_CAMERA_EARLY_FD
 #define USE_EARLY_FD_PREVIEW
