@@ -20,6 +20,11 @@ ifndef TARGET_SOC_BASE
 TARGET_SOC_BASE = $(TARGET_SOC)
 endif
 
+ifeq ($(TARGET_SOC_BASE), exynos8895)
+build_dirs := \
+	exynos8895
+endif
+
 ifeq ($(TARGET_SOC_BASE), exynos9610)
 build_dirs := \
 	exynos9610
